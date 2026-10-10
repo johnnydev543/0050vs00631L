@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Presentation-only dark/light theme; default dark, persisted preference, readable theme-specific chart colors, print in light.",
+  "original_review_record": "review.json remains the immutable financial review of the original implementation.",
+  "current_builder_sha256": "38e8802c537514a789abb6aae2d1ecae7643bf24e5360b2799dc04487a9a185e",
+  "unchanged_table_text": true,
+  "unchanged_all_48_chart_paths": true,
+  "unchanged_financial_sources_and_results": true,
+  "browser_checks": {
+    "dark_default": true,
+    "dark_light_toggle": true,
+    "preference_survives_reload": true,
+    "cash_scenario_switch_works_in_dark": true,
+    "dark_charts_visually_checked": true
+  },
+  "public_snapshot_note": "Presentation and provenance adapted for public reading; successful market data retained."
+}

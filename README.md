@@ -45,7 +45,7 @@
 
 ## 離線重現
 
-Python 3.10+建議；僅使用標準函式庫，從已保存資料重跑不需網路或憑證。
+Python 3.10+建議；僅使用標準函式庫，從已保存資料重跑不需網路。
 
 ```bash
 python3 normalize.py
@@ -61,4 +61,4 @@ python3 validation/independent_backtest_review.py
 - `validation/`：獨立重算、敏感度與離線重跑證據。
 - `START_HERE.txt`：詳細重現方式。
 
-原研究覆核與檔案雜湊保留在`review.json`；後續呈現調整見`validation/presentation_updates.json`。
+計算覆核摘要見`review.json`；目前公開版重算證據與呈現檢查見`validation/`。

@@ -1,0 +1,33 @@
+0050 / 00631L 公開回測成果
+
+投入本金：新臺幣1,000,000元（100萬元）。各策略本金相同，期間沒有額外投入。
+實際期間：2014-10-31 開盤至2026-10-08 收盤。
+
+先開啟 report.html，可切換深／淺色及現金年收益0%、1%、2%假設情境。
+results/summary.csv 匯總24組結果；每個情境均附逐日資產與交易紀錄。
+
+偏離10個百分點：觀察正二占總資產的比例。目標50%時，比例≤40%或≥60%
+會觸發再平衡，下一個可交易日開盤調回50%。60%目標的門檻是50%與70%；
+80%目標的門檻是70%與90%。完整說明及100萬元範例見報告與README。
+
+離線重現（建議Python 3.10+，僅使用標準函式庫）
+從專案根目錄執行：
+python3 normalize.py
+python3 -m unittest -v test_backtest.py
+python3 backtest.py --input normalized.json --out results
+python3 build_report.py
+python3 validation/independent_backtest_review.py
+
+資料與方法：以實際ETF日價、官方分割比例及配息重建歷史持倉。
+現金收益及滑價為固定假設，允許小數受益單位；未計個人稅、最低佣金與T+2
+交割限制。日線不能證明個別委託成交，亦未認證嚴格歷史資料版本。
+
+主要檔案
+README.md：公開摘要、本金與再平衡解釋。
+report.html：互動報告與來源。
+raw/：市場資料成功回應及官方公告。
+normalized.json：核對後的行情、公司行動與交易日。
+results/：24組設定、逐日資產、交易及指標。
+data_quality.json / twse_spotcheck.json：資料品質及官方抽查。
+validation/：獨立重算與呈現檢查。
+FILE_MANIFEST.json：本公開成果各檔案SHA256。

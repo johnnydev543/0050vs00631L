@@ -1,0 +1,27 @@
+{
+  "cash_day_count": 365.2425,
+  "cash_yield": 0.0,
+  "costs": {
+    "commission": 0.001425,
+    "sell_tax": 0.001,
+    "slippage": 0.0005
+  },
+  "dividend_rule": "Entitlement before ex-date opening trades, receivable until payment, buyhold reinvestment after payment date at first tradable open",
+  "end": "2026-10-08",
+  "engine_version": "1.0.0",
+  "fractional_units": true,
+  "initial_capital": 1000000.0,
+  "input_semantic_sha256": "683cde44a03ef6d18695ccb72d94fa3ea787060342470e1339e77a26f6a6a9f6",
+  "one_price_bar_execution": "When daily high equals low, opening fills are conservatively rejected ex post; pending orders wait for a subsequent executable open. The close still marks NAV. This is an execution assumption, not a signal using future prices.",
+  "quarter_rule": "First market session of new calendar quarter, delayed until ETF executable open",
+  "sessions_per_year": 252,
+  "start": "2014-10-31",
+  "strategy": {
+    "name": "00631L_80_threshold",
+    "rebalance": "threshold",
+    "symbol": "00631L",
+    "threshold": 0.1,
+    "weight": 0.8
+  },
+  "threshold_rule": "Absolute close weight deviation >= threshold; execute at subsequent tradable open"
+}

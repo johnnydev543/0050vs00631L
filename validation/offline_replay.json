@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "method": "Rebuild normalized input from saved raw snapshots in a new directory; rerun all 24 strategies; byte-compare every output file.",
+  "compared_result_files": 123,
+  "differences": [],
+  "input_byte_identical": true,
+  "python": "3.9.6"
+}

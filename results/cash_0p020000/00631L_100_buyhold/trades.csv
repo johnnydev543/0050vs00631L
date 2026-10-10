@@ -1,0 +1,2 @@
+side,quantity,raw_open,execution_price,gross_amount,commission,sell_tax,slippage_cost,total_cost,cash_change,units_after,cash_after,receivables,nav_before,nav_after,target_weight,weight_after,date,symbol,reason
+buy,49928.863868989814,19.99,19.999995,998577.0277354768,1422.9722645230545,0.0,499.038994370552,1922.0112588936065,-999999.9999999999,49928.863868989814,1.1641532182693481e-10,0,1000000.0,998077.9887411065,1.0,0.9999999999999999,2014-10-31,00631L,initial

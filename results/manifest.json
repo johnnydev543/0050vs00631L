@@ -1,0 +1,44 @@
+{
+  "engine_sha256": "17a366760c2b84d2ec7c5a8215615552a77c8edcb3fad7b027b70755f20b295a",
+  "engine_version": "1.0.0",
+  "input_file_sha256": "789dc72096f429458dc6103e7995010c3a2bcaa9a42850e46098412c389b63f7",
+  "input_semantic_sha256": "683cde44a03ef6d18695ccb72d94fa3ea787060342470e1339e77a26f6a6a9f6",
+  "metadata": {
+    "data_manifest": [
+      {
+        "path": "raw/download.jsonl",
+        "sha256": "6cf27dd72f220da8952d8cd47e18c10baf803e25c4adf3f506efb76741a73c98"
+      },
+      {
+        "path": "raw/parvalue.jsonl",
+        "sha256": "a7b8a2514831da586b86386e19f3d95a9fc296b9fd22e4cf1cab6bb51ec3bf73"
+      },
+      {
+        "path": "raw/yuanta_0050_dividends.json",
+        "sha256": "4ee026c2baa30f75b5dd1d7e4371267b28e8ab1f5240b8adabdb33eb6d487532",
+        "source": "https://www.yuantafunds.com/myfund/dividend/history?fundid=1066"
+      }
+    ],
+    "finmind_adjusted_price_available": false,
+    "method": "Raw prices plus effective corporate-action accounting; no adjusted prices used for signal or fills.",
+    "not_strict_historical_vintage": true,
+    "quality_status": "PASS_WITH_LIMITATIONS",
+    "requested_end": "2026-10-09",
+    "verified_suspensions": {
+      "0050": [
+        "2025-06-11",
+        "2025-06-12",
+        "2025-06-13",
+        "2025-06-16",
+        "2025-06-17"
+      ],
+      "00631L": [
+        "2026-03-25",
+        "2026-03-26",
+        "2026-03-27",
+        "2026-03-30"
+      ]
+    }
+  },
+  "runs": 24
+}

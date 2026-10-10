@@ -1,0 +1,1542 @@
+{
+  "checks": [
+    {
+      "id": "independent_0050_buyhold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 1.862645149230957e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 0.0,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 8.881784197001252e-16,
+          "sortino": 1.3322676295501878e-15
+        },
+        "trades": 23
+      }
+    },
+    {
+      "id": "ledger_0050_buyhold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 1.1097256447101245e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_0050_buyhold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2024-02-15",
+        "duration_calendar_days": 759,
+        "duration_sessions": 500,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_0050_buyhold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_50_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 5.587935447692871e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 5.587935447692871e-09,
+          "cagr": 2.220446049250313e-16,
+          "max_drawdown": 1.1102230246251565e-16,
+          "sharpe": 6.661338147750939e-16,
+          "sortino": 6.661338147750939e-16
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_50_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 2.495852413630928e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_50_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-11-21",
+        "duration_calendar_days": 673,
+        "duration_sessions": 446,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_50_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_50_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 3.725290298461914e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 1.862645149230957e-09,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 0.0,
+          "sortino": 2.220446049250313e-16
+        },
+        "trades": 16
+      }
+    },
+    {
+      "id": "ledger_00631L_50_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 6.318714440567419e-10,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_50_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-06-15",
+        "duration_calendar_days": 514,
+        "duration_sessions": 339,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_50_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_60_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 1.862645149230957e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 0.0,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 8.881784197001252e-16,
+          "sortino": 1.3322676295501878e-15
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_60_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 1.823039497139689e-09,
+        "max_target_weight_difference": 2.220446049250313e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_60_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-12-14",
+        "duration_calendar_days": 696,
+        "duration_sessions": 463,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_60_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_60_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 7.450580596923828e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 7.450580596923828e-09,
+          "cagr": 2.220446049250313e-16,
+          "max_drawdown": 0.0,
+          "sharpe": 2.220446049250313e-16,
+          "sortino": 2.220446049250313e-16
+        },
+        "trades": 15
+      }
+    },
+    {
+      "id": "ledger_00631L_60_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 7.744347385596484e-10,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_60_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-07-14",
+        "duration_calendar_days": 543,
+        "duration_sessions": 358,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_60_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_80_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 2.2351741790771484e-08,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 2.2351741790771484e-08,
+          "cagr": 2.220446049250313e-16,
+          "max_drawdown": 0.0,
+          "sharpe": 0.0,
+          "sortino": 2.220446049250313e-16
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_80_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 3.0113369575701654e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_80_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-12-15",
+        "duration_calendar_days": 697,
+        "duration_sessions": 464,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_80_quarterly cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_80_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 3.725290298461914e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 3.725290298461914e-09,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 2.220446049250313e-16,
+          "sortino": 0.0
+        },
+        "trades": 7
+      }
+    },
+    {
+      "id": "ledger_00631L_80_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 2.4306245904881507e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_80_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2024-01-25",
+        "duration_calendar_days": 738,
+        "duration_sessions": 492,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_80_threshold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_100_buyhold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 7.450580596923828e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 0.0,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 6.661338147750939e-16,
+          "sortino": 6.661338147750939e-16
+        },
+        "trades": 1
+      }
+    },
+    {
+      "id": "ledger_00631L_100_buyhold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 7.66249286243692e-11,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_100_buyhold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2024-01-25",
+        "duration_calendar_days": 738,
+        "duration_sessions": 492,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_100_buyhold cash=0.0",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_0050_buyhold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 9.313225746154785e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 7.450580596923828e-09,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 2.220446049250313e-16,
+          "sortino": 4.440892098500626e-16
+        },
+        "trades": 23
+      }
+    },
+    {
+      "id": "ledger_0050_buyhold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 9.320189064965234e-10,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_0050_buyhold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2024-02-15",
+        "duration_calendar_days": 759,
+        "duration_sessions": 500,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_0050_buyhold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_50_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 2.253800630569458e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 2.2351741790771484e-07,
+          "cagr": 2.4424906541753444e-15,
+          "max_drawdown": 1.887379141862766e-15,
+          "sharpe": 9.547918011776346e-15,
+          "sortino": 1.3766765505351941e-14
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_50_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 9.008118695419398e-10,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_50_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-07-14",
+        "duration_calendar_days": 543,
+        "duration_sessions": 358,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_50_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_50_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 2.123415470123291e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 2.123415470123291e-07,
+          "cagr": 2.220446049250313e-15,
+          "max_drawdown": 1.4432899320127035e-15,
+          "sharpe": 1.1324274851176597e-14,
+          "sortino": 1.709743457922741e-14
+        },
+        "trades": 15
+      }
+    },
+    {
+      "id": "ledger_00631L_50_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 2.773958840407431e-10,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_50_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-06-13",
+        "duration_calendar_days": 512,
+        "duration_sessions": 337,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_50_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_60_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 2.4959444999694824e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 2.4586915969848633e-07,
+          "cagr": 1.9984014443252818e-15,
+          "max_drawdown": 9.992007221626409e-16,
+          "sharpe": 6.661338147750939e-15,
+          "sortino": 9.992007221626409e-15
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_60_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 2.0881998352706432e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_60_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-11-21",
+        "duration_calendar_days": 673,
+        "duration_sessions": 446,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_60_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_60_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 2.7567148208618164e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 2.7194619178771973e-07,
+          "cagr": 1.9984014443252818e-15,
+          "max_drawdown": 1.2212453270876722e-15,
+          "sharpe": 5.10702591327572e-15,
+          "sortino": 7.327471962526033e-15
+        },
+        "trades": 15
+      }
+    },
+    {
+      "id": "ledger_00631L_60_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 2.4097062123473734e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_60_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-07-14",
+        "duration_calendar_days": 543,
+        "duration_sessions": 358,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_60_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_80_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 2.384185791015625e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 2.3469328880310059e-07,
+          "cagr": 1.1102230246251565e-15,
+          "max_drawdown": 3.3306690738754696e-16,
+          "sharpe": 1.7763568394002505e-15,
+          "sortino": 2.886579864025407e-15
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_80_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 3.317268237879034e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_80_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-12-14",
+        "duration_calendar_days": 696,
+        "duration_sessions": 463,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_80_quarterly cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_80_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 1.825392246246338e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 1.7508864402770996e-07,
+          "cagr": 6.661338147750939e-16,
+          "max_drawdown": 6.661338147750939e-16,
+          "sharpe": 1.3322676295501878e-15,
+          "sortino": 2.220446049250313e-15
+        },
+        "trades": 8
+      }
+    },
+    {
+      "id": "ledger_00631L_80_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 1.0477378964424133e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_80_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-12-12",
+        "duration_calendar_days": 694,
+        "duration_sessions": 461,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_80_threshold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_100_buyhold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 7.450580596923828e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 0.0,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 4.440892098500626e-16,
+          "sortino": 4.440892098500626e-16
+        },
+        "trades": 1
+      }
+    },
+    {
+      "id": "ledger_00631L_100_buyhold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 7.66249286243692e-11,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_100_buyhold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2024-01-25",
+        "duration_calendar_days": 738,
+        "duration_sessions": 492,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_100_buyhold cash=0.01",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_0050_buyhold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 3.725290298461914e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 3.725290298461914e-09,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 1.9984014443252818e-15,
+          "sortino": 3.1086244689504383e-15
+        },
+        "trades": 23
+      }
+    },
+    {
+      "id": "ledger_0050_buyhold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 4.324647306930274e-10,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_0050_buyhold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2024-02-15",
+        "duration_calendar_days": 759,
+        "duration_sessions": 500,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_0050_buyhold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_50_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 8.67992639541626e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 8.605420589447021e-07,
+          "cagr": 8.881784197001252e-15,
+          "max_drawdown": 4.773959005888173e-15,
+          "sharpe": 3.774758283725532e-14,
+          "sortino": 5.706546346573305e-14
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_50_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 7.969447324285284e-10,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_50_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-06-13",
+        "duration_calendar_days": 512,
+        "duration_sessions": 337,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_50_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_50_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 8.475035429000854e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 8.381903171539307e-07,
+          "cagr": 8.43769498715119e-15,
+          "max_drawdown": 5.88418203051333e-15,
+          "sharpe": 4.085620730620576e-14,
+          "sortino": 6.195044477408373e-14
+        },
+        "trades": 15
+      }
+    },
+    {
+      "id": "ledger_00631L_50_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 2.541582944104448e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_50_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-06-13",
+        "duration_calendar_days": 512,
+        "duration_sessions": 337,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_50_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_60_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 1.0076910257339478e-06,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 9.927898645401e-07,
+          "cagr": 7.549516567451064e-15,
+          "max_drawdown": 3.6637359812630166e-15,
+          "sharpe": 2.886579864025407e-14,
+          "sortino": 4.285460875053104e-14
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_60_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 1.9681465346366167e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_60_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-07-14",
+        "duration_calendar_days": 543,
+        "duration_sessions": 358,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_60_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_60_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 9.94652509689331e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 9.797513484954834e-07,
+          "cagr": 6.661338147750939e-15,
+          "max_drawdown": 4.6629367034256575e-15,
+          "sharpe": 2.6867397195928788e-14,
+          "sortino": 4.107825191113079e-14
+        },
+        "trades": 15
+      }
+    },
+    {
+      "id": "ledger_00631L_60_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 6.393747753463686e-10,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_60_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-06-15",
+        "duration_calendar_days": 514,
+        "duration_sessions": 339,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_60_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_80_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 9.052455425262451e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 8.866190910339355e-07,
+          "cagr": 3.9968028886505635e-15,
+          "max_drawdown": 1.6653345369377348e-15,
+          "sharpe": 1.0658141036401503e-14,
+          "sortino": 1.5987211554602254e-14
+        },
+        "trades": 49
+      }
+    },
+    {
+      "id": "ledger_00631L_80_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 3.130480763502419e-09,
+        "max_target_weight_difference": 2.220446049250313e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_80_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-12-14",
+        "duration_calendar_days": 696,
+        "duration_sessions": 463,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_80_quarterly cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_80_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 5.885958671569824e-07,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 5.811452865600586e-07,
+          "cagr": 2.4424906541753444e-15,
+          "max_drawdown": 2.1094237467877974e-15,
+          "sharpe": 7.105427357601002e-15,
+          "sortino": 1.0658141036401503e-14
+        },
+        "trades": 7
+      }
+    },
+    {
+      "id": "ledger_00631L_80_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 1.0240910341963172e-09,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_80_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2023-12-27",
+        "duration_calendar_days": 709,
+        "duration_sessions": 472,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_80_threshold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "independent_00631L_100_buyhold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_daily_nav_difference_twd": 7.450580596923828e-09,
+        "trade_dates_equal": true,
+        "metric_absolute_differences": {
+          "ending_nav": 0.0,
+          "cagr": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe": 4.440892098500626e-16,
+          "sortino": 2.220446049250313e-16
+        },
+        "trades": 1
+      }
+    },
+    {
+      "id": "ledger_00631L_100_buyhold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "max_cost_reconciliation_twd": 7.66249286243692e-11,
+        "max_target_weight_difference": 1.1102230246251565e-16,
+        "no_negative_cash_or_units": true,
+        "no_trades_on_suspension": true
+      }
+    },
+    {
+      "id": "recovery_00631L_100_buyhold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "peak_date": "2022-01-17",
+        "trough_date": "2022-10-25",
+        "recovery_date": "2024-01-25",
+        "duration_calendar_days": 738,
+        "duration_sessions": 492,
+        "censored": false
+      }
+    },
+    {
+      "id": "persisted_00631L_100_buyhold cash=0.02",
+      "status": "PASS",
+      "evidence": {
+        "metrics_identical": true,
+        "config_identical": true,
+        "max_saved_daily_nav_difference_twd": 0.0
+      }
+    },
+    {
+      "id": "closed_form_100_buyhold",
+      "status": "PASS",
+      "evidence": {
+        "expected_twd": 44925991.70931703,
+        "engine_twd": 44925991.70931703
+      }
+    },
+    {
+      "id": "source_hash_raw/download.jsonl",
+      "status": "PASS",
+      "evidence": {
+        "sha256": "6cf27dd72f220da8952d8cd47e18c10baf803e25c4adf3f506efb76741a73c98"
+      }
+    },
+    {
+      "id": "source_hash_raw/parvalue.jsonl",
+      "status": "PASS",
+      "evidence": {
+        "sha256": "a7b8a2514831da586b86386e19f3d95a9fc296b9fd22e4cf1cab6bb51ec3bf73"
+      }
+    },
+    {
+      "id": "source_hash_raw/yuanta_0050_dividends.json",
+      "status": "PASS",
+      "evidence": {
+        "sha256": "4ee026c2baa30f75b5dd1d7e4371267b28e8ab1f5240b8adabdb33eb6d487532"
+      }
+    },
+    {
+      "id": "result_manifest_current_engine_and_data",
+      "status": "PASS",
+      "evidence": {
+        "engine_sha256": "17a366760c2b84d2ec7c5a8215615552a77c8edcb3fad7b027b70755f20b295a",
+        "normalized_sha256": "789dc72096f429458dc6103e7995010c3a2bcaa9a42850e46098412c389b63f7"
+      }
+    },
+    {
+      "id": "all_normalized_prices_identical_to_raw_0050",
+      "status": "PASS",
+      "evidence": {
+        "rows": 2907
+      }
+    },
+    {
+      "id": "all_normalized_prices_identical_to_raw_00631L",
+      "status": "PASS",
+      "evidence": {
+        "rows": 2908
+      }
+    },
+    {
+      "id": "twse_independent_0050_20141001",
+      "status": "PASS",
+      "evidence": {
+        "fields_compared": 4,
+        "issues": []
+      }
+    },
+    {
+      "id": "twse_independent_00631L_20141001",
+      "status": "PASS",
+      "evidence": {
+        "fields_compared": 4,
+        "issues": []
+      }
+    },
+    {
+      "id": "twse_independent_0050_20261001",
+      "status": "PASS",
+      "evidence": {
+        "fields_compared": 24,
+        "issues": []
+      }
+    },
+    {
+      "id": "twse_independent_00631L_20261001",
+      "status": "PASS",
+      "evidence": {
+        "fields_compared": 24,
+        "issues": []
+      }
+    },
+    {
+      "id": "twse_independent_0050_20250601",
+      "status": "PASS",
+      "evidence": {
+        "fields_compared": 64,
+        "issues": []
+      }
+    },
+    {
+      "id": "twse_independent_00631L_20260301",
+      "status": "PASS",
+      "evidence": {
+        "fields_compared": 72,
+        "issues": []
+      }
+    },
+    {
+      "id": "coverage_0050",
+      "status": "PASS",
+      "evidence": {
+        "market_sessions": 2912,
+        "observed_bars": 2907,
+        "missing_dates": [
+          "2025-06-11",
+          "2025-06-12",
+          "2025-06-13",
+          "2025-06-16",
+          "2025-06-17"
+        ]
+      }
+    },
+    {
+      "id": "split_0050",
+      "status": "PASS",
+      "evidence": {
+        "date": "2025-06-18",
+        "previous_tradable_date": "2025-06-10",
+        "split_neutral_return": 0.008640339252584228
+      }
+    },
+    {
+      "id": "coverage_00631L",
+      "status": "PASS",
+      "evidence": {
+        "market_sessions": 2912,
+        "observed_bars": 2908,
+        "missing_dates": [
+          "2026-03-25",
+          "2026-03-26",
+          "2026-03-27",
+          "2026-03-30"
+        ]
+      }
+    },
+    {
+      "id": "split_00631L",
+      "status": "PASS",
+      "evidence": {
+        "date": "2026-03-31",
+        "previous_tradable_date": "2026-03-24",
+        "split_neutral_return": -0.0438451991425024
+      }
+    },
+    {
+      "id": "future_price_invariance_0050_buyhold",
+      "status": "PASS",
+      "evidence": {
+        "cutoff": "2022-12-30",
+        "future_price_multiplier": 1.19
+      }
+    },
+    {
+      "id": "future_price_invariance_00631L_50_quarterly",
+      "status": "PASS",
+      "evidence": {
+        "cutoff": "2022-12-30",
+        "future_price_multiplier": 1.19
+      }
+    },
+    {
+      "id": "future_price_invariance_00631L_50_threshold",
+      "status": "PASS",
+      "evidence": {
+        "cutoff": "2022-12-30",
+        "future_price_multiplier": 1.19
+      }
+    },
+    {
+      "id": "future_price_invariance_00631L_60_quarterly",
+      "status": "PASS",
+      "evidence": {
+        "cutoff": "2022-12-30",
+        "future_price_multiplier": 1.19
+      }
+    },
+    {
+      "id": "future_price_invariance_00631L_60_threshold",
+      "status": "PASS",
+      "evidence": {
+        "cutoff": "2022-12-30",
+        "future_price_multiplier": 1.19
+      }
+    },
+    {
+      "id": "future_price_invariance_00631L_80_quarterly",
+      "status": "PASS",
+      "evidence": {
+        "cutoff": "2022-12-30",
+        "future_price_multiplier": 1.19
+      }
+    },
+    {
+      "id": "future_price_invariance_00631L_80_threshold",
+      "status": "PASS",
+      "evidence": {
+        "cutoff": "2022-12-30",
+        "future_price_multiplier": 1.19
+      }
+    },
+    {
+      "id": "future_price_invariance_00631L_100_buyhold",
+      "status": "PASS",
+      "evidence": {
+        "cutoff": "2022-12-30",
+        "future_price_multiplier": 1.19
+      }
+    },
+    {
+      "id": "dividend_2015-10-26",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2015-11-26",
+        "reinvestment_date": "2015-11-27",
+        "entitlement_twd": 30710.09196126481
+      }
+    },
+    {
+      "id": "dividend_2016-07-28",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2016-08-30",
+        "reinvestment_date": "2016-08-31",
+        "entitlement_twd": 13466.003973532286
+      }
+    },
+    {
+      "id": "dividend_2017-02-08",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2017-03-14",
+        "reinvestment_date": "2017-03-15",
+        "entitlement_twd": 27259.120762238836
+      }
+    },
+    {
+      "id": "dividend_2017-07-31",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2017-08-31",
+        "reinvestment_date": "2017-09-01",
+        "entitlement_twd": 11485.95412818267
+      }
+    },
+    {
+      "id": "dividend_2018-01-29",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2018-03-13",
+        "reinvestment_date": "2018-03-14",
+        "entitlement_twd": 36402.766243527665
+      }
+    },
+    {
+      "id": "dividend_2018-07-23",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2018-08-27",
+        "reinvestment_date": "2018-08-28",
+        "entitlement_twd": 11884.22357467663
+      }
+    },
+    {
+      "id": "dividend_2019-01-22",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2019-03-08",
+        "reinvestment_date": "2019-03-11",
+        "entitlement_twd": 39365.57936647668
+      }
+    },
+    {
+      "id": "dividend_2019-07-19",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2019-08-22",
+        "reinvestment_date": "2019-08-23",
+        "entitlement_twd": 12343.454615989336
+      }
+    },
+    {
+      "id": "dividend_2020-01-31",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2020-03-06",
+        "reinvestment_date": "2020-03-09",
+        "entitlement_twd": 51578.8031328868
+      }
+    },
+    {
+      "id": "dividend_2020-07-21",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2020-08-24",
+        "reinvestment_date": "2020-08-25",
+        "entitlement_twd": 12865.248474262684
+      }
+    },
+    {
+      "id": "dividend_2021-01-22",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2021-03-09",
+        "reinvestment_date": "2021-03-10",
+        "entitlement_twd": 56434.31086941449
+      }
+    },
+    {
+      "id": "dividend_2021-07-21",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2021-08-24",
+        "reinvestment_date": "2021-08-25",
+        "entitlement_twd": 6625.08268793501
+      }
+    },
+    {
+      "id": "dividend_2022-01-21",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2022-03-04",
+        "reinvestment_date": "2022-03-07",
+        "entitlement_twd": 60728.752047935806
+      }
+    },
+    {
+      "id": "dividend_2022-07-18",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2022-08-19",
+        "reinvestment_date": "2022-08-22",
+        "entitlement_twd": 34956.93232152133
+      }
+    },
+    {
+      "id": "dividend_2023-01-30",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2023-03-07",
+        "reinvestment_date": "2023-03-08",
+        "entitlement_twd": 51249.35294052206
+      }
+    },
+    {
+      "id": "dividend_2023-07-18",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2023-08-11",
+        "reinvestment_date": "2023-08-14",
+        "entitlement_twd": 38258.00014113963
+      }
+    },
+    {
+      "id": "dividend_2024-01-17",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2024-02-21",
+        "reinvestment_date": "2024-02-22",
+        "entitlement_twd": 61319.12961682771
+      }
+    },
+    {
+      "id": "dividend_2024-07-16",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2024-08-09",
+        "reinvestment_date": "2024-08-12",
+        "entitlement_twd": 20867.852166037752
+      }
+    },
+    {
+      "id": "dividend_2025-01-17",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2025-02-20",
+        "reinvestment_date": "2025-02-21",
+        "entitlement_twd": 56660.490015050396
+      }
+    },
+    {
+      "id": "dividend_2025-07-21",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2025-08-08",
+        "reinvestment_date": "2025-08-11",
+        "entitlement_twd": 30633.363148734723
+      }
+    },
+    {
+      "id": "dividend_2026-01-22",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2026-02-11",
+        "reinvestment_date": "2026-02-23",
+        "entitlement_twd": 85676.76298548238
+      }
+    },
+    {
+      "id": "dividend_2026-07-21",
+      "status": "PASS",
+      "evidence": {
+        "pay_date": "2026-08-10",
+        "reinvestment_date": "2026-08-11",
+        "entitlement_twd": 52060.28380433678
+      }
+    }
+  ],
+  "status": "PASS",
+  "count": 143
+}

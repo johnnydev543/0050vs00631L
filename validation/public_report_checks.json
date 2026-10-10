@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "principal_twd": 1000000,
+  "principal_cells": 24,
+  "threshold_explanation": true,
+  "no_provider_credential_explanations_in_public_docs": true,
+  "financial_metrics_identical_to_original_24_runs": true,
+  "market_price_and_corporate_action_values_unchanged": true,
+  "independent_replay": "PASS",
+  "original_financial_review": "review.json is a public summary of the original review, not a claim that later presentation changes were independently reviewed."
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "Public report presentation: dark/light theme, prominent initial capital, capital column, 10-percentage-point explanation and example; removed credential and deployment explanations from report.",
+  "financial_inputs_and_results": "Unchanged",
+  "report_builder_sha256": "fbf10caef5f993034d87e4c1494f2a3589336dd547177b823be31b46a8e886a4",
+  "original_financial_review": "review.json",
+  "public_snapshot_omits": [
+    "repo_before.json",
+    "repo_after.json",
+    "raw/credential_check.jsonl"
+  ],
+  "public_snapshot_note": "Presentation and provenance adapted for public reading; successful market data retained."
+}
