@@ -1,0 +1,366 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "requested_start": "2014-10-31",
+  "requested_end": "2026-10-09",
+  "actual_end": "2026-10-08",
+  "market_sessions": 2912,
+  "api_failures": [],
+  "manifest": [
+    {
+      "path": "raw/download.jsonl",
+      "sha256": "6cf27dd72f220da8952d8cd47e18c10baf803e25c4adf3f506efb76741a73c98"
+    },
+    {
+      "path": "raw/parvalue.jsonl",
+      "sha256": "a7b8a2514831da586b86386e19f3d95a9fc296b9fd22e4cf1cab6bb51ec3bf73"
+    },
+    {
+      "path": "raw/yuanta_0050_dividends.json",
+      "sha256": "4ee026c2baa30f75b5dd1d7e4371267b28e8ab1f5240b8adabdb33eb6d487532",
+      "source": "https://www.yuantafunds.com/myfund/dividend/history?fundid=1066"
+    }
+  ],
+  "instruments": {
+    "0050": {
+      "observed_prices": 2907,
+      "missing_market_dates": [
+        "2025-06-11",
+        "2025-06-12",
+        "2025-06-13",
+        "2025-06-16",
+        "2025-06-17"
+      ],
+      "verified_suspension_source": "https://www.twse.com.tw/staticFiles/news/news/tsecnews/8a8216d696b406fc0196ce27c2e90063.pdf",
+      "unexplained_missing": [],
+      "duplicates": 0,
+      "invalid_ohlc": 0,
+      "split_event": {
+        "date": "2025-06-18",
+        "ratio": 4,
+        "source": "https://www.twse.com.tw/staticFiles/news/news/tsecnews/8a8216d696b406fc0196ce27c2e90063.pdf"
+      },
+      "dividends_checked": 22,
+      "dividend_checks": [
+        {
+          "ex_date": "2015-10-26",
+          "pay_date": "2015-11-26",
+          "amount": 2.0,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2016-07-28",
+          "pay_date": "2016-08-30",
+          "amount": 0.85,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2017-02-08",
+          "pay_date": "2017-03-14",
+          "amount": 1.7,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2017-07-31",
+          "pay_date": "2017-08-31",
+          "amount": 0.7,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2018-01-29",
+          "pay_date": "2018-03-13",
+          "amount": 2.2,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2018-07-23",
+          "pay_date": "2018-08-27",
+          "amount": 0.7,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2019-01-22",
+          "pay_date": "2019-03-08",
+          "amount": 2.3,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2019-07-19",
+          "pay_date": "2019-08-22",
+          "amount": 0.7,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2020-01-31",
+          "pay_date": "2020-03-06",
+          "amount": 2.9,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2020-07-21",
+          "pay_date": "2020-08-24",
+          "amount": 0.7,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2021-01-22",
+          "pay_date": "2021-03-09",
+          "amount": 3.05,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2021-07-21",
+          "pay_date": "2021-08-24",
+          "amount": 0.35,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2022-01-21",
+          "pay_date": "2022-03-04",
+          "amount": 3.2,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2022-07-18",
+          "pay_date": "2022-08-19",
+          "amount": 1.8,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2023-01-30",
+          "pay_date": "2023-03-07",
+          "amount": 2.6,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2023-07-18",
+          "pay_date": "2023-08-11",
+          "amount": 1.9,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2024-01-17",
+          "pay_date": "2024-02-21",
+          "amount": 3.0,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2024-07-16",
+          "pay_date": "2024-08-09",
+          "amount": 1.0,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2025-01-17",
+          "pay_date": "2025-02-20",
+          "amount": 2.7,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2025-07-21",
+          "pay_date": "2025-08-08",
+          "amount": 0.36,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2026-01-22",
+          "pay_date": "2026-02-11",
+          "amount": 1.0,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        },
+        {
+          "ex_date": "2026-07-21",
+          "pay_date": "2026-08-10",
+          "amount": 0.6,
+          "result_amount_match": true,
+          "reference_price_match": true,
+          "yuanta_official_match": true
+        }
+      ],
+      "first_row": {
+        "date": "2014-10-31",
+        "stock_id": "0050",
+        "Trading_Volume": 16609131,
+        "Trading_money": 1079821584,
+        "open": 65.0,
+        "max": 65.3,
+        "min": 64.7,
+        "close": 65.3,
+        "spread": 0.5,
+        "Trading_turnover": 2165
+      },
+      "last_row": {
+        "date": "2026-10-08",
+        "stock_id": "0050",
+        "Trading_Volume": 99877876,
+        "Trading_money": 11509275054,
+        "open": 115.35,
+        "max": 115.55,
+        "min": 114.9,
+        "close": 114.95,
+        "spread": -1.1,
+        "Trading_turnover": 191636
+      },
+      "largest_absolute_diagnostic_returns": [
+        {
+          "date": "2025-04-07",
+          "return": -0.09999999999999998
+        },
+        {
+          "date": "2026-07-31",
+          "return": 0.09999999999999987
+        },
+        {
+          "date": "2025-04-10",
+          "return": 0.0998632010943914
+        },
+        {
+          "date": "2024-08-05",
+          "return": -0.0912993703491699
+        },
+        {
+          "date": "2020-03-20",
+          "return": 0.07950401167031362
+        }
+      ]
+    },
+    "00631L": {
+      "observed_prices": 2908,
+      "missing_market_dates": [
+        "2026-03-25",
+        "2026-03-26",
+        "2026-03-27",
+        "2026-03-30"
+      ],
+      "verified_suspension_source": "https://wwwc.twse.com.tw/staticFiles/news/news/tsecnews/8a8216d69c37647f019c994d0e2700d1.pdf",
+      "unexplained_missing": [],
+      "duplicates": 0,
+      "invalid_ohlc": 0,
+      "split_event": {
+        "date": "2026-03-31",
+        "ratio": 22,
+        "source": "https://wwwc.twse.com.tw/staticFiles/news/news/tsecnews/8a8216d69c37647f019c994d0e2700d1.pdf"
+      },
+      "dividends_checked": 0,
+      "dividend_checks": [],
+      "first_row": {
+        "date": "2014-10-31",
+        "stock_id": "00631L",
+        "Trading_Volume": 16880000,
+        "Trading_money": 338333770,
+        "open": 19.99,
+        "max": 20.2,
+        "min": 19.93,
+        "close": 20.2,
+        "spread": 0.21,
+        "Trading_turnover": 3220
+      },
+      "last_row": {
+        "date": "2026-10-08",
+        "stock_id": "00631L",
+        "Trading_Volume": 148411561,
+        "Trading_money": 6093234147,
+        "open": 41.13,
+        "max": 41.31,
+        "min": 40.83,
+        "close": 40.9,
+        "spread": -0.85,
+        "Trading_turnover": 61330
+      },
+      "largest_absolute_diagnostic_returns": [
+        {
+          "date": "2025-04-07",
+          "return": -0.19995007488766858
+        },
+        {
+          "date": "2025-04-10",
+          "return": 0.19968366943455895
+        },
+        {
+          "date": "2024-08-05",
+          "return": -0.19223744292237444
+        },
+        {
+          "date": "2026-07-31",
+          "return": 0.1874559548978154
+        },
+        {
+          "date": "2018-10-11",
+          "return": -0.15374331550802145
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Calculations use raw prices and corporate-action accounting; provider-adjusted-price equivalence was not certified.",
+    "Current data snapshot is retrospective; no historical vintage or event publication timestamps proven.",
+    "Raw prices are preserved; not every historical price independently checked against TWSE.",
+    "Only officially verified suspension dates receive stale valuation; they are never fabricated tradable prices."
+  ],
+  "adjusted_price_diagnostics": {
+    "0050": {
+      "available": false,
+      "records": 0,
+      "duplicate_dates": 0,
+      "date_set_matches_actual_prices": null,
+      "event_diagnostics": [],
+      "use": "Diagnostic only; portfolio signals, fills and dividends use raw prices and accounting."
+    },
+    "00631L": {
+      "available": false,
+      "records": 0,
+      "duplicate_dates": 0,
+      "date_set_matches_actual_prices": null,
+      "event_diagnostics": [],
+      "use": "Diagnostic only; portfolio signals, fills and dividends use raw prices and accounting."
+    }
+  },
+  "independent_twse_spotcheck": {
+    "status": "PASS",
+    "scope": "Six stock-month samples; OHLC only, within the normalized backtest interval.",
+    "total_compared_rows": 48,
+    "total_compared_fields": 192,
+    "total_mismatches": 0
+  }
+}

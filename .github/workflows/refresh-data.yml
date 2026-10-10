@@ -1,0 +1,57 @@
+name: Refresh fixed-window study
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/refresh-data.yml
+      - scripts/fetch_market_data.py
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Refresh market snapshots
+        env:
+          FINMIND_API_TOKEN: ${{ secrets.FINMIND_API_TOKEN }}
+        run: python scripts/fetch_market_data.py
+      - name: Normalize and test
+        run: |
+          python normalize.py
+          python -m unittest -v test_backtest.py test_portfolio_backtest.py test_analyze_portfolios.py test_web_calculator.py
+      - name: Recompute and verify
+        run: |
+          python backtest.py --input normalized.json --out results
+          python portfolio_backtest.py
+          python analyze_portfolios.py
+          python validation/independent_backtest_review.py
+          python validation/portfolio_independent_review.py
+          python validation/period_independent_review.py
+          python build_site.py
+      - name: Upload refreshed study
+        uses: actions/upload-artifact@v4
+        with:
+          name: fixed-window-etf-study
+          path: |
+            dist/
+            analysis/
+            portfolio_results/
+            results/summary.csv
+            results/summary.json
+            normalized.json
+            data_quality.json
+            raw/download.jsonl
+            validation/source_refresh.json
+          retention-days: 30
+          if-no-files-found: error

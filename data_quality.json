@@ -338,6 +338,24 @@
     "Raw prices are preserved; not every historical price independently checked against TWSE.",
     "Only officially verified suspension dates receive stale valuation; they are never fabricated tradable prices."
   ],
+  "adjusted_price_diagnostics": {
+    "0050": {
+      "available": false,
+      "records": 0,
+      "duplicate_dates": 0,
+      "date_set_matches_actual_prices": null,
+      "event_diagnostics": [],
+      "use": "Diagnostic only; portfolio signals, fills and dividends use raw prices and accounting."
+    },
+    "00631L": {
+      "available": false,
+      "records": 0,
+      "duplicate_dates": 0,
+      "date_set_matches_actual_prices": null,
+      "event_diagnostics": [],
+      "use": "Diagnostic only; portfolio signals, fills and dividends use raw prices and accounting."
+    }
+  },
   "independent_twse_spotcheck": {
     "status": "PASS",
     "scope": "Six stock-month samples; OHLC only, within the normalized backtest interval.",

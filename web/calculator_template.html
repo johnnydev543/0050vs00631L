@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>市場曝險回測計算機｜0050 與正二</title>
+<script>try{const t=localStorage.getItem('etf-report-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<style>
+:root{color-scheme:light;--bg:#f1f4f8;--surface:#fff;--soft:#f5f8fc;--ink:#142337;--muted:#607186;--line:#dbe3ec;--accent:#126356;--accent-ink:#fff;--link:#126897;--a:#b47937;--b:#178976;--c:#4477ac;--custom:#142337;--error:#a32945}
+:root[data-theme=dark]{color-scheme:dark;--bg:#0b111b;--surface:#121c2b;--soft:#1a283b;--ink:#e6edf7;--muted:#a5b6cc;--line:#30415a;--accent:#a4e7d4;--accent-ink:#10251e;--link:#8bc9f2;--a:#e6b275;--b:#77d9bd;--c:#94c7ef;--custom:#e6edf7;--error:#ff9db0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"PingFang TC",sans-serif}a{color:var(--link)}button,input,select{font:inherit}button,input,select{border-radius:7px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}button{cursor:pointer;padding:8px 13px}button:hover{background:var(--soft)}button:disabled{opacity:.5;cursor:wait}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.shell{max-width:1440px;margin:auto;padding:30px}.top{display:flex;justify-content:space-between;align-items:center;gap:20px}.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.12em}.top-actions{display:flex;gap:16px;align-items:center}h1{font-size:34px;line-height:1.25;margin:16px 0 12px}h2{font-size:20px;margin:0 0 12px}h3{font-size:17px;margin:0 0 12px}.intro{color:var(--muted);margin:0 0 26px}.layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:26px;align-items:start}.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}.settings{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow:hidden;display:flex;flex-direction:column;min-height:0}.settings h2,.presets{flex-shrink:0}.settings form{display:flex;flex-direction:column;min-height:0;flex:1}.form-scroll{overflow-y:auto;min-height:0;flex:1;padding-right:3px}.presets small{display:block;font-size:12px;font-variant-numeric:tabular-nums}.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}.presets button{padding:7px;font-size:14px}.presets button[aria-pressed=true]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.field{display:block;margin:12px 0}.field>span{display:block;font-size:14px;font-weight:600;margin-bottom:6px}.input-row{display:flex;align-items:center;gap:9px}.input-row input{width:100%;min-width:0}.input-row em{font-style:normal;color:var(--muted);white-space:nowrap;min-width:20px;flex:0 0 auto}input,select{width:100%;padding:9px 11px}.hint,.note{font-size:13px;color:var(--muted)}.hint{margin-top:5px}.allocation{margin:20px 0;padding:15px;background:var(--soft);border-radius:8px}.allocation-bar{display:flex;height:8px;border-radius:5px;overflow:hidden;margin:10px 0 14px;background:var(--line)}.allocation-list{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:13px}.allocation-list b{font-variant-numeric:tabular-nums}.run{flex-shrink:0;margin-top:10px;background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600;width:100%;padding:12px}.run:hover{background:var(--accent);filter:brightness(1.05)}.status{flex-shrink:0;margin:10px 0 0;min-height:38px;font-size:13px;color:var(--muted)}.error{color:var(--error)}.result-context{font-size:14px;color:var(--muted);margin-bottom:17px}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:18px}.metric{background:var(--surface);padding:18px;border:1px solid var(--line);border-radius:10px}.metric span{font-size:13px;color:var(--muted)}.metric strong{display:block;font-size:29px;font-weight:600;line-height:1.6;white-space:nowrap;font-variant-numeric:tabular-nums}.charts{display:grid;gap:18px}.chart-header{display:flex;justify-content:space-between;align-items:center;gap:14px}.chart-container svg{display:block;width:100%;height:auto}.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:13px;margin-top:10px}.legend span{display:inline-flex;align-items:center;gap:7px}.legend i{display:inline-block;width:18px;height:3px}.details{margin-top:18px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.5}th,td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}th:first-child,td:first-child{text-align:left}thead{color:var(--muted)}tbody tr.selected{background:var(--soft)}.empty{padding:30px;color:var(--muted)}.downloads{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.chart-tooltip{position:fixed;z-index:20;pointer-events:none;background:var(--surface);color:var(--ink);border:1px solid var(--line);padding:11px 14px;border-radius:8px;font-size:13px;box-shadow:0 8px 24px #0002;max-width:270px}.chart-tooltip div{display:flex;justify-content:space-between;gap:20px}.chart-tooltip strong{display:block;margin-bottom:7px}.footer{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.badge{font-size:12px;color:var(--muted)}[hidden]{display:none!important}
+@media(max-width:1000px){.layout{grid-template-columns:280px minmax(0,1fr)}.metric strong{font-size:23px}.shell{padding:22px}}
+@media(max-width:780px){.layout{grid-template-columns:1fr}.settings{position:static;max-height:none;overflow:visible}.shell{padding:18px}.top{align-items:flex-start}.top-actions{gap:8px;flex-wrap:wrap;justify-content:flex-end}h1{font-size:27px}.metrics{gap:8px}.metric{padding:13px 10px}.metric strong{font-size:20px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}.chart-header{align-items:flex-start}.panel{padding:17px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><div class="eyebrow">TAIWAN ETF · HISTORICAL RESEARCH</div><div class="top-actions"><a href="report.html">完整研究報告</a><button id="theme" type="button">淺色主題</button></div></header>
+  <h1>市場曝險回測計算機</h1>
+  <p class="intro">輸入目標曝險，自行調整正二、0050與現金，再用同一段真實歷史計算。期間：2014-10-31～2026-10-08。</p>
+  <div class="layout">
+    <aside class="panel settings">
+      <h2>回測設定</h2>
+      <div class="presets" aria-label="160%曝險預設配置"><button type="button" data-preset="A" aria-pressed="true">A<br><small>80／0／20</small></button><button type="button" data-preset="B" aria-pressed="false">B<br><small>60／40／0</small></button><button type="button" data-preset="C" aria-pressed="false">C<br><small>70／20／10</small></button></div>
+      <form id="form">
+        <div class="form-scroll"><div class="field-grid">
+          <label class="field"><span>目標市場曝險</span><div class="input-row"><input id="exposure" type="number" min="0" max="200" step="any" value="160" required><em>%</em></div><div class="hint">可輸入0%～200%。</div></label>
+          <label class="field"><span>0050占總資產比例</span><div class="input-row"><input id="ordinary" type="number" min="0" max="40" step="any" value="0" required><em>%</em></div><div class="hint" id="mixHint">此曝險下可設定0%～40%。</div></label>
+          <label class="field"><span>投入本金</span><div class="input-row"><input id="principal" type="number" min="0.01" step="any" value="100" required><em>萬元</em></div></label>
+          <label class="field"><span>現金年收益率（假設）</span><div class="input-row"><input id="cashRate" type="number" min="0" max="10" step="any" value="1" required><em>%</em></div></label>
+          <label class="field"><span>再平衡方式</span><select id="rule"><option value="quarterly">季度</option><option value="threshold">權重門檻</option><option value="exposure_threshold">曝險門檻</option></select></label>
+          <label class="field"><span id="thresholdLabel">偏離門檻</span><div class="input-row"><input id="threshold" type="number" min="0.1" max="100" step="any" value="10" disabled required><em>百分點</em></div></label>
+        </div>
+        <div class="allocation"><span class="note">由目標曝險推算的配置</span><div class="allocation-bar" aria-hidden="true"><span id="barL" style="background:var(--a)"></span><span id="bar50" style="background:var(--b)"></span><span id="barCash" style="background:var(--line)"></span></div><div class="allocation-list"><span>正二 <b id="wL">80%</b></span><span>0050 <b id="w50">0%</b></span><span>現金 <b id="wCash">20%</b></span></div></div>
+        <p class="note">160%曝險有多種配置：A為80%正二＋20%現金；B為60%正二＋40%0050；C為70%正二＋20%0050＋10%現金。</p></div>
+        <button id="run" class="run" type="submit" disabled>計算並比較</button>
+        <p id="status" class="status" role="status" aria-live="polite">已載入A參考結果，正在準備自訂計算…</p>
+      </form>
+    </aside>
+    <section aria-label="回測結果">
+      <div id="resultContext" class="result-context"></div>
+      <div class="metrics"><div class="metric"><span>期末資產（萬元）</span><strong id="ending">—</strong></div><div class="metric"><span>年化報酬 CAGR</span><strong id="cagr">—</strong></div><div class="metric"><span>最大回撤</span><strong id="mdd">—</strong></div></div>
+      <div class="charts">
+        <div class="panel"><div class="chart-header"><h2>資產成長</h2><span class="badge">相同目標曝險、相同本金</span></div><div id="navChart" class="chart-container"></div><div id="navLegend" class="legend"></div></div>
+        <div class="panel"><h2>每日配置名目曝險</h2><div id="exposureChart" class="chart-container"></div><p class="note">以當日實際持倉市值比例估算：2×正二比例＋0050比例。現金與應收股利曝險為0；基金內部逐日精確槓桿未核實。</p></div>
+      </div>
+      <div class="panel details"><h2>同曝險配置比較</h2><div id="comparisonTable" class="table-wrap"></div><p class="note">A為正二＋現金；B在此曝險下儘量配置0050；C取兩者中間配置。各方案使用相同再平衡方式、門檻、現金年收益及成本。</p></div>
+      <div class="panel details"><h2>年度績效</h2><div id="annualTable" class="table-wrap"></div><p class="note">每格為當年報酬／當年最大回撤。2014及2026為部分年度，未年化。</p></div>
+      <div class="panel details"><h2>2020疫情與2022熊市</h2><div id="crisisTable" class="table-wrap"></div><p class="note">採該曆年內最大回撤事件，回本可延伸到樣本末。「回本天數」從該次高點計算。</p></div>
+      <div class="downloads"><button id="downloadDaily" type="button">下載每日資產與曝險CSV</button><button id="downloadConfig" type="button">下載此次設定與完整結果</button></div>
+      <div class="footer">每側佣金0.1425%、賣出稅0.1%、每側滑價0.05%。股利於發放後再投資，允許小數受益單位，未計個人稅、最低佣金及T+2交割限制。一價日假設不成交。所有結果為此段歷史資料與明列假設下的模擬；輸入設定與計算在你的瀏覽器中處理。</div>
+    </section>
+  </div>
+</main>
+<div id="tooltip" class="chart-tooltip" role="tooltip" hidden></div>
+<script id="bundle" type="application/json">@@BUNDLE@@</script>
+<script id="workerSource" type="text/plain">@@WORKER@@</script>
+<script>@@APP@@</script>
+</body>
+</html>

@@ -3,7 +3,8 @@
 投入本金：新臺幣1,000,000元（100萬元）。各策略本金相同，期間沒有額外投入。
 實際期間：2014-10-31 開盤至2026-10-08 收盤。
 
-先開啟 report.html，可切換深／淺色及現金年收益0%、1%、2%假設情境。
+互動計算機：開啟dist/index.html，可輸入曝險、本金、0050比例、現金收益及規則。
+固定研究報告：report.html，可切換深／淺色及現金年收益0%、1%、2%假設情境。
 results/summary.csv 匯總24組結果；每個情境均附逐日資產與交易紀錄。
 
 偏離10個百分點：觀察正二占總資產的比例。目標50%時，比例≤40%或≥60%
@@ -15,7 +16,9 @@ results/summary.csv 匯總24組結果；每個情境均附逐日資產與交易�
 python3 normalize.py
 python3 -m unittest -v test_backtest.py
 python3 backtest.py --input normalized.json --out results
-python3 build_report.py
+python3 portfolio_backtest.py
+python3 analyze_portfolios.py
+python3 build_site.py
 python3 validation/independent_backtest_review.py
 
 資料與方法：以實際ETF日價、官方分割比例及配息重建歷史持倉。

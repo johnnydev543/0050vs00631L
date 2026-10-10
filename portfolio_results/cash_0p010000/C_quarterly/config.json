@@ -1,0 +1,32 @@
+{
+  "actual_internal_fund_leverage_available": false,
+  "cash_yield": 0.01,
+  "costs": {
+    "commission": 0.001425,
+    "sell_tax": 0.001,
+    "slippage": 0.0005
+  },
+  "dividend_rule": "Ex-date receivable; payment cash usable after payment date; reinvest paid pool into issuing ETF at next executable open. A full rebalance absorbs eligible paid pools.",
+  "end": "2026-10-08",
+  "exposure_rule": "Nominal exposure differs by >=20 percentage points from target; next jointly executable open.",
+  "funding_rule": "No borrowing; cash-like target includes receivables. If locked receivables exceed target cash, scale stock allocation to available capital.",
+  "initial_capital": 1000000.0,
+  "input_semantic_sha256": "683cde44a03ef6d18695ccb72d94fa3ea787060342470e1339e77a26f6a6a9f6",
+  "nominal_exposure_multipliers": {
+    "0050": 1.0,
+    "00631L": 2.0
+  },
+  "one_price_rule": "Observed close is valued; high=low bars cannot fill; both target ETFs must be executable for a portfolio rebalance.",
+  "portfolio": {
+    "cash_weight": 0.1,
+    "exposure_threshold": 0.2,
+    "label": "C",
+    "leveraged_weight": 0.7,
+    "ordinary_weight": 0.2,
+    "rule": "quarterly",
+    "weight_threshold": 0.1
+  },
+  "portfolio_engine_version": "1.0.0",
+  "start": "2014-10-31",
+  "threshold_rule": "Any stock/cash-like close weight differs by >=10 percentage points; next jointly executable open."
+}

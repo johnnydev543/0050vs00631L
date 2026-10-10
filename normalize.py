@@ -83,7 +83,7 @@ def main() -> None:
    'unexplained_missing':[],'duplicates':0,'invalid_ohlc':0,'split_event':out['splits'][s][0],
    'dividends_checked':len(dividends),'dividend_checks':checks,'first_row':rows[0],'last_row':rows[-1]}
   # Self-built theoretical ex-date reinvested close index for diagnostics only.
-  # This is explicitly not the inaccessible FinMind adjusted-price series.
+  # Provider-adjusted prices are kept separately and never used as trade prices.
   prev=None;index=100.0;divmap={r['ex_date']:r['amount'] for r in dividends}
   daily_moves=[]
   for d in calendar:
@@ -96,8 +96,26 @@ def main() -> None:
    derived.append({'stock_id':s,'date':d,'raw_close':close,'split_adjusted_close':adjclose,'diagnostic_total_return_index':index,'stale':False})
    prev=close
   report['instruments'][s]['largest_absolute_diagnostic_returns']=sorted(daily_moves,key=lambda r:abs(r['return']),reverse=True)[:5]
+ adjusted={}
+ for s in SOURCES:
+  items=[r for r in queries.get(('TaiwanStockPriceAdj',s),[]) if start<=r['date']<=requested_end]
+  by_date={r['date']:r for r in items}
+  assert len(by_date)==len(items), 'duplicate adjusted-price dates'
+  assert all(math.isfinite(float(r['close'])) and float(r['close'])>0 for r in items), 'invalid adjusted close'
+  checks=[]
+  for event in out['splits'][s]+[dict(d,date=d['ex_date']) for d in out['dividends'][s]]:
+   d=event['date'];prior=max(t for t in out['prices'][s] if t<d)
+   if d in by_date and prior in by_date:
+    checks.append({'date':d,'previous_actual_market_date':prior,
+                   'adjusted_close_return':float(by_date[d]['close'])/float(by_date[prior]['close'])-1,
+                   'raw_close_return':out['prices'][s][d]['close']/out['prices'][s][prior]['close']-1})
+  adjusted[s]={'available':bool(items),'records':len(items),'duplicate_dates':len(items)-len(by_date),
+                'date_set_matches_actual_prices':set(by_date)==set(out['prices'][s]) if items else None,
+                'event_diagnostics':checks,
+                'use':'Diagnostic only; portfolio signals, fills and dividends use raw prices and accounting.'}
+ report['adjusted_price_diagnostics']=adjusted
  out['metadata']={'requested_end':requested_end,'verified_suspensions':{s:SOURCES[s]['suspended'] for s in SOURCES},
-  'quality_status':report['status'],'finmind_adjusted_price_available':False,'data_manifest':manifest,
+  'quality_status':report['status'],'finmind_adjusted_price_available':all(x['available'] for x in adjusted.values()),'data_manifest':manifest,
   'method':'Raw prices plus effective corporate-action accounting; no adjusted prices used for signal or fills.',
   'not_strict_historical_vintage':True}
  spotcheck=root/'twse_spotcheck.json'

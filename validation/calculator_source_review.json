@@ -1,0 +1,349 @@
+{
+  "status": "PASS",
+  "review_level": "L3",
+  "reviewed_at_utc": "2026-10-10T10:30:58.533495+00:00",
+  "check_count": 28,
+  "checks": [
+    {
+      "id": "CALC-WEIGHT-ALGEBRA",
+      "status": "PASS",
+      "evidence": {
+        "synthetic_mapping_cases": 123,
+        "violations": [],
+        "constraint": "0 <= ordinary <= min(E, 200-E); 2*wL+w50=E/100; cash>=0; weights sum to 1"
+      }
+    },
+    {
+      "id": "CALC-INVALID-INPUTS",
+      "status": "PASS",
+      "evidence": {
+        "cases": 15,
+        "rejected": 15
+      }
+    },
+    {
+      "id": "CALC-REAL-FIXED A quarterly",
+      "status": "PASS",
+      "evidence": {
+        "ending_nav": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "sharpe": 0.0,
+        "sortino": 0.0
+      }
+    },
+    {
+      "id": "CALC-REAL-FIXED A threshold",
+      "status": "PASS",
+      "evidence": {
+        "ending_nav": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "sharpe": 0.0,
+        "sortino": 0.0
+      }
+    },
+    {
+      "id": "CALC-REAL-FIXED B quarterly",
+      "status": "PASS",
+      "evidence": {
+        "ending_nav": 1.564621925354004e-07,
+        "cagr": 6.661338147750939e-16,
+        "max_drawdown": 2.220446049250313e-16,
+        "sharpe": 8.881784197001252e-16,
+        "sortino": 1.7763568394002505e-15
+      }
+    },
+    {
+      "id": "CALC-REAL-FIXED B threshold",
+      "status": "PASS",
+      "evidence": {
+        "ending_nav": 3.725290298461914e-09,
+        "cagr": 0.0,
+        "max_drawdown": 1.1102230246251565e-16,
+        "sharpe": 1.1102230246251565e-15,
+        "sortino": 1.5543122344752192e-15
+      }
+    },
+    {
+      "id": "CALC-REAL-FIXED C quarterly",
+      "status": "PASS",
+      "evidence": {
+        "ending_nav": 1.862645149230957e-08,
+        "cagr": 2.220446049250313e-16,
+        "max_drawdown": 1.1102230246251565e-16,
+        "sharpe": 2.220446049250313e-16,
+        "sortino": 4.440892098500626e-16
+      }
+    },
+    {
+      "id": "CALC-REAL-FIXED C threshold",
+      "status": "PASS",
+      "evidence": {
+        "ending_nav": 1.1175870895385742e-08,
+        "cagr": 0.0,
+        "max_drawdown": 1.1102230246251565e-16,
+        "sharpe": 8.881784197001252e-16,
+        "sortino": 8.881784197001252e-16
+      }
+    },
+    {
+      "id": "CALC-COMPARISON 120",
+      "status": "PASS",
+      "evidence": {
+        "request": {
+          "exposure": 120,
+          "ordinary": 25,
+          "principal": 150,
+          "cash_rate": 2,
+          "rule": "threshold",
+          "threshold": 7
+        },
+        "ordinary_presets": [
+          0.0,
+          80.0,
+          40.0
+        ],
+        "nominal_only": true,
+        "partial_year_cagr_null": true
+      }
+    },
+    {
+      "id": "CALC-COMPARISON 0",
+      "status": "PASS",
+      "evidence": {
+        "request": {
+          "exposure": 0,
+          "ordinary": 0,
+          "principal": 100,
+          "cash_rate": 1,
+          "rule": "exposure_threshold",
+          "threshold": 20
+        },
+        "ordinary_presets": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nominal_only": true,
+        "partial_year_cagr_null": true
+      }
+    },
+    {
+      "id": "CALC-COMPARISON 200",
+      "status": "PASS",
+      "evidence": {
+        "request": {
+          "exposure": 200,
+          "ordinary": 0,
+          "principal": 100,
+          "cash_rate": 0,
+          "rule": "quarterly",
+          "threshold": 10
+        },
+        "ordinary_presets": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nominal_only": true,
+        "partial_year_cagr_null": true
+      }
+    },
+    {
+      "id": "CALC-BUNDLE-SOURCES",
+      "status": "PASS",
+      "evidence": {
+        "backtest.py": "17a366760c2b84d2ec7c5a8215615552a77c8edcb3fad7b027b70755f20b295a",
+        "portfolio_backtest.py": "8db9f588abf80093673e7ed538fe7cd9e51755540c39a3b913fb365f44532eb6",
+        "analyze_portfolios.py": "288ad8f1ab077f66941fea7826942520270afea3f3e755c78ea9e65696cda162",
+        "web_calculator.py": "8700870bb3cb0f59e37c155c6bbbc1f0666b1ab2f3158a3b5e5d4707aeb472ff"
+      }
+    },
+    {
+      "id": "CALC-BUNDLE-MARKET-DATA",
+      "status": "PASS",
+      "evidence": {
+        "normalized_file_sha256": "789dc72096f429458dc6103e7995010c3a2bcaa9a42850e46098412c389b63f7",
+        "market_sessions": 2912
+      }
+    },
+    {
+      "id": "CALC-BUNDLE-JAVASCRIPT",
+      "status": "PASS",
+      "evidence": {
+        "worker_sha256": "df3d43e5856b86b3aecdc006291ee32dd4b1215e1f6c392e0e3c5f48756ed255",
+        "app_sha256": "1633c9eb9644318a549fe422c729375d7e928c87f03ad40cab25d4ce2b69dc1b"
+      }
+    },
+    {
+      "id": "CALC-BUNDLED-SEED",
+      "status": "PASS",
+      "evidence": {
+        "selected": "A at 160%, initial 100 wan, cash 1%, quarterly",
+        "selected_full_daily_rows": 2912,
+        "selected_has_full_config_trades": true,
+        "seed_metrics_match_fresh_python": true
+      }
+    },
+    {
+      "id": "CALC-NO-CREDENTIAL-BUNDLE",
+      "status": "PASS",
+      "evidence": {
+        "credential_named_data_fields": [],
+        "runtime_credential_access_in_modules": false,
+        "note": "No credential values were accessed for this review; this is a source/schema check."
+      }
+    },
+    {
+      "id": "CALC-PARAMETER-HANDOFF",
+      "status": "PASS",
+      "evidence": {
+        "mechanism": "JSON string bound to Python variable; static Python expression decodes JSON; request data is not inserted as executable source"
+      }
+    },
+    {
+      "id": "CALC-PINNED-RUNTIME",
+      "status": "PASS",
+      "evidence": {
+        "runtime_version": "0.29.5",
+        "network_dependency": "Pyodide CDN; calculation and request inputs execute locally after loading"
+      }
+    },
+    {
+      "id": "CALC-RESULT-BINDING",
+      "status": "PASS",
+      "evidence": {
+        "context_and_downloads": "Bound to last successful result, not pending/current form fields",
+        "stale_jobs": "Only latest matching result id is rendered"
+      }
+    },
+    {
+      "id": "CALC-JS-SYNTAX web/calculator_worker.js",
+      "status": "PASS",
+      "evidence": {
+        "exit_code": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "id": "CALC-JS-SYNTAX web/calculator_app.js",
+      "status": "PASS",
+      "evidence": {
+        "exit_code": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "id": "CALC-REPORT-CONCLUSIONS",
+      "status": "PASS",
+      "evidence": {
+        "B_not_universally_superior": true,
+        "observed_weights_with_nominal_multipliers_only": true
+      }
+    },
+    {
+      "id": "CALC-PARTIAL-AND-WINDOW-LABELS",
+      "status": "PASS",
+      "evidence": {
+        "partial_years": "2014/2026 explicitly labeled",
+        "crisis": "Calendar-year drawdown, recovery extends through sample end",
+        "stages": "Common fixed calendar windows"
+      }
+    },
+    {
+      "id": "CALC-REPORT-ARTIFACT-CURRENT",
+      "status": "PASS",
+      "evidence": {
+        "all_rate_portfolio_sections_match_sources": {
+          "0.0": true,
+          "0.01": true,
+          "0.02": true
+        },
+        "dist_report_identical_except_relative_calculator_link": true
+      }
+    },
+    {
+      "id": "CALC-NORMALIZER-RAW-PRESERVATION",
+      "status": "PASS",
+      "evidence": {
+        "exit_code": 0,
+        "core_market_and_action_fields_identical": true,
+        "adjusted_available": {
+          "0050": false,
+          "00631L": false
+        },
+        "provider_adjusted_equivalence_certified": false
+      }
+    },
+    {
+      "id": "CALC-DOC-THRESHOLD-UNIT",
+      "status": "PASS",
+      "evidence": {
+        "finding_id": "RVW-CALC-001",
+        "expected": "number + percentage points, without an extra % sign"
+      }
+    },
+    {
+      "id": "CALC-DOC-MULTIASSET-RULE",
+      "status": "PASS",
+      "evidence": {
+        "finding_id": "RVW-CALC-002",
+        "expected": "Explicit multi-asset/cash-like trigger and common opening; legacy explanation scoped separately; target exposure label"
+      }
+    },
+    {
+      "id": "CALC-DOC-CRISIS-ANCHOR",
+      "status": "PASS",
+      "evidence": {
+        "finding_id": "RVW-CALC-003",
+        "expected": "Prior-year closing portfolio NAV, not ETF price"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "RVW-CALC-001",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Threshold label used both percent sign and percentage-point unit"
+    },
+    {
+      "id": "RVW-CALC-002",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Legacy threshold explanation needed scope and multi-asset method clarification"
+    },
+    {
+      "id": "RVW-CALC-003",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Crisis anchor description referred to price instead of portfolio NAV"
+    }
+  ],
+  "scope": "Offline Python adapter, mathematical allocation bounds, real-data parity, embedded source/data/seed integrity, JS syntax/source flow, credential-access/schema scan, and financial report wording.",
+  "excluded": "No browser interaction, CDN availability test, runtime visual QA, network traffic inspection, remote publication or GitHub-secret access.",
+  "limitations": [
+    "Pyodide remains an external pinned CDN dependency; the model source and market inputs are bundled, not the full runtime.",
+    "Source-flow review does not replace actual browser behavior verification, which is performed separately by the parent task.",
+    "Nominal exposure still uses fixed 2/1 multipliers; internal derivatives exposure and strict point-in-time data vintage remain unverified."
+  ],
+  "reviewed_file_sha256": {
+    "web_calculator.py": "8700870bb3cb0f59e37c155c6bbbc1f0666b1ab2f3158a3b5e5d4707aeb472ff",
+    "test_web_calculator.py": "6d31d05d12e98400ce4dbf527cb7b8d9138f7f62075a0f8fbf2248f84e9b58fc",
+    "build_calculator.py": "f5506960d91664ce97918f6daf39724fdf34fbcc4a5ff247837ff59495d3c2db",
+    "web/calculator_app.js": "1633c9eb9644318a549fe422c729375d7e928c87f03ad40cab25d4ce2b69dc1b",
+    "web/calculator_worker.js": "df3d43e5856b86b3aecdc006291ee32dd4b1215e1f6c392e0e3c5f48756ed255",
+    "web/calculator_template.html": "7197fcfd760faf1ae1d55ccc5b3e6bda0d8b31fc03de213e88ce97bbd2c6de9f",
+    "report_portfolios.py": "753e5cac694be24bbb9a67254401ff163e79c2b40c0d2acaabffa3218acebe91",
+    "build_report.py": "df79e934d8b116f30c083aa8b54098b4331adcc52b704f1405285357e17bb4c8",
+    "normalize.py": "70a04362eb42bc1e95fcd56285ba69b024e875c38985be99d303d87539d573bf",
+    "analyze_portfolios.py": "288ad8f1ab077f66941fea7826942520270afea3f3e755c78ea9e65696cda162",
+    "dist/index.html": "fd0964aad63a8c62f678f33d55d10039c7f3c29ef9ce57db129c9992d9f30f7d",
+    "dist/report.html": "160009c59da051671291ddd7cc4a332784ab51a2b8b80125bc9d76631e0f0a2e",
+    "normalized.json": "789dc72096f429458dc6103e7995010c3a2bcaa9a42850e46098412c389b63f7"
+  }
+}

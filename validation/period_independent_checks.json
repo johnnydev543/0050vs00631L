@@ -1,0 +1,396 @@
+{
+  "status": "PASS",
+  "check_count": 26,
+  "pass_count": 26,
+  "comparison_count": 31751,
+  "series_count": 48,
+  "checks": [
+    {
+      "id": "RVW-PER-001",
+      "title": "Complete unique 48-series annual/stage/crisis catalog",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 961,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-002",
+      "title": "Annual endpoints and preceding-year close anchors",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 4368,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-003",
+      "title": "Annual nonannualized compounded returns and full-year CAGR",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 1152,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-004",
+      "title": "Annual drawdown independently recomputed from log NAV maxima",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 624,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-005",
+      "title": "Partial-year output does not publish annualized CAGR",
+      "status": "PASS",
+      "failure_severity": "Minor",
+      "comparisons": 96,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-006",
+      "title": "Only boundary years 2014 and 2026 are marked partial for this sample",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 624,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-007",
+      "title": "Fixed-stage endpoints and immediately preceding close anchors",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 1680,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-008",
+      "title": "Fixed-stage compounded returns and ACT/365.2425 CAGR",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 480,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-009",
+      "title": "Fixed-stage drawdown resets at anchor rather than lifetime peak",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 240,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-010",
+      "title": "Annual/stage Sharpe, Sortino, and nominal exposure",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 2592,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-011",
+      "title": "Fixed 2020/2022 in-year worst peak-to-trough event",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 672,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-012",
+      "title": "Crisis first recovery through sample end and day/session durations",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 480,
+      "mismatches": [],
+      "evidence": {
+        "cross_year_recovery_count": 48,
+        "examples": [
+          {
+            "series": [
+              "legacy:0050_buyhold",
+              0.0,
+              2022
+            ],
+            "recovery_date": "2024-02-15"
+          },
+          {
+            "series": [
+              "legacy:00631L_50_quarterly",
+              0.0,
+              2022
+            ],
+            "recovery_date": "2023-11-21"
+          },
+          {
+            "series": [
+              "legacy:00631L_50_threshold",
+              0.0,
+              2022
+            ],
+            "recovery_date": "2023-06-15"
+          },
+          {
+            "series": [
+              "legacy:00631L_60_quarterly",
+              0.0,
+              2022
+            ],
+            "recovery_date": "2023-12-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "RVW-PER-013",
+      "title": "Predeclared stage dates and crisis years match approved fixed windows",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 7,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-014",
+      "title": "Published CSV tables match corresponding JSON values",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 17712,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-015",
+      "title": "Synthetic annual anchor includes first-session loss and excludes neighboring years",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 6,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-016",
+      "title": "Synthetic initial-capital anchor preserves initial entry loss",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 3,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-017",
+      "title": "Synthetic stage MDD resets to 100 anchor instead of historical 200 high",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 2,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-018",
+      "title": "Synthetic crisis recovery crosses calendar year at first recovery only",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 8,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-019",
+      "title": "Synthetic unrecovered crisis reports elapsed censored duration",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 8,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-020",
+      "title": "Synthetic later larger drawdown cannot replace in-year crisis trough",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 3,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-021",
+      "title": "Synthetic equal prior highs use most recent peak before worst trough",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 4,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-022",
+      "title": "Synthetic empty analysis windows are excluded",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 2,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-023",
+      "title": "Synthetic rising series has zero drawdown and immediate recovery",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 6,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-024",
+      "title": "Synthetic crisis at sample start uses initial capital and opening anchor session",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 5,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-025",
+      "title": "Synthetic recovery threshold does not accept a genuinely below-peak NAV",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 3,
+      "mismatches": []
+    },
+    {
+      "id": "RVW-PER-026",
+      "title": "Synthetic one-session window null risk ratios and opening-to-close CAGR",
+      "status": "PASS",
+      "failure_severity": "Major",
+      "comparisons": 13,
+      "mismatches": []
+    }
+  ],
+  "findings": [],
+  "source_sha256": {
+    "analyze_portfolios.py": "288ad8f1ab077f66941fea7826942520270afea3f3e755c78ea9e65696cda162",
+    "backtest.py": "17a366760c2b84d2ec7c5a8215615552a77c8edcb3fad7b027b70755f20b295a",
+    "portfolio_backtest.py": "8db9f588abf80093673e7ed538fe7cd9e51755540c39a3b913fb365f44532eb6",
+    "portfolio_results/manifest.json": "430530c9abc9da190a687f09b0e4b707f58ac4da6bd4b2822d43e12d09fceda7",
+    "results/manifest.json": "c099cc028d9cecd1c46d9c384620264e01a5d8c53bd1c85f8e7dc8c1e95f9ae7",
+    "results/summary.json": "34f586917ba1eb347a424ee0f3339d86104576200d6c22c14a80db2c62e277c2",
+    "results/cash_0p000000/0050_buyhold/daily.csv": "8d90f175a5d57175ffb5a0812d1381d96f3cd5b467f1a497b7c1eced42135e46",
+    "results/cash_0p000000/00631L_50_quarterly/daily.csv": "3601e6d16b97ddbaeee8eb6faacca8fee58810ef35ff4aba8f062126fc2844ae",
+    "results/cash_0p000000/00631L_50_threshold/daily.csv": "e3b205754e0a9d25f08ac578be003ace55fd43038f457d0b1091b3255e931842",
+    "results/cash_0p000000/00631L_60_quarterly/daily.csv": "e761428ddd74bbf8f483dc63af13096f0d365c34db9e36a879cac30ecd878fac",
+    "results/cash_0p000000/00631L_60_threshold/daily.csv": "b3d08246ce8aaa083e759646fed9bcbf075e5c92445bdc95f209a0e9a5f0969c",
+    "results/cash_0p000000/00631L_80_quarterly/daily.csv": "4cab996b9e906bb802bcdc66b086372d418665c8792009a61ddc79ede1c59cd4",
+    "results/cash_0p000000/00631L_80_threshold/daily.csv": "82cd8aa9be1b608d2e93083b1830c92a75367ffce6eed38fec6b39cd7eb7b469",
+    "results/cash_0p000000/00631L_100_buyhold/daily.csv": "b450665a3eb014ec8777b9f0fd56c11b064fb1563b299493a977fa11368d3499",
+    "results/cash_0p010000/0050_buyhold/daily.csv": "9b276e63ef9147331663af49c5f461446099f3b19f07bd160854196d8cd4d9d8",
+    "results/cash_0p010000/00631L_50_quarterly/daily.csv": "280644d76c93145c57988ad569d0f6010be8f39a2a3bf533781671b30593e8b8",
+    "results/cash_0p010000/00631L_50_threshold/daily.csv": "4b8db488253f60deb7d4761c498a6132d1d3415bb9da679800b29421c83c69a3",
+    "results/cash_0p010000/00631L_60_quarterly/daily.csv": "9fbd5a3c787c3c6bc5bafba48ce9f182a5988fe167c2e44ca9eed9c945bb6a9f",
+    "results/cash_0p010000/00631L_60_threshold/daily.csv": "e0d6bba4647add6cab766fbe4d92b0213a6e0189030362d3d3e03121cdf52084",
+    "results/cash_0p010000/00631L_80_quarterly/daily.csv": "3c06e6a4433512ab85d4bc4949cf21e4710725fae9ae96bb3be8d2eb93eeb794",
+    "results/cash_0p010000/00631L_80_threshold/daily.csv": "b52c716b7b1056939a89caed2a92074480fc50450b0bf69aae77f2982d56f950",
+    "results/cash_0p010000/00631L_100_buyhold/daily.csv": "7e5fe8aef7d41a5ba124404072cf0e4916c3be187d08ae322787852afefededf",
+    "results/cash_0p020000/0050_buyhold/daily.csv": "8691090ef66292ff027487c8a03d8ed973c534dc1b4608f535319c1ffe9aea30",
+    "results/cash_0p020000/00631L_50_quarterly/daily.csv": "0d262028c7cb0dd5c8ea7720d6095d2d08a26f09473ce707ca781e2e92092aef",
+    "results/cash_0p020000/00631L_50_threshold/daily.csv": "1c65528dd488ebd799edfb153716115dbd6effbd0b728677ce6986d9c6597f37",
+    "results/cash_0p020000/00631L_60_quarterly/daily.csv": "0b8378cdd8c2c3f14b406b4ee4320f7b3d2de5f95b5b43aa2bb3ef05c74c0273",
+    "results/cash_0p020000/00631L_60_threshold/daily.csv": "628f90f81e43a26d008d9f0f4354904cdc607fcce9a76df95d4d9f2f9a312332",
+    "results/cash_0p020000/00631L_80_quarterly/daily.csv": "22cd6c17750efe9ae922d477486403944ae6e95631bc0265d3afadfea16ae42f",
+    "results/cash_0p020000/00631L_80_threshold/daily.csv": "f5c1317933c228ccd1a3afd831110249fd5b138ac8fd1785cd8d970e36eb8646",
+    "results/cash_0p020000/00631L_100_buyhold/daily.csv": "6a9cd0189bc0adda737133a3d04e584be696630a2f95db53723ec7377b5b3315",
+    "portfolio_results/summary.json": "bc4b677873dde17bdc339cc152c127cacfef5f7229e10211e02ecdb9b3c2b36b",
+    "portfolio_results/cash_0p000000/A_quarterly/daily.csv.gz": "96e0d626221d3ed1059e3fc59ac64f6970e9708bd578014a3419c6f33e7d4e34",
+    "portfolio_results/cash_0p000000/A_threshold/daily.csv.gz": "c49e1a0629b461adee3b6d2ae24db5b3c39e516eae82aceb52ebcec2fbaae749",
+    "portfolio_results/cash_0p000000/B_quarterly/daily.csv.gz": "f6848cb5d30699d3485a4ec665480c120e4f45001520859b6206f2d5f4baf0d5",
+    "portfolio_results/cash_0p000000/B_threshold/daily.csv.gz": "5740454fc4df74c9a75f2fd2f7e179e50afaf782817f4ee7d4c1ed110cd42017",
+    "portfolio_results/cash_0p000000/B_exposure_threshold/daily.csv.gz": "d29b1157c34052e432f8270c244be1e12c700674caf3f8b0466ac5f144dc029c",
+    "portfolio_results/cash_0p000000/C_quarterly/daily.csv.gz": "ea68be6fd3bb1d9c01f08177cdcb50bef6a5e8fc095c35dd3bc2ff0c91430e10",
+    "portfolio_results/cash_0p000000/C_threshold/daily.csv.gz": "f44fcd87a69184e2d870c7822913be43936dfd0630168c21b6b7cd9ff991cd19",
+    "portfolio_results/cash_0p000000/C_exposure_threshold/daily.csv.gz": "9b20dcb13c6cfc5c5462bc2145f84db40fb2bf892afffd656a0f7c66f3dc6be0",
+    "portfolio_results/cash_0p010000/A_quarterly/daily.csv.gz": "e70ac526169600f38f7f48d22cb316482eceac14654f49799bfb503081144483",
+    "portfolio_results/cash_0p010000/A_threshold/daily.csv.gz": "6ff24e4ce06f08917d13bda1f8526e76e0610185ab6e73587e90d26c63b43373",
+    "portfolio_results/cash_0p010000/B_quarterly/daily.csv.gz": "b6b67b1ef66bd3f734cc8c4a69884175dec91fbed1f3884fe9c314d403f7968d",
+    "portfolio_results/cash_0p010000/B_threshold/daily.csv.gz": "d66dd9ac52d51e0040552d4017705b5f9772cfb313f872d3794a5faec14c7058",
+    "portfolio_results/cash_0p010000/B_exposure_threshold/daily.csv.gz": "7d6ecf922224035e905233489c978b90917cfbb7860492fb18e2fbae4a8efb4e",
+    "portfolio_results/cash_0p010000/C_quarterly/daily.csv.gz": "f107faa16ebcfb0cc3ac7c1e3fb71a741130f82a742acebc21257b237681daff",
+    "portfolio_results/cash_0p010000/C_threshold/daily.csv.gz": "506c18895afc72b7d7712f49c09417eabb3adba6362378e4a1ea8daee72a23e3",
+    "portfolio_results/cash_0p010000/C_exposure_threshold/daily.csv.gz": "2b6e33bf4d6865963dfc85309ecf50a5a22ed239435320f7da755912e8d31781",
+    "portfolio_results/cash_0p020000/A_quarterly/daily.csv.gz": "be4f01b36b4e1352c0857cf778bba56f1fbadb6085c394d4856879b3eb2812c0",
+    "portfolio_results/cash_0p020000/A_threshold/daily.csv.gz": "255237b637717a650352bc3f8f8725bb3bfa8a1ea413ae29bb5d412d1e36261e",
+    "portfolio_results/cash_0p020000/B_quarterly/daily.csv.gz": "c98ce637134ff104fae2e50a0aaea08bb1e9bb317cf8411aa37be2f452409837",
+    "portfolio_results/cash_0p020000/B_threshold/daily.csv.gz": "98780e779a4ef20b9fb8d54d0e7f83d03e71d59ddbb917e01ad6d499e0decbe4",
+    "portfolio_results/cash_0p020000/B_exposure_threshold/daily.csv.gz": "909b7c6c8d146e842efb170eda44e1a83b266994a71bf1ce1bdcc8ccfc08e433",
+    "portfolio_results/cash_0p020000/C_quarterly/daily.csv.gz": "5f7848d1e279a2bfdca31043e7fbebffcf07cfa2e48cf8a43cd103aad8fc790a",
+    "portfolio_results/cash_0p020000/C_threshold/daily.csv.gz": "493abd87b3daac2f9a28ea8d39d0ba551e28ffa46c0264b83120ce554bb92c5c",
+    "portfolio_results/cash_0p020000/C_exposure_threshold/daily.csv.gz": "6b5962be160eae5d300409e57940e931c5be7ffa6710eb2ae0303dc4043bf2e6",
+    "analysis/annual_performance.json": "fcbabd16104d664dd6f0726de3e3e493a130105bc4f0500c4923ccda6fd0bbdf",
+    "analysis/annual_performance.csv": "9d59dbef5295e07beed21685d8fb9e13f2c9ae20dc39f8a709a7f9afc095dbe5",
+    "analysis/market_stages.json": "8a5e9ac500ed3154d9521b5eac40e63b16666ef19e6f139271466d701e622e7c",
+    "analysis/market_stages.csv": "391c075cc7bc49331f60abca1a6e18a9aadc09d244a569c1c4facee9598849c7",
+    "analysis/crisis_recovery.json": "ca902436bd1d22c2e052b3538959fe12709d50b6d3382e030d2481799dcb6889",
+    "analysis/crisis_recovery.csv": "e11e88766f2217cec3136dc18bd201d03a0ee1ef2998e3cdf3304b74b53c94f6",
+    "analysis/analysis_config.json": "f95443d743ea7a7641718d29264ca2398f3a3cd5e87d59a9d6149815888af1a9",
+    "validation/period_independent_review.py": "f25e9db89e58fd7ca9ec51eb8fb19fda18a85fc2ca1fb30aec4424f71998f12c"
+  },
+  "reviewed_at_utc": "2026-10-10T10:29:36.855195+00:00",
+  "generation_consistency": {
+    "portfolio_manifest_engine_matches": true,
+    "portfolio_manifest_legacy_engine_matches": true
+  },
+  "source_mtime_utc": {
+    "analyze_portfolios.py": "2026-10-10T10:10:26.574895+00:00",
+    "backtest.py": "2026-10-10T08:29:30.240052+00:00",
+    "portfolio_backtest.py": "2026-10-10T09:50:06.748273+00:00",
+    "portfolio_results/manifest.json": "2026-10-10T09:51:05.687443+00:00",
+    "results/manifest.json": "2026-10-10T09:02:39.448828+00:00",
+    "results/summary.json": "2026-10-10T09:02:39.437208+00:00",
+    "results/cash_0p000000/0050_buyhold/daily.csv": "2026-10-10T09:02:38.360927+00:00",
+    "results/cash_0p000000/00631L_50_quarterly/daily.csv": "2026-10-10T09:02:38.406779+00:00",
+    "results/cash_0p000000/00631L_50_threshold/daily.csv": "2026-10-10T09:02:38.451451+00:00",
+    "results/cash_0p000000/00631L_60_quarterly/daily.csv": "2026-10-10T09:02:38.496605+00:00",
+    "results/cash_0p000000/00631L_60_threshold/daily.csv": "2026-10-10T09:02:38.542141+00:00",
+    "results/cash_0p000000/00631L_80_quarterly/daily.csv": "2026-10-10T09:02:38.587243+00:00",
+    "results/cash_0p000000/00631L_80_threshold/daily.csv": "2026-10-10T09:02:38.631358+00:00",
+    "results/cash_0p000000/00631L_100_buyhold/daily.csv": "2026-10-10T09:02:38.676374+00:00",
+    "results/cash_0p010000/0050_buyhold/daily.csv": "2026-10-10T09:02:38.723059+00:00",
+    "results/cash_0p010000/00631L_50_quarterly/daily.csv": "2026-10-10T09:02:38.770913+00:00",
+    "results/cash_0p010000/00631L_50_threshold/daily.csv": "2026-10-10T09:02:38.817961+00:00",
+    "results/cash_0p010000/00631L_60_quarterly/daily.csv": "2026-10-10T09:02:38.864312+00:00",
+    "results/cash_0p010000/00631L_60_threshold/daily.csv": "2026-10-10T09:02:38.911351+00:00",
+    "results/cash_0p010000/00631L_80_quarterly/daily.csv": "2026-10-10T09:02:38.957634+00:00",
+    "results/cash_0p010000/00631L_80_threshold/daily.csv": "2026-10-10T09:02:39.004030+00:00",
+    "results/cash_0p010000/00631L_100_buyhold/daily.csv": "2026-10-10T09:02:39.051280+00:00",
+    "results/cash_0p020000/0050_buyhold/daily.csv": "2026-10-10T09:02:39.097125+00:00",
+    "results/cash_0p020000/00631L_50_quarterly/daily.csv": "2026-10-10T09:02:39.145013+00:00",
+    "results/cash_0p020000/00631L_50_threshold/daily.csv": "2026-10-10T09:02:39.191949+00:00",
+    "results/cash_0p020000/00631L_60_quarterly/daily.csv": "2026-10-10T09:02:39.239237+00:00",
+    "results/cash_0p020000/00631L_60_threshold/daily.csv": "2026-10-10T09:02:39.289207+00:00",
+    "results/cash_0p020000/00631L_80_quarterly/daily.csv": "2026-10-10T09:02:39.339717+00:00",
+    "results/cash_0p020000/00631L_80_threshold/daily.csv": "2026-10-10T09:02:39.388779+00:00",
+    "results/cash_0p020000/00631L_100_buyhold/daily.csv": "2026-10-10T09:02:39.435915+00:00",
+    "portfolio_results/summary.json": "2026-10-10T09:51:05.686239+00:00",
+    "portfolio_results/cash_0p000000/A_quarterly/daily.csv.gz": "2026-10-10T09:51:03.162052+00:00",
+    "portfolio_results/cash_0p000000/A_threshold/daily.csv.gz": "2026-10-10T09:51:03.257354+00:00",
+    "portfolio_results/cash_0p000000/B_quarterly/daily.csv.gz": "2026-10-10T09:51:03.361615+00:00",
+    "portfolio_results/cash_0p000000/B_threshold/daily.csv.gz": "2026-10-10T09:51:03.459582+00:00",
+    "portfolio_results/cash_0p000000/B_exposure_threshold/daily.csv.gz": "2026-10-10T09:51:03.555355+00:00",
+    "portfolio_results/cash_0p000000/C_quarterly/daily.csv.gz": "2026-10-10T09:51:03.660480+00:00",
+    "portfolio_results/cash_0p000000/C_threshold/daily.csv.gz": "2026-10-10T09:51:03.763627+00:00",
+    "portfolio_results/cash_0p000000/C_exposure_threshold/daily.csv.gz": "2026-10-10T09:51:03.865170+00:00",
+    "portfolio_results/cash_0p010000/A_quarterly/daily.csv.gz": "2026-10-10T09:51:03.964227+00:00",
+    "portfolio_results/cash_0p010000/A_threshold/daily.csv.gz": "2026-10-10T09:51:04.061688+00:00",
+    "portfolio_results/cash_0p010000/B_quarterly/daily.csv.gz": "2026-10-10T09:51:04.192771+00:00",
+    "portfolio_results/cash_0p010000/B_threshold/daily.csv.gz": "2026-10-10T09:51:04.392787+00:00",
+    "portfolio_results/cash_0p010000/B_exposure_threshold/daily.csv.gz": "2026-10-10T09:51:04.536819+00:00",
+    "portfolio_results/cash_0p010000/C_quarterly/daily.csv.gz": "2026-10-10T09:51:04.645652+00:00",
+    "portfolio_results/cash_0p010000/C_threshold/daily.csv.gz": "2026-10-10T09:51:04.750775+00:00",
+    "portfolio_results/cash_0p010000/C_exposure_threshold/daily.csv.gz": "2026-10-10T09:51:04.858985+00:00",
+    "portfolio_results/cash_0p020000/A_quarterly/daily.csv.gz": "2026-10-10T09:51:04.958318+00:00",
+    "portfolio_results/cash_0p020000/A_threshold/daily.csv.gz": "2026-10-10T09:51:05.058111+00:00",
+    "portfolio_results/cash_0p020000/B_quarterly/daily.csv.gz": "2026-10-10T09:51:05.164116+00:00",
+    "portfolio_results/cash_0p020000/B_threshold/daily.csv.gz": "2026-10-10T09:51:05.265879+00:00",
+    "portfolio_results/cash_0p020000/B_exposure_threshold/daily.csv.gz": "2026-10-10T09:51:05.363716+00:00",
+    "portfolio_results/cash_0p020000/C_quarterly/daily.csv.gz": "2026-10-10T09:51:05.472059+00:00",
+    "portfolio_results/cash_0p020000/C_threshold/daily.csv.gz": "2026-10-10T09:51:05.579467+00:00",
+    "portfolio_results/cash_0p020000/C_exposure_threshold/daily.csv.gz": "2026-10-10T09:51:05.684391+00:00",
+    "analysis/annual_performance.json": "2026-10-10T10:23:00.932443+00:00",
+    "analysis/annual_performance.csv": "2026-10-10T10:23:00.925793+00:00",
+    "analysis/market_stages.json": "2026-10-10T10:23:00.936785+00:00",
+    "analysis/market_stages.csv": "2026-10-10T10:23:00.934290+00:00",
+    "analysis/crisis_recovery.json": "2026-10-10T10:23:00.938232+00:00",
+    "analysis/crisis_recovery.csv": "2026-10-10T10:23:00.937427+00:00",
+    "analysis/analysis_config.json": "2026-10-10T10:23:02.211390+00:00"
+  },
+  "limitations": [
+    "Offline review of saved ledgers and analyses; no independent upstream market-data or point-in-time version verification.",
+    "Real-output numerical independence is from analysis formulas, not a second trading engine; portfolio accounting is reviewed separately.",
+    "Approved windows and partial-year expectations are for the fixed 2014-10-31 to 2026-10-08 sample.",
+    "Recovery uses close NAV with a 1e-12 relative floating-point tolerance; censored duration means elapsed time, not completed recovery.",
+    "Annual and stage risk ratios retain 252-session annualization, distinct from the nonannualized period-return column."
+  ]
+}

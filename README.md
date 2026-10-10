@@ -4,6 +4,8 @@
 
 實際期間：2014-10-31開盤至2026-10-08收盤。2026-10-09休市。
 
+[開啟互動回測網站](https://taiwan-etf-exposure-johnny.humble-root-7878.chatgpt.site)。可輸入0%～200%目標曝險、0050比例、本金、現金收益及再平衡方式，直接以同一套Python引擎在瀏覽器計算。
+
 [下載深色主題完整報告](report.html) 後，用瀏覽器開啟。可切換深／淺色及現金收益0%、1%、2%情境；[全部24組結果CSV](results/summary.csv) 可直接下載。
 
 ## 主要結果
@@ -41,7 +43,7 @@
 
 允許小數受益單位、固定滑價；未計個人稅負、券商最低費及T+2交割限制。一價日假設不成交，保留真實收盤估值；日線不能證明個別委託成交。這是當前歷史資料快照的模擬，未認證嚴格歷史版本或所有事件發布時刻。
 
-14項測試與獨立重算通過。詳細資料品質與限制：[data_quality.json](data_quality.json)、[review.json](review.json)。
+原始14項測試與獨立重算通過；擴充後共40項測試通過。詳細資料品質與限制：[data_quality.json](data_quality.json)、[review.json](review.json)。
 
 ## 離線重現
 
@@ -49,9 +51,11 @@ Python 3.10+建議；僅使用標準函式庫，從已保存資料重跑不需�
 
 ```bash
 python3 normalize.py
-python3 -m unittest -v test_backtest.py
+python3 -m unittest -v test_backtest.py test_portfolio_backtest.py test_analyze_portfolios.py test_web_calculator.py
 python3 backtest.py --input normalized.json --out results
-python3 build_report.py
+python3 portfolio_backtest.py
+python3 analyze_portfolios.py
+python3 build_site.py
 python3 validation/independent_backtest_review.py
 ```
 
@@ -62,3 +66,33 @@ python3 validation/independent_backtest_review.py
 - `START_HERE.txt`：詳細重現方式。
 
 計算覆核摘要見`review.json`；目前公開版重算證據與呈現檢查見`validation/`。
+
+
+## 相同160%目標曝險擴充
+
+A：80%正二＋20%現金；B：60%正二＋40%0050；C：70%正二＋20%0050＋10%現金。
+
+本金均100萬元、現金年收益假設1%。
+
+| 配置／規則 | 期末（萬元） | CAGR | 最大回撤 | Sharpe | Sortino | 平均名目曝險 | 再平衡次數 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| A／季度 | 2,506.12 | 30.98% | -46.25% | 1.041 | 1.488 | 161.14% | 48 |
+| A／權重門檻 | 2,909.17 | 32.62% | -46.36% | 1.059 | 1.516 | 167.62% | 7 |
+| B／季度 | 2,598.30 | 31.37% | -44.82% | 1.047 | 1.513 | 160.24% | 48 |
+| B／權重門檻 | 2,645.77 | 31.57% | -45.77% | 1.045 | 1.507 | 162.39% | 3 |
+| C／季度 | 2,552.85 | 31.18% | -45.53% | 1.045 | 1.501 | 160.69% | 48 |
+| C／權重門檻 | 2,926.89 | 32.69% | -45.81% | 1.065 | 1.534 | 165.33% | 7 |
+
+B在季度再平衡下的風險調整指標略優於A；在10個百分點權重門檻下，未全面優於A。共同曝險門檻的補充情境、2020與2022回撤及回本、年度與固定期段績效均在完整報告。
+
+每日曝險是2×實際正二持倉市值比例＋實際0050比例的**名目估計**；並非已核實的基金內部逐日期貨槓桿。現金與應收股利曝險為0。
+
+主比較：任一所持股票或現金類（現金＋應收）權重距目標10個百分點，下一個所持ETF均可交易的開盤調整；A僅持正二。補充：共同名目曝險距160%達20個百分點，下一可成交開盤調整。
+
+- `portfolio_results/`：24條A/B/C與共同曝險門檻對照（包含6條原A控制）。
+- `analysis/`：年度、固定期段、危機回撤/回本、每日名目曝險。
+- `portfolio_review.json`：新增234組獨立查核與40項單元測試的覆核證據。
+- `dist/index.html`：互動計算機，自含資料與Python程式；首次載入需下載固定版本瀏覽器計算環境。
+- `.github/workflows/refresh-data.yml`：手動或資料工具更新時重新擷取與核對固定期間，輸出Actions成果，不自行覆寫已發布的歷史結果。
+
+A、B、C的目標曝險相同；實際持倉漂移與再平衡門檻對應的曝險範圍不同。因此報酬差不能單獨歸因於現金或正二比例。

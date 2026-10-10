@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "review_id": "ETF-20141031-20261009-L3",
+  "reviewed_at_utc": "2026-10-10T08:35:03.022616+00:00",
+  "reviewer": "independent_review subagent",
+  "review_level": "L3",
+  "status": "PASS",
+  "verdict": "PASS for deterministic historical simulation under the disclosed assumptions; no unresolved Blocker or Major finding. Provider-adjusted equivalence and strict point-in-time data vintage are not certified.",
+  "scope": {
+    "symbols": [
+      "0050",
+      "00631L"
+    ],
+    "start": "2014-10-31",
+    "requested_end": "2026-10-09",
+    "actual_end": "2026-10-08",
+    "strategies": 8,
+    "cash_yield_scenarios": [
+      0,
+      0.01,
+      0.02
+    ],
+    "runs": 24,
+    "market_sessions": 2912,
+    "initial_capital_twd": 1000000,
+    "read_only_source_review": true,
+    "original_repository_modified_by_reviewer": false
+  },
+  "findings": [
+    {
+      "id": "RVW-001",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Engine did not independently reject unverified missing bars",
+      "evidence": "Initial version relied on normalizer coverage checks. Final validate_input rejects missing dates outside metadata.verified_suspensions and exactly matches start/end bounds; test_unverified_missing_bar_is_an_error passes. Current actual data had no unexplained gaps at any point.",
+      "files": [
+        "backtest.py",
+        "test_backtest.py"
+      ]
+    },
+    {
+      "id": "RVW-002",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "One-price-day rejection must not imply a lower-bound return",
+      "evidence": "Report now calls high=low rejection an ex-post daily-bar execution availability approximation, retains observed close for valuation and disclaims a performance lower bound. Independent sensitivity finds main-scenario 50% threshold ending NAV increases 42410.39539251849 TWD versus assumed opening fills, with CAGR increasing 0.0004488202888863757. The caveat and rounded differences appear in report source.",
+      "files": [
+        "build_report.py",
+        "validation/one_price_execution_sensitivity.json"
+      ]
+    },
+    {
+      "id": "RVW-003",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Sortino prose placed annualization beside the denominator ambiguously",
+      "evidence": "Report source now states daily mean excess return divided by the all-observation negative-excess RMS, multiplied by sqrt(252), with nonnegative days contributing zero. Engine formula and synthetic test were correct.",
+      "files": [
+        "build_report.py",
+        "test_backtest.py"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "TEST-UNIT",
+      "status": "PASS",
+      "count": 14,
+      "evidence": "python3 -m unittest -v test_backtest.py completed successfully. Synthetic tests cover fees, exact post-cost targets, threshold next-open timing, corporate actions, suspension, one-price marks/fills, dividend entitlement/payment/reinvestment, calendar interest, metric definitions, censored recovery and deterministic outputs."
+    },
+    {
+      "id": "TEST-INDEPENDENT",
+      "status": "PASS",
+      "count": 143,
+      "evidence_file": "validation/independent_review_checks.json",
+      "method": "Independent execution uses numerical bisection rather than the engine closed-form target equation. Cash accrual uses session gaps and intervening payment events rather than a calendar-day loop. All 24 complete paths, trade dates, CAGR, MDD, Sharpe, Sortino and longest recovery compare successfully. Saved metrics/configuration/NAV files and engine/input manifest hashes match fresh engine runs.",
+      "maximum_daily_nav_difference_twd": 1.0076910257339478e-06
+    },
+    {
+      "id": "TEST-CLOSED-FORM",
+      "status": "PASS",
+      "evidence": "00631L 100%: 1000000 / (19.99 * 1.0005 * 1.001425) * 22 * 40.9 = 44925991.70931703 TWD, exactly equal to engine ending NAV."
+    },
+    {
+      "id": "TEST-NORMALIZER-REPLAY",
+      "status": "PASS",
+      "evidence": "Re-ran normalizer in an isolated work directory using copied raw snapshots. Core start/end/calendar/prices/splits/dividends identical; original output data and original project were not modified by that check."
+    },
+    {
+      "id": "TEST-RAW-PROVENANCE",
+      "status": "PASS",
+      "evidence": "All 2907 and 2908 normalized price rows equal saved market-provider raw records; recorded raw hashes match. Independent parsing of six saved TWSE stock-month responses matches 48 rows / 192 OHLC fields. Both official split PDF snapshots are saved and referenced by hashed spotcheck manifest."
+    },
+    {
+      "id": "TEST-SIGNAL-NONANTICIPATION",
+      "status": "PASS",
+      "evidence": "Multiplying future prices after 2022-12-30 by 1.19 leaves all prior daily account values and trades identical for all eight strategies. Threshold tests prove next-open execution. This is a signal/accounting test, not proof of historical publication/vintage availability or actual order fills."
+    }
+  ],
+  "limitations": [
+    {
+      "id": "LIM-PIT",
+      "status": "NOT_ESTABLISHED",
+      "description": "Current retrospective snapshots lack proven historical vintages and all corporate-action publication timestamps. Unknown announcement times remain null. No strict point-in-time claim is endorsed."
+    },
+    {
+      "id": "LIM-FILLS",
+      "status": "DISCLOSED",
+      "description": "Fractional units, fixed slippage, raw opening reference prices and one-price-bar fill rejection are execution-model assumptions; daily OHLC cannot prove personal order priority, available liquidity or actual fill. One-price rejection is an ex-post execution approximation and can improve returns."
+    },
+    {
+      "id": "LIM-CASH",
+      "status": "DISCLOSED",
+      "description": "Cash 0/1/2% yields are hypothetical effective annual rates, not observed historical deposit returns. Trade-date cash bookkeeping omits T+2 settlement restrictions; personal taxes and minimum brokerage fees are excluded."
+    },
+    {
+      "id": "LIM-SUSPENSION",
+      "status": "DISCLOSED",
+      "description": "Verified suspensions are not executable. Last observed close is retained only for valuation, so daily risk measures are affected by stale marks and subsequent catch-up price changes."
+    },
+    {
+      "id": "LIM-DAILY-DATA",
+      "status": "DISCLOSED",
+      "description": "Six official stock-month samples and all official 0050 dividend events were cross-checked, but not every historical daily price independently verified against TWSE."
+    }
+  ],
+  "reproduce": {
+    "working_directory": "etf_backtest",
+    "unit_tests": "python3 -m unittest -v test_backtest.py",
+    "independent_checks_and_sensitivity": "python3 validation/independent_backtest_review.py",
+    "notes": "Independent checker exits nonzero on a failed check; it reads original snapshots/results and rewrites only its own validation evidence files."
+  },
+  "reviewed_file_sha256": {
+    "normalize.py": "dbe9d3c0fc1d081f2547493b2519b137b23a8ebd26f0379ee218d1f593941d63",
+    "normalized.json": "bd0c3dc27d251268896b3718873eff302c1230873586a9e198e9245465d66fe3",
+    "data_quality.json": "53394581582d224d0266f7bb0593c01c746fd18ddf67fc517d42ca56de398c4d",
+    "backtest.py": "17a366760c2b84d2ec7c5a8215615552a77c8edcb3fad7b027b70755f20b295a",
+    "test_backtest.py": "a737c81b61dd042c83d52978992f2d9978913a9357dc70de68e324f79b3f8423",
+    "results/manifest.json": "eee2fdd2636f09edb739fa9f7a744fc64cec51ac50f8cbacaaba9dcc6b4d98c4",
+    "results/summary.json": "26cafa2680a4dac86def74f4b4030f41b07f38fb710e0f8b75a829b1b227bbdf",
+    "twse_spotcheck.json": "af1ecef2294e6307b117ffcd1ed96b34f083bea3808a013374a3dc7e28665134",
+    "validation/independent_backtest_review.py": "f42aa1cf9987ab4948a3b0a2750ee380a89de05029883468b28d69ef61c1a02f",
+    "validation/independent_review_checks.json": "15dead71178bf7b74186e70d1df3aa6673c308b49598cca77bc5dfd22f79a764",
+    "validation/one_price_execution_sensitivity.json": "7e9214f956e555525828cb17f2599a6d99e9e8a6f5c00959cbc5548c682c921c"
+  },
+  "public_summary_note": "Public summary of the original financial review. Current public snapshot and verification hashes are documented separately in validation/public_report_checks.json. Original technical audit is retained in the independent research deliverable."
+}

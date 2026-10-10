@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "cash_yield_assumption": 0.0,
+      "max_nav_difference_twd": 1.1175870895385742e-08,
+      "portfolio": "A_quarterly",
+      "status": "PASS"
+    },
+    {
+      "cash_yield_assumption": 0.0,
+      "max_nav_difference_twd": 7.450580596923828e-09,
+      "portfolio": "A_threshold",
+      "status": "PASS"
+    },
+    {
+      "cash_yield_assumption": 0.01,
+      "max_nav_difference_twd": 1.4901161193847656e-08,
+      "portfolio": "A_quarterly",
+      "status": "PASS"
+    },
+    {
+      "cash_yield_assumption": 0.01,
+      "max_nav_difference_twd": 3.725290298461914e-09,
+      "portfolio": "A_threshold",
+      "status": "PASS"
+    },
+    {
+      "cash_yield_assumption": 0.02,
+      "max_nav_difference_twd": 1.1175870895385742e-08,
+      "portfolio": "A_quarterly",
+      "status": "PASS"
+    },
+    {
+      "cash_yield_assumption": 0.02,
+      "max_nav_difference_twd": 1.1175870895385742e-08,
+      "portfolio": "A_threshold",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

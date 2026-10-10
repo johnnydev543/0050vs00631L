@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "tested_live_url": "https://taiwan-etf-exposure-johnny.humble-root-7878.chatgpt.site",
+  "method": "Native browser UI against deployed site; independent Python expected values",
+  "checks": [
+    {
+      "case": "custom",
+      "inputs": {
+        "exposure": 137.5,
+        "ordinary": 11.2,
+        "principal": 234.5,
+        "cash_rate": 1.5,
+        "rule": "threshold",
+        "threshold": 7.5
+      },
+      "ending_nav_wan": 4380.01,
+      "cagr_pct": 27.79,
+      "max_drawdown_pct": -41.4
+    },
+    {
+      "case": "cash_only",
+      "ending_nav_wan": 112.61,
+      "cagr_pct": 1.0,
+      "max_drawdown_pct": 0,
+      "sharpe": null,
+      "sortino": null
+    },
+    {
+      "case": "full_leveraged",
+      "exposure": 200,
+      "ending_nav_wan": 4492.6,
+      "cagr_pct": 37.54,
+      "max_drawdown_pct": -55.14
+    },
+    {
+      "case": "download",
+      "fields": [
+        "params",
+        "config",
+        "metrics",
+        "daily",
+        "trades",
+        "annual",
+        "crises",
+        "stages"
+      ],
+      "bytes": 3178185
+    },
+    {
+      "case": "theme",
+      "dark_and_light_switch": "PASS"
+    },
+    {
+      "case": "public_relative_report_download_links",
+      "status": "PASS"
+    },
+    {
+      "case": "unit_tests",
+      "passed": 40
+    }
+  ]
+}

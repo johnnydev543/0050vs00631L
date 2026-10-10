@@ -1,0 +1,58 @@
+[
+  {
+    "strategy": "00631L_60_threshold",
+    "cash_rate": 0.0,
+    "reject_minus_allow_final_nav": 93301.43879519776,
+    "reject_final_nav": 13721962.68050443,
+    "allow_final_nav": 13628661.241709232,
+    "reject_minus_allow_cagr": 0.0007115140337436987,
+    "allowed_one_price_trades": [
+      {
+        "date": "2025-04-10",
+        "side": "buy"
+      }
+    ]
+  },
+  {
+    "strategy": "00631L_80_threshold",
+    "cash_rate": 0.0,
+    "reject_minus_allow_final_nav": 48279.690924718976,
+    "reject_final_nav": 26843383.746603042,
+    "allow_final_nav": 26795104.055678323,
+    "reject_minus_allow_cagr": 0.00019863316007806553,
+    "allowed_one_price_trades": [
+      {
+        "date": "2025-04-10",
+        "side": "buy"
+      }
+    ]
+  },
+  {
+    "strategy": "00631L_50_threshold",
+    "cash_rate": 0.01,
+    "reject_minus_allow_final_nav": 42410.39539251849,
+    "reject_final_nav": 9584793.602738261,
+    "allow_final_nav": 9542383.207345743,
+    "reject_minus_allow_cagr": 0.0004488202888863757,
+    "allowed_one_price_trades": [
+      {
+        "date": "2025-04-10",
+        "side": "buy"
+      }
+    ]
+  },
+  {
+    "strategy": "00631L_50_threshold",
+    "cash_rate": 0.02,
+    "reject_minus_allow_final_nav": 49640.063195388764,
+    "reject_final_nav": 10031558.871484134,
+    "allow_final_nav": 9981918.808288746,
+    "reject_minus_allow_cagr": 0.0005039747800283934,
+    "allowed_one_price_trades": [
+      {
+        "date": "2025-04-10",
+        "side": "buy"
+      }
+    ]
+  }
+]

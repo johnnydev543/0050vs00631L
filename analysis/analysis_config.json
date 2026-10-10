@@ -1,0 +1,41 @@
+{
+  "annual_return": "Year-end NAV divided by prior-year closing NAV; first year uses initial capital. 2014 and 2026 are partial, not annualized.",
+  "crisis_definition": "Worst drawdown inside fixed calendar year, anchored at preceding year-end close; recovery searched through full sample.",
+  "crisis_years": [
+    2020,
+    2022
+  ],
+  "distinct_configuration_scenarios": 42,
+  "internal_fund_exposure": "Unavailable; cannot certify actual daily futures leverage/beta.",
+  "main_threshold": "Any asset/cash-like weight differs by 10 percentage points.",
+  "matched_exposure_sensitivity": "Nominal exposure differs by 20 percentage points; A is the same as its main weight-threshold strategy.",
+  "nominal_exposure": "2*actual 00631L market-value weight + actual 0050 market-value weight; cash and dividend receivables have zero nominal exposure.",
+  "rows_including_six_A_controls": 48,
+  "stages": [
+    [
+      "2014–2019",
+      "2014-10-31",
+      "2019-12-31"
+    ],
+    [
+      "2020 疫情年",
+      "2020-01-01",
+      "2020-12-31"
+    ],
+    [
+      "2021",
+      "2021-01-01",
+      "2021-12-31"
+    ],
+    [
+      "2022 熊市年",
+      "2022-01-01",
+      "2022-12-31"
+    ],
+    [
+      "2023 至樣本末",
+      "2023-01-01",
+      "2026-10-08"
+    ]
+  ]
+}

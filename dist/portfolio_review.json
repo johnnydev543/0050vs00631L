@@ -1,0 +1,242 @@
+{
+  "schema_version": "1.0",
+  "review_id": "ETF-PORTFOLIO-20141031-20261008-L3",
+  "reviewed_at_utc": "2026-10-10T10:31:58.524933+00:00",
+  "reviewer": "independent_review with independent period_review subagent",
+  "review_level": "L3",
+  "status": "PASS",
+  "verdict": "The two-ETF accounting engine, saved results, custom-request adapter, bundled Python/data/seed integrity, JavaScript source flow, period/exposure analyses and financial report source wording pass independent offline review. No unresolved Blocker, Major, or Minor findings. Browser execution and remote deployment are checked separately by the parent task.",
+  "scope": {
+    "symbols": [
+      "00631L",
+      "0050"
+    ],
+    "start": "2014-10-31",
+    "end": "2026-10-08",
+    "initial_capital_twd": 1000000,
+    "fixed_portfolios": {
+      "A": {
+        "00631L": 0.8,
+        "0050": 0,
+        "cash": 0.2
+      },
+      "B": {
+        "00631L": 0.6,
+        "0050": 0.4,
+        "cash": 0
+      },
+      "C": {
+        "00631L": 0.7,
+        "0050": 0.2,
+        "cash": 0.1
+      }
+    },
+    "cash_yield_scenarios": [
+      0,
+      0.01,
+      0.02
+    ],
+    "fixed_portfolio_runs": 24,
+    "primary_rules": [
+      "quarterly",
+      "any_stock_or_cash_plus_receivables_weight_10pp"
+    ],
+    "supplementary_rules": [
+      "B_nominal_exposure_20pp",
+      "C_nominal_exposure_20pp"
+    ],
+    "combined_analysis_series": 48,
+    "A_duplicate_control_series": 6,
+    "configuration_rule_rate_combinations_excluding_A_controls": 42,
+    "annual_records": 624,
+    "stage_records": 240,
+    "crisis_records": 96,
+    "daily_exposure_records": 139776,
+    "custom_python_engine_cases": "All-cash 0/1/2% under all three rules; 100% single-ETF edges; custom weights .3/.4/.3, capital 250000, cash yield .015, thresholds .075/.15; invalid inputs.",
+    "excluded": "Actual browser/Pyodide execution, rendered visual/interaction QA, CDN availability or network traffic inspection, remote deployment/publication, GitHub-secret access, and upstream data-vintage verification. Browser behavior is tested separately by the parent task.",
+    "original_review_preserved": true,
+    "implementation_modified_by_reviewer": false,
+    "credentials_or_original_tw_market_repository_accessed": false,
+    "custom_ui_source_review": "E in 0..200%, 0050 total-asset percentage in 0..min(E,200-E), leverage weight=(E-0050)/2, nonnegative residual cash; principal in wan; shared Python engine; same-condition A/B/C comparisons; embedded four-module/data/seed parity; source-level worker/result/download binding."
+  },
+  "findings": [
+    {
+      "id": "RVW-PER-005",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Partial calendar years retained an annualized CAGR field",
+      "evidence": "Annual period_return was already correct, but 2014/2026 period_cagr could be mistaken for the requested nonannualized partial-year result. All 96 partial-year annual records now set period_cagr to null; fixed-stage CAGR remains available. Independent period checks pass.",
+      "files": [
+        "analyze_portfolios.py",
+        "analysis/annual_performance.json",
+        "validation/period_independent_checks.json"
+      ]
+    },
+    {
+      "id": "RVW-PORT-002",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Custom threshold configuration descriptions were hard-coded to 10/20pp",
+      "evidence": "Configuration rule descriptions now interpolate Portfolio.weight_threshold and Portfolio.exposure_threshold. Numeric settings and human-readable descriptions therefore remain consistent for custom parameters. Fixed standard strategies and all independent financial checks are unchanged.",
+      "files": [
+        "portfolio_backtest.py"
+      ]
+    },
+    {
+      "id": "RVW-CALC-001",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Threshold label used both percent sign and percentage-point unit"
+    },
+    {
+      "id": "RVW-CALC-002",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Legacy threshold explanation needed scope and multi-asset method clarification"
+    },
+    {
+      "id": "RVW-CALC-003",
+      "severity": "Minor",
+      "status": "RESOLVED",
+      "result": "PASS",
+      "title": "Crisis anchor description referred to price instead of portfolio NAV"
+    }
+  ],
+  "checks": [
+    {
+      "id": "PORT-UNIT",
+      "status": "PASS",
+      "count": 40,
+      "evidence": "All 40 discovered unit tests pass: 14 legacy, 15 portfolio, 5 period-analysis and 6 web-adapter tests. Command: python3 -B -m unittest discover -v."
+    },
+    {
+      "id": "PORT-INDEPENDENT",
+      "status": "PASS",
+      "count": 180,
+      "evidence_file": "validation/portfolio_independent_checks.json",
+      "method": "Enumerate piecewise funding regimes and trade directions to solve an affine post-cost NAV equation directly. This differs from the production bisection solver. Independently accrue cash across market-session intervals and payment events, then verify every saved daily account/exposure field, transaction, metric and manifest.",
+      "maximum_daily_nav_difference_twd": 9.052455425262451e-07,
+      "maximum_A_vs_legacy_daily_nav_difference_twd": 1.4901161193847656e-08
+    },
+    {
+      "id": "PORT-FUNDING-DRIP",
+      "status": "PASS",
+      "evidence": "Locked receivables and payment-day dividend cash are not spent; relative stock target weights are preserved when investable NAV is insufficient. Transactions sell before buying; complete rebalances absorb eligible paid pools. A hand-computable pay-date/quarter-boundary example preserves 360 cash that day and reinvests it into 0050 on the next session. Forty solver regimes agree within 1.17e-10 TWD."
+    },
+    {
+      "id": "PORT-CUSTOM-EDGES",
+      "status": "PASS",
+      "evidence": "All-cash NAV agrees with an analytic calendar-day compound-interest formula, with no trades and undefined Sharpe/Sortino represented as null. Both 100% single-ETF edges match legacy buy-and-hold NAV. Custom parameters agree with independent account reconstruction, and all eleven tested invalid inputs are rejected."
+    },
+    {
+      "id": "PORT-EXPOSURE",
+      "status": "PASS",
+      "evidence": "All 139776 combined daily exposure-export rows match their original saved books exactly. Nominal exposure equals 2 times actual 00631L weight plus actual 0050 weight; dividend receivables/cash contribute zero. Actual internal fund exposure remains unknown/empty."
+    },
+    {
+      "id": "PORT-SIGNAL-TIMING",
+      "status": "PASS",
+      "evidence": "All eight strategies retain identical pre-cutoff account states and trades when future prices after 2022-12-30 are changed by 13%. Threshold execution uses the next jointly executable opening session; one-price bars are valued but not filled."
+    },
+    {
+      "id": "PERIOD-INDEPENDENT",
+      "status": "PASS",
+      "count": 26,
+      "value_comparisons": 31751,
+      "evidence_file": "validation/period_independent_checks.json",
+      "method": "Independent index/anchor and cumulative-maximum formulas verify 624 calendar-year records, 240 fixed stages, 96 crisis events, CSV/JSON parity, and 12 synthetic cases. Crisis recovery scans beyond the event year, with 48 real events recovering in a later calendar year."
+    },
+    {
+      "id": "PORT-LEGACY-PRESERVATION",
+      "status": "PASS",
+      "evidence": "Legacy backtest.py and test_backtest.py match the originally reviewed files byte for byte. The original review.json is preserved. Across the preserved legacy summaries, financial metrics match the original delivered summaries; public-snapshot metadata/config hashes can differ from the original private provenance snapshot. Six A variants independently match the corresponding preserved legacy 80% paths."
+    },
+    {
+      "id": "CALCULATOR-SOURCE-INDEPENDENT",
+      "status": "PASS",
+      "count": 28,
+      "evidence_file": "validation/calculator_source_review.json",
+      "evidence": "123 synthetic allocation-bound cases, invalid input rejection, real 160% fixed-result parity, 120/0/200% same-condition comparisons, exact embedded Python/JavaScript/data and precomputed seed matching, static JSON parameter handoff, result-bound context/downloads, pinned Pyodide version, JS syntax, no credential-bearing data fields/runtime credential reads, latest report content and isolated normalizer replay preserving all raw market/action fields."
+    }
+  ],
+  "limitations": [
+    {
+      "id": "PORT-LIM-NOMINAL",
+      "description": "Multipliers 2 and 1 define nominal market exposure from observed holdings, not measured daily derivatives leverage or beta inside the funds. Actual internal exposure cannot be certified and remains null."
+    },
+    {
+      "id": "PORT-LIM-DATA",
+      "description": "Uses the same retrospective FinMind raw-price and verified corporate-action snapshot as the original review. Provider-adjusted validation remains unavailable and strict point-in-time vintage/publication timestamps remain unestablished."
+    },
+    {
+      "id": "PORT-LIM-EXECUTION",
+      "description": "Fractional units, fixed transaction charges and slippage, trade-date cash accounting, common executable openings, and ex-post rejection of one-price bars are modeling assumptions. They do not prove historical order fills or a conservative performance lower bound."
+    },
+    {
+      "id": "PORT-LIM-PERIODS",
+      "description": "Calendar years, the five declared stages, and 2020/2022 crisis windows are descriptive retrospective summaries, not trading signals or proof of performance in other periods. Partial-year returns are not annualized; risk ratios retain the disclosed 252-session convention."
+    },
+    {
+      "id": "PORT-LIM-CASH",
+      "description": "Cash yields are hypothetical effective annual rates. Receivables are valued at face value with no interest until paid; payment-day funds remain unavailable for investment until the next day. T+2 settlement restrictions, personal taxes, minimum fees and liquidity limits are not modeled."
+    },
+    {
+      "id": "PORT-LIM-CUSTOM",
+      "description": "Source and offline calculations cover representative custom engine/adapter boundaries and parameter validation. Actual browser/runtime behavior, network loading and visual rendering are outside this independent review and are tested separately by the parent task."
+    },
+    {
+      "id": "PORT-LIM-CDN",
+      "description": "The calculator embeds its market snapshot and four Python modules but loads the pinned Pyodide 0.29.5 runtime from an external CDN. Source/data embedding does not make the initial runtime load network-independent or prove CDN availability."
+    }
+  ],
+  "reproduce": {
+    "working_directory": "repository root",
+    "unit_tests": "python3 -B -m unittest discover -v",
+    "portfolio_checks": "python3 -B validation/portfolio_independent_review.py",
+    "period_checks": "python3 -B validation/period_independent_review.py",
+    "calculator_source_checks": "python3 -B validation/calculator_source_review.py"
+  },
+  "reviewed_file_sha256": {
+    "analysis/analysis_config.json": "f95443d743ea7a7641718d29264ca2398f3a3cd5e87d59a9d6149815888af1a9",
+    "analysis/annual_performance.json": "fcbabd16104d664dd6f0726de3e3e493a130105bc4f0500c4923ccda6fd0bbdf",
+    "analysis/crisis_recovery.json": "ca902436bd1d22c2e052b3538959fe12709d50b6d3382e030d2481799dcb6889",
+    "analysis/daily_nominal_exposure.csv.gz": "b7b5df633887abbe3cb398c9022d7787f3f60b6cb9e3f272c7184091388e5dc5",
+    "analysis/exposure_summary.json": "2174930919127ceeea8f8e6ff4a89eee0ad4e1055f9695f749213ae8e39434bf",
+    "analysis/legacy_A_regression.json": "6b73a1907733babca33488ba1cfd47c1e2d656a11939d6ce6fa18cb41751f292",
+    "analysis/market_stages.json": "8a5e9ac500ed3154d9521b5eac40e63b16666ef19e6f139271466d701e622e7c",
+    "analyze_portfolios.py": "288ad8f1ab077f66941fea7826942520270afea3f3e755c78ea9e65696cda162",
+    "backtest.py": "17a366760c2b84d2ec7c5a8215615552a77c8edcb3fad7b027b70755f20b295a",
+    "build_calculator.py": "f5506960d91664ce97918f6daf39724fdf34fbcc4a5ff247837ff59495d3c2db",
+    "build_report.py": "df79e934d8b116f30c083aa8b54098b4331adcc52b704f1405285357e17bb4c8",
+    "dist/index.html": "fd0964aad63a8c62f678f33d55d10039c7f3c29ef9ce57db129c9992d9f30f7d",
+    "dist/report.html": "160009c59da051671291ddd7cc4a332784ab51a2b8b80125bc9d76631e0f0a2e",
+    "normalize.py": "70a04362eb42bc1e95fcd56285ba69b024e875c38985be99d303d87539d573bf",
+    "normalized.json": "789dc72096f429458dc6103e7995010c3a2bcaa9a42850e46098412c389b63f7",
+    "portfolio_backtest.py": "8db9f588abf80093673e7ed538fe7cd9e51755540c39a3b913fb365f44532eb6",
+    "portfolio_results/manifest.json": "430530c9abc9da190a687f09b0e4b707f58ac4da6bd4b2822d43e12d09fceda7",
+    "portfolio_results/summary.csv": "cbfc64d77b716f05003da113a6ba9412c76ce27af7ec86c105e756001f0efc93",
+    "portfolio_results/summary.json": "bc4b677873dde17bdc339cc152c127cacfef5f7229e10211e02ecdb9b3c2b36b",
+    "report.html": "a30519e399f2c147c9dd2b6e4f43e2667521566b6d775bf7ef694accc179c29d",
+    "report_portfolios.py": "753e5cac694be24bbb9a67254401ff163e79c2b40c0d2acaabffa3218acebe91",
+    "review.json": "3ab8db7764243077cdb7e8e3dcc62744833dbdbb88c1649640edea9b6357cd1f",
+    "test_analyze_portfolios.py": "cf7fda774d2746fc42a5390b8c02a84d293d37d3e124ccdef8656435ec7fae3a",
+    "test_portfolio_backtest.py": "0087d53762073b56f382f918b825d39690168a7320669d3f08073ed67f4b25ba",
+    "test_web_calculator.py": "6d31d05d12e98400ce4dbf527cb7b8d9138f7f62075a0f8fbf2248f84e9b58fc",
+    "validation/calculator_source_review.json": "4c3e44d56a44fa42ac4906ce168f6b601cdcd6f01f8b3fb99d26914cd00a4cc5",
+    "validation/calculator_source_review.py": "67f895fc66182525a6b6d070d1a42953fdb8be9ce59f21d8ffc47b09174a6c77",
+    "validation/period_independent_checks.json": "dfd2b69363ef1b369c05a5257db6939581991af005ff8d51151e0da1f7f5d46d",
+    "validation/period_independent_review.py": "f25e9db89e58fd7ca9ec51eb8fb19fda18a85fc2ca1fb30aec4424f71998f12c",
+    "validation/portfolio_independent_checks.json": "f983763e3b8c31b01824ea9ba203d6f5913da94e5c046647484f0d1c970c030c",
+    "validation/portfolio_independent_review.py": "25e72fdfc65a1c0ae313c9dc13193a210c0ed25832f0ad06ba4285216af796b3",
+    "web/calculator_app.js": "1633c9eb9644318a549fe422c729375d7e928c87f03ad40cab25d4ce2b69dc1b",
+    "web/calculator_template.html": "7197fcfd760faf1ae1d55ccc5b3e6bda0d8b31fc03de213e88ce97bbd2c6de9f",
+    "web/calculator_worker.js": "df3d43e5856b86b3aecdc006291ee32dd4b1215e1f6c392e0e3c5f48756ed255",
+    "web_calculator.py": "8700870bb3cb0f59e37c155c6bbbc1f0666b1ab2f3158a3b5e5d4707aeb472ff"
+  },
+  "independent_check_count": 234,
+  "unit_test_count": 40
+}

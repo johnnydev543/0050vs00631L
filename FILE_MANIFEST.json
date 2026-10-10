@@ -1,43 +1,675 @@
 {
+  ".github/workflows/refresh-data.yml": {
+    "bytes": 1710,
+    "sha256": "1e9185acc60590a2ee52e83b96589641be8d685c1e6ac3b4e67f2753ae3ec3e8"
+  },
   ".gitignore": {
     "bytes": 60,
     "sha256": "a36a7eef2758a28924e45d7eefff19bec2a6415611036fd7bbda328e46332044"
   },
+  ".nojekyll": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
   "README.md": {
-    "bytes": 3728,
-    "sha256": "4d61170117ba9ebee31b3d05b0791252df6cfae2e9ebb7ed0177d79776be65dd"
+    "bytes": 6323,
+    "sha256": "9cd3c6a34ec673ee7b24c86c78045b650a01f0a6ce8654a1b978671474a88083"
   },
   "START_HERE.txt": {
-    "bytes": 1682,
-    "sha256": "7384b2e5b14ef84f932543119fdc3bdbd02669d37cc4d6d8a54c5f857ca20293"
+    "bytes": 1858,
+    "sha256": "43d718b5d1eb2ff798d595d555264be077ef70cae8ca3582cb084a1b1ca14b2d"
+  },
+  "analysis/analysis_config.json": {
+    "bytes": 1280,
+    "sha256": "f95443d743ea7a7641718d29264ca2398f3a3cd5e87d59a9d6149815888af1a9"
+  },
+  "analysis/annual_performance.csv": {
+    "bytes": 161263,
+    "sha256": "9d59dbef5295e07beed21685d8fb9e13f2c9ae20dc39f8a709a7f9afc095dbe5"
+  },
+  "analysis/annual_performance.json": {
+    "bytes": 394199,
+    "sha256": "fcbabd16104d664dd6f0726de3e3e493a130105bc4f0500c4923ccda6fd0bbdf"
+  },
+  "analysis/crisis_recovery.csv": {
+    "bytes": 16914,
+    "sha256": "e11e88766f2217cec3136dc18bd201d03a0ee1ef2998e3cdf3304b74b53c94f6"
+  },
+  "analysis/crisis_recovery.json": {
+    "bytes": 50978,
+    "sha256": "ca902436bd1d22c2e052b3538959fe12709d50b6d3382e030d2481799dcb6889"
+  },
+  "analysis/daily_nominal_exposure.csv.gz": {
+    "bytes": 5725573,
+    "sha256": "b7b5df633887abbe3cb398c9022d7787f3f60b6cb9e3f272c7184091388e5dc5"
+  },
+  "analysis/exposure_summary.csv": {
+    "bytes": 8383,
+    "sha256": "e9a30bafd6db8dc5ba0d8f83200106d4d3c82e545f634ea19a833a5c9cb17622"
+  },
+  "analysis/exposure_summary.json": {
+    "bytes": 25234,
+    "sha256": "2174930919127ceeea8f8e6ff4a89eee0ad4e1055f9695f749213ae8e39434bf"
+  },
+  "analysis/legacy_A_regression.json": {
+    "bytes": 1015,
+    "sha256": "6b73a1907733babca33488ba1cfd47c1e2d656a11939d6ce6fa18cb41751f292"
+  },
+  "analysis/market_stages.csv": {
+    "bytes": 62880,
+    "sha256": "391c075cc7bc49331f60abca1a6e18a9aadc09d244a569c1c4facee9598849c7"
+  },
+  "analysis/market_stages.json": {
+    "bytes": 147892,
+    "sha256": "8a5e9ac500ed3154d9521b5eac40e63b16666ef19e6f139271466d701e622e7c"
+  },
+  "analyze_portfolios.py": {
+    "bytes": 10713,
+    "sha256": "288ad8f1ab077f66941fea7826942520270afea3f3e755c78ea9e65696cda162"
   },
   "backtest.py": {
     "bytes": 26061,
     "sha256": "17a366760c2b84d2ec7c5a8215615552a77c8edcb3fad7b027b70755f20b295a"
   },
+  "build_calculator.py": {
+    "bytes": 2281,
+    "sha256": "f5506960d91664ce97918f6daf39724fdf34fbcc4a5ff247837ff59495d3c2db"
+  },
   "build_report.py": {
-    "bytes": 21340,
-    "sha256": "fbf10caef5f993034d87e4c1494f2a3589336dd547177b823be31b46a8e886a4"
+    "bytes": 21521,
+    "sha256": "df79e934d8b116f30c083aa8b54098b4331adcc52b704f1405285357e17bb4c8"
+  },
+  "build_site.py": {
+    "bytes": 1035,
+    "sha256": "b3310549443790f68b474469ae28c758321db755ffbd19ccf85894058756eb9d"
   },
   "data_quality.json": {
-    "bytes": 10253,
-    "sha256": "41472930538c2132892c09d374f6b30b23f35da83c7239bba7b460fe80fc312b"
+    "bytes": 10841,
+    "sha256": "7369afa89ad9447bef57b10cd1d71f88e2a3ef2263a23e3205efa28029d43736"
+  },
+  "deployment/site.json": {
+    "bytes": 389,
+    "sha256": "4bb1f2b5e307128de445ad3c2f97733230697c5ad58ee1c34049fd8d63d10a64"
   },
   "derived_price_diagnostics.csv": {
     "bytes": 352007,
     "sha256": "bdb59bb2445e2744936abf1cb7d94eb2b4723b17de1b6eb0d6f2784049b6587f"
   },
+  "dist/analysis/annual_performance.csv": {
+    "bytes": 161263,
+    "sha256": "9d59dbef5295e07beed21685d8fb9e13f2c9ae20dc39f8a709a7f9afc095dbe5"
+  },
+  "dist/analysis/crisis_recovery.csv": {
+    "bytes": 16914,
+    "sha256": "e11e88766f2217cec3136dc18bd201d03a0ee1ef2998e3cdf3304b74b53c94f6"
+  },
+  "dist/analysis/daily_nominal_exposure.csv.gz": {
+    "bytes": 5725573,
+    "sha256": "b7b5df633887abbe3cb398c9022d7787f3f60b6cb9e3f272c7184091388e5dc5"
+  },
+  "dist/analysis/market_stages.csv": {
+    "bytes": 62880,
+    "sha256": "391c075cc7bc49331f60abca1a6e18a9aadc09d244a569c1c4facee9598849c7"
+  },
+  "dist/data_quality.json": {
+    "bytes": 10841,
+    "sha256": "7369afa89ad9447bef57b10cd1d71f88e2a3ef2263a23e3205efa28029d43736"
+  },
+  "dist/index.html": {
+    "bytes": 968026,
+    "sha256": "fd0964aad63a8c62f678f33d55d10039c7f3c29ef9ce57db129c9992d9f30f7d"
+  },
+  "dist/portfolio_results/summary.csv": {
+    "bytes": 4905,
+    "sha256": "cbfc64d77b716f05003da113a6ba9412c76ce27af7ec86c105e756001f0efc93"
+  },
+  "dist/portfolio_review.json": {
+    "bytes": 14835,
+    "sha256": "8dd99ba3eacee0a26c5936025322cdcf940eaa9b9cf73495351d22614cc1c2f5"
+  },
+  "dist/raw/yuanta_0050_dividends.json": {
+    "bytes": 22987,
+    "sha256": "4ee026c2baa30f75b5dd1d7e4371267b28e8ab1f5240b8adabdb33eb6d487532"
+  },
+  "dist/report.html": {
+    "bytes": 3478011,
+    "sha256": "160009c59da051671291ddd7cc4a332784ab51a2b8b80125bc9d76631e0f0a2e"
+  },
+  "dist/results/summary.csv": {
+    "bytes": 7862,
+    "sha256": "0f6a2cd6e30f6b14fdecce0a6c0d172d9041e5de5b7749d6ab0c272f028a2764"
+  },
+  "dist/results/summary.json": {
+    "bytes": 74586,
+    "sha256": "34f586917ba1eb347a424ee0f3339d86104576200d6c22c14a80db2c62e277c2"
+  },
+  "dist/review.json": {
+    "bytes": 8403,
+    "sha256": "3ab8db7764243077cdb7e8e3dcc62744833dbdbb88c1649640edea9b6357cd1f"
+  },
+  "dist/twse_spotcheck.json": {
+    "bytes": 6181,
+    "sha256": "af1ecef2294e6307b117ffcd1ed96b34f083bea3808a013374a3dc7e28665134"
+  },
+  "dist/validation/one_price_execution_sensitivity.json": {
+    "bytes": 1499,
+    "sha256": "7e9214f956e555525828cb17f2599a6d99e9e8a6f5c00959cbc5548c682c921c"
+  },
   "fetch_yuanta_dividends.py": {
     "bytes": 1870,
     "sha256": "7ea05eb7ba7ba1c1455d623419d1c8b2f71b653a9bff98eb54638af5de99e416"
   },
+  "index.html": {
+    "bytes": 229,
+    "sha256": "710e01f070a830e96a37910c95b55c1cfcf5ea17a00f26c07ee4359b837dd6b7"
+  },
   "normalize.py": {
-    "bytes": 8489,
-    "sha256": "f69d063d9c6e4e79a8700f8ec2331ca30ffad3fc0f47579e909ea1dafea63950"
+    "bytes": 9777,
+    "sha256": "70a04362eb42bc1e95fcd56285ba69b024e875c38985be99d303d87539d573bf"
   },
   "normalized.json": {
     "bytes": 1857448,
     "sha256": "789dc72096f429458dc6103e7995010c3a2bcaa9a42850e46098412c389b63f7"
+  },
+  "portfolio_backtest.py": {
+    "bytes": 18048,
+    "sha256": "8db9f588abf80093673e7ed538fe7cd9e51755540c39a3b913fb365f44532eb6"
+  },
+  "portfolio_results/cash_0p000000/A_quarterly/config.json": {
+    "bytes": 1389,
+    "sha256": "a0357ef74638d81bd5f90fc5bde97ddc90525568859e7c2a8585a3ceab541b7e"
+  },
+  "portfolio_results/cash_0p000000/A_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "eee08eb5d57baa4fc5868a315ce1d7897b142e44d8d642dbbba1c36d130d0a9f"
+  },
+  "portfolio_results/cash_0p000000/A_quarterly/daily.csv.gz": {
+    "bytes": 226949,
+    "sha256": "96e0d626221d3ed1059e3fc59ac64f6970e9708bd578014a3419c6f33e7d4e34"
+  },
+  "portfolio_results/cash_0p000000/A_quarterly/metrics.json": {
+    "bytes": 3241,
+    "sha256": "13101007a3fd393c97ac6fc29b3605c0efb4e29381ce0e1ebc42c97ef286ad1a"
+  },
+  "portfolio_results/cash_0p000000/A_quarterly/trades.csv": {
+    "bytes": 11390,
+    "sha256": "b7510bfb71dfcea3689bf4bf5a20b21c18c023d40a6bbdb0fc4ae1ef5785f282"
+  },
+  "portfolio_results/cash_0p000000/A_threshold/config.json": {
+    "bytes": 1389,
+    "sha256": "d7942fe18b1b6829ea8e229956403ed0750e7b9cce273827d79f66dc05d5d46c"
+  },
+  "portfolio_results/cash_0p000000/A_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "9d21e639225864d756e5d2fe4e631bec391509d98eb8d5233300d73456c4df8b"
+  },
+  "portfolio_results/cash_0p000000/A_threshold/daily.csv.gz": {
+    "bytes": 218381,
+    "sha256": "c49e1a0629b461adee3b6d2ae24db5b3c39e516eae82aceb52ebcec2fbaae749"
+  },
+  "portfolio_results/cash_0p000000/A_threshold/metrics.json": {
+    "bytes": 3239,
+    "sha256": "91917d1a24852202fb23198803da1de6c950b06423eba1ad6793efc99d03abc1"
+  },
+  "portfolio_results/cash_0p000000/A_threshold/trades.csv": {
+    "bytes": 1769,
+    "sha256": "f9557753667157f7838149d1b2e0da101674a498f00712a2d854ccb97e3db86a"
+  },
+  "portfolio_results/cash_0p000000/B_exposure_threshold/config.json": {
+    "bytes": 1398,
+    "sha256": "1fe15891ecd204118050e0502e30b1436a5fa5eabaca89275cfd5db5106ea331"
+  },
+  "portfolio_results/cash_0p000000/B_exposure_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "ae5841aae8da6b4f166ca0143217685c01f5ae19f908c16b21e7a06c250582cf"
+  },
+  "portfolio_results/cash_0p000000/B_exposure_threshold/daily.csv.gz": {
+    "bytes": 251815,
+    "sha256": "d29b1157c34052e432f8270c244be1e12c700674caf3f8b0466ac5f144dc029c"
+  },
+  "portfolio_results/cash_0p000000/B_exposure_threshold/metrics.json": {
+    "bytes": 3313,
+    "sha256": "d34ba347ee0da50b3f490f6abc0ba999efd29f9d4a60b0a4fb76aaa18526fbea"
+  },
+  "portfolio_results/cash_0p000000/B_exposure_threshold/trades.csv": {
+    "bytes": 5545,
+    "sha256": "1f9f59120a91f61f90528e3c904280edd69953753e596c01cabbe72f1a1ac13a"
+  },
+  "portfolio_results/cash_0p000000/B_quarterly/config.json": {
+    "bytes": 1389,
+    "sha256": "efde3b3799e19a4da3101cc4bf1d4ea3c60f6dc21d34d0e6cbcc0e49736417b5"
+  },
+  "portfolio_results/cash_0p000000/B_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "049edeabdbc880af2ea3aebff16ae2248fe9af09916ffdc7232186b894c3d0b8"
+  },
+  "portfolio_results/cash_0p000000/B_quarterly/daily.csv.gz": {
+    "bytes": 229558,
+    "sha256": "f6848cb5d30699d3485a4ec665480c120e4f45001520859b6206f2d5f4baf0d5"
+  },
+  "portfolio_results/cash_0p000000/B_quarterly/metrics.json": {
+    "bytes": 3292,
+    "sha256": "64766e90b632f22a300ce1933211bcd9bf8ef1dfcb442e573bc2085c74bb0d6a"
+  },
+  "portfolio_results/cash_0p000000/B_quarterly/trades.csv": {
+    "bytes": 25711,
+    "sha256": "9591dc549bb5eefbcb36ec28f101f10ea41227ebb6e05334e81a77212414624e"
+  },
+  "portfolio_results/cash_0p000000/B_threshold/config.json": {
+    "bytes": 1389,
+    "sha256": "f13cac5093167a704cdf19f16c69c3a3f97463ea6978b6aa1ba0b192bf17a82f"
+  },
+  "portfolio_results/cash_0p000000/B_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "7a17ec94c831256d9d8edf91d2a528882654a322059b7fe2170cfee4b8ce37c1"
+  },
+  "portfolio_results/cash_0p000000/B_threshold/daily.csv.gz": {
+    "bytes": 249031,
+    "sha256": "5740454fc4df74c9a75f2fd2f7e179e50afaf782817f4ee7d4c1ed110cd42017"
+  },
+  "portfolio_results/cash_0p000000/B_threshold/metrics.json": {
+    "bytes": 3276,
+    "sha256": "4125a6bb7dec45688df86391b057ac4bf3f7bdc038147eab55ac3771f2502a4c"
+  },
+  "portfolio_results/cash_0p000000/B_threshold/trades.csv": {
+    "bytes": 6358,
+    "sha256": "fed29027f52b4790586d351703bd5689c15c2a3d067267a143758da435d47025"
+  },
+  "portfolio_results/cash_0p000000/C_exposure_threshold/config.json": {
+    "bytes": 1398,
+    "sha256": "b2aaf9f51f01c0dabc305a04823c4cafbf8ec475c61cdcf311cc1da9aad5cc57"
+  },
+  "portfolio_results/cash_0p000000/C_exposure_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "dfdb509539bd50e40e155f77ff7454b0b7a799d3725d1a8d4fe86ef4667d3609"
+  },
+  "portfolio_results/cash_0p000000/C_exposure_threshold/daily.csv.gz": {
+    "bytes": 276374,
+    "sha256": "9b20dcb13c6cfc5c5462bc2145f84db40fb2bf892afffd656a0f7c66f3dc6be0"
+  },
+  "portfolio_results/cash_0p000000/C_exposure_threshold/metrics.json": {
+    "bytes": 3318,
+    "sha256": "9fe21e6f3500a5f95a4ee590d86d689b4f7079951b20b7ec2aa55f93852c50cc"
+  },
+  "portfolio_results/cash_0p000000/C_exposure_threshold/trades.csv": {
+    "bytes": 5927,
+    "sha256": "33f715a977491d85166c27cc2857a89e6b542e1b832acd4d9badebe081e91753"
+  },
+  "portfolio_results/cash_0p000000/C_quarterly/config.json": {
+    "bytes": 1389,
+    "sha256": "41f529f4c710a37fddfbe213eca2b273142673a6fd9494ec0213fabf6080cdc4"
+  },
+  "portfolio_results/cash_0p000000/C_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "3d68e353bf480163894575dd077efb61466d95703d347664c284f56a899a2044"
+  },
+  "portfolio_results/cash_0p000000/C_quarterly/daily.csv.gz": {
+    "bytes": 279109,
+    "sha256": "ea68be6fd3bb1d9c01f08177cdcb50bef6a5e8fc095c35dd3bc2ff0c91430e10"
+  },
+  "portfolio_results/cash_0p000000/C_quarterly/metrics.json": {
+    "bytes": 3304,
+    "sha256": "da9e2ae046a401853c6a1d6e49061888a16533bce4f424f29d31a9cf4dc40c3a"
+  },
+  "portfolio_results/cash_0p000000/C_quarterly/trades.csv": {
+    "bytes": 26881,
+    "sha256": "074d95dadb2b2762e54631287905ce965c9c1cf3c63e0a334dbd7af946ecbca1"
+  },
+  "portfolio_results/cash_0p000000/C_threshold/config.json": {
+    "bytes": 1389,
+    "sha256": "70784574edae7f5cdcf9882c96c766948e46c2a5b4eb9ef30b4ec1e658b56b0f"
+  },
+  "portfolio_results/cash_0p000000/C_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "d6065a8edc22ba5d32feeda4ff9114f9d676cfdcf1ec265719a87c83c71ceb58"
+  },
+  "portfolio_results/cash_0p000000/C_threshold/daily.csv.gz": {
+    "bytes": 276453,
+    "sha256": "f44fcd87a69184e2d870c7822913be43936dfd0630168c21b6b7cd9ff991cd19"
+  },
+  "portfolio_results/cash_0p000000/C_threshold/metrics.json": {
+    "bytes": 3304,
+    "sha256": "032c16d6484ae286879ff4cdb246d158f618180e2fb152b0a32a000910a0b96c"
+  },
+  "portfolio_results/cash_0p000000/C_threshold/trades.csv": {
+    "bytes": 7076,
+    "sha256": "76bd860b5b4926cc7cf73577e77f536bbdd4c67991c2981a5bbf76fed458c0d6"
+  },
+  "portfolio_results/cash_0p010000/A_quarterly/config.json": {
+    "bytes": 1390,
+    "sha256": "f91a56739f0e51b58f70c434dbc57bd45a986659fc0e1fed6dacf4ba6b271959"
+  },
+  "portfolio_results/cash_0p010000/A_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "1ee7234927b64abee7a5908aefb1421107a252a340b1adcaa673c0114c7432a6"
+  },
+  "portfolio_results/cash_0p010000/A_quarterly/daily.csv.gz": {
+    "bytes": 306387,
+    "sha256": "e70ac526169600f38f7f48d22cb316482eceac14654f49799bfb503081144483"
+  },
+  "portfolio_results/cash_0p010000/A_quarterly/metrics.json": {
+    "bytes": 3257,
+    "sha256": "31673a2887d96b4a75cb56e0a92206d3ec0553556b3ba7955ba2bec9732befa3"
+  },
+  "portfolio_results/cash_0p010000/A_quarterly/trades.csv": {
+    "bytes": 11359,
+    "sha256": "aed8ab721eabd1b4e773ec0581c799094bb1b578903bc8370325dc77f7a243da"
+  },
+  "portfolio_results/cash_0p010000/A_threshold/config.json": {
+    "bytes": 1390,
+    "sha256": "3a1234983f453cd6c55df8e0032f378793d69efec605577e98583d395f3fbc0e"
+  },
+  "portfolio_results/cash_0p010000/A_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "4d0255abc020883c11606bb472290609d9b25560efd91ff179051f1590657abd"
+  },
+  "portfolio_results/cash_0p010000/A_threshold/daily.csv.gz": {
+    "bytes": 303632,
+    "sha256": "6ff24e4ce06f08917d13bda1f8526e76e0610185ab6e73587e90d26c63b43373"
+  },
+  "portfolio_results/cash_0p010000/A_threshold/metrics.json": {
+    "bytes": 3258,
+    "sha256": "e236c60272b5ffdf91ac5613144f935d5efade038b7261e9a98a1d1e84b403c7"
+  },
+  "portfolio_results/cash_0p010000/A_threshold/trades.csv": {
+    "bytes": 1980,
+    "sha256": "0fc8f59ec5263426f14b34ca7404ab667a5bdcd1e3cfaef572dfc244759c2bb2"
+  },
+  "portfolio_results/cash_0p010000/B_exposure_threshold/config.json": {
+    "bytes": 1399,
+    "sha256": "df4b1ac37a2dc1c070303ed31842bac3e13024bde017f84d2aa52f95145a821d"
+  },
+  "portfolio_results/cash_0p010000/B_exposure_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "762ab9252a714965d81600d481453962429b4f3a39a806d12721ba9c22ebbc7e"
+  },
+  "portfolio_results/cash_0p010000/B_exposure_threshold/daily.csv.gz": {
+    "bytes": 322376,
+    "sha256": "7d6ecf922224035e905233489c978b90917cfbb7860492fb18e2fbae4a8efb4e"
+  },
+  "portfolio_results/cash_0p010000/B_exposure_threshold/metrics.json": {
+    "bytes": 3323,
+    "sha256": "1c1778d40a0ac030eae0f06a1b9acb34d43329a1c8547ddf718bd3e259666cba"
+  },
+  "portfolio_results/cash_0p010000/B_exposure_threshold/trades.csv": {
+    "bytes": 5539,
+    "sha256": "4bc8e9454ace87df5d910eaab77b9090decec0749bff1023383097fde1d81f0a"
+  },
+  "portfolio_results/cash_0p010000/B_quarterly/config.json": {
+    "bytes": 1390,
+    "sha256": "41076dc9aa4a4288b74990a4f798393c97cb74b6645882a135280ea07d37e253"
+  },
+  "portfolio_results/cash_0p010000/B_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "5bbc62a784c1fa242d0f35987a458ed81492c812daaa2808dcb6e7058b10c601"
+  },
+  "portfolio_results/cash_0p010000/B_quarterly/daily.csv.gz": {
+    "bytes": 270414,
+    "sha256": "b6b67b1ef66bd3f734cc8c4a69884175dec91fbed1f3884fe9c314d403f7968d"
+  },
+  "portfolio_results/cash_0p010000/B_quarterly/metrics.json": {
+    "bytes": 3303,
+    "sha256": "0c15f40dce3d0b993a092090a30d023559618991734311b7b81d8375e903f411"
+  },
+  "portfolio_results/cash_0p010000/B_quarterly/trades.csv": {
+    "bytes": 25744,
+    "sha256": "ddb936ca35457b0656f7b338b7ded32f74e2349c33c34e0e406fc5bf9c774103"
+  },
+  "portfolio_results/cash_0p010000/B_threshold/config.json": {
+    "bytes": 1390,
+    "sha256": "ea9fcc7d9d338db89d9f84d11e86b1164babfb2443b0366dc63f5cf7ca654c10"
+  },
+  "portfolio_results/cash_0p010000/B_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "ab2b80ecbc4d31d3e37ff3b98bdf75352329a8086426d05052141d0694687938"
+  },
+  "portfolio_results/cash_0p010000/B_threshold/daily.csv.gz": {
+    "bytes": 308451,
+    "sha256": "d66dd9ac52d51e0040552d4017705b5f9772cfb313f872d3794a5faec14c7058"
+  },
+  "portfolio_results/cash_0p010000/B_threshold/metrics.json": {
+    "bytes": 3287,
+    "sha256": "662f6b9cc9d06097384cd4d25b0bf07f7e3fa44ecab82d30f498e8f4577b1ba9"
+  },
+  "portfolio_results/cash_0p010000/B_threshold/trades.csv": {
+    "bytes": 6315,
+    "sha256": "4226dd16f111c5df90b3179da78201e8d69fa259af48f14b070df500833bee83"
+  },
+  "portfolio_results/cash_0p010000/C_exposure_threshold/config.json": {
+    "bytes": 1399,
+    "sha256": "75b67eb4cbc35055338e002bf5e65057324101253dddec807356f020d56f3708"
+  },
+  "portfolio_results/cash_0p010000/C_exposure_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "b55421696e7e81335eff8b0b527435c8265ea624bd6cd59d021b56e6d0356535"
+  },
+  "portfolio_results/cash_0p010000/C_exposure_threshold/daily.csv.gz": {
+    "bytes": 347102,
+    "sha256": "2b6e33bf4d6865963dfc85309ecf50a5a22ed239435320f7da755912e8d31781"
+  },
+  "portfolio_results/cash_0p010000/C_exposure_threshold/metrics.json": {
+    "bytes": 3329,
+    "sha256": "e2fabde2eb3e72ea287376a917d41a9a2fc1a4f7ef788a22f67459b8facbfdfc"
+  },
+  "portfolio_results/cash_0p010000/C_exposure_threshold/trades.csv": {
+    "bytes": 6914,
+    "sha256": "a2722fd2842bdaadf6679badd8d7da10372c15dde450a35ca64bab7d6fce7268"
+  },
+  "portfolio_results/cash_0p010000/C_quarterly/config.json": {
+    "bytes": 1390,
+    "sha256": "8c07ea801ecafb1f1fd8c1262060b69b569dca9edb3a7a39f6b5ec2b9cb9119b"
+  },
+  "portfolio_results/cash_0p010000/C_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "f70ed6833dcd8ab0b52894a79c86a2c4252a46bf1756a5175ecd3389518d9129"
+  },
+  "portfolio_results/cash_0p010000/C_quarterly/daily.csv.gz": {
+    "bytes": 349330,
+    "sha256": "f107faa16ebcfb0cc3ac7c1e3fb71a741130f82a742acebc21257b237681daff"
+  },
+  "portfolio_results/cash_0p010000/C_quarterly/metrics.json": {
+    "bytes": 3317,
+    "sha256": "a11c461323b9d2681bf9279a0cb20eb4d824945cdb8562b43ea982e7484be13a"
+  },
+  "portfolio_results/cash_0p010000/C_quarterly/trades.csv": {
+    "bytes": 26720,
+    "sha256": "7d65ad488308b5d2e1710fc5141ad19e2ba740cef6706eb3ca18ae5d32825c30"
+  },
+  "portfolio_results/cash_0p010000/C_threshold/config.json": {
+    "bytes": 1390,
+    "sha256": "6dd3b897183f2ed4f912d7e2b28661c9ac57b18e437d7f35e3c23a332dc51586"
+  },
+  "portfolio_results/cash_0p010000/C_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "0a614ec37b6deacead2adf71d0f820e85b0b7bf99d0e074d1ec76687d9a9c962"
+  },
+  "portfolio_results/cash_0p010000/C_threshold/daily.csv.gz": {
+    "bytes": 347264,
+    "sha256": "506c18895afc72b7d7712f49c09417eabb3adba6362378e4a1ea8daee72a23e3"
+  },
+  "portfolio_results/cash_0p010000/C_threshold/metrics.json": {
+    "bytes": 3323,
+    "sha256": "921622e728e686f2024532b1323ec330172eee8ddf51591a99eb64d6b09b618d"
+  },
+  "portfolio_results/cash_0p010000/C_threshold/trades.csv": {
+    "bytes": 8122,
+    "sha256": "2e42459795f3a1670d6a32561fcb35e94ea0afc1c3c6d64b14cec0df3686cd2f"
+  },
+  "portfolio_results/cash_0p020000/A_quarterly/config.json": {
+    "bytes": 1390,
+    "sha256": "22e358b88feb8d91f72c4476d874ce29c9e201b872602be5fb7f6da8476875e5"
+  },
+  "portfolio_results/cash_0p020000/A_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "96da180a201af4bed0141dc8f3ee0be3702b67402698754d5e3056969c0f7658"
+  },
+  "portfolio_results/cash_0p020000/A_quarterly/daily.csv.gz": {
+    "bytes": 307139,
+    "sha256": "be4f01b36b4e1352c0857cf778bba56f1fbadb6085c394d4856879b3eb2812c0"
+  },
+  "portfolio_results/cash_0p020000/A_quarterly/metrics.json": {
+    "bytes": 3259,
+    "sha256": "e1921093b2b4d4eb027a057d8eff6d9068ded20de23e60b6ffc6c08cd3952058"
+  },
+  "portfolio_results/cash_0p020000/A_quarterly/trades.csv": {
+    "bytes": 11359,
+    "sha256": "59fbaa82ea95903470f4a1fb7bb0c4c834b17ec33aca42360d4ed303206f2916"
+  },
+  "portfolio_results/cash_0p020000/A_threshold/config.json": {
+    "bytes": 1390,
+    "sha256": "537cca8e444980c564fc4da22da40fac9715accca43e7fb46f07b950a6c8852a"
+  },
+  "portfolio_results/cash_0p020000/A_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "78cd6f39a4b227a5e5d00d9ce27c43f7df3359a9e7b42b9a85df55077a27c773"
+  },
+  "portfolio_results/cash_0p020000/A_threshold/daily.csv.gz": {
+    "bytes": 304072,
+    "sha256": "255237b637717a650352bc3f8f8725bb3bfa8a1ea413ae29bb5d412d1e36261e"
+  },
+  "portfolio_results/cash_0p020000/A_threshold/metrics.json": {
+    "bytes": 3262,
+    "sha256": "d87c3e51661cab5fb9e60dd5c9b426b1aaefd9e897f003e06d00283c6fadc15e"
+  },
+  "portfolio_results/cash_0p020000/A_threshold/trades.csv": {
+    "bytes": 1788,
+    "sha256": "bb771da1729f6f1c6292c2c787dc1a09fa2492efba722e646cdec9420630484d"
+  },
+  "portfolio_results/cash_0p020000/B_exposure_threshold/config.json": {
+    "bytes": 1399,
+    "sha256": "bdce74e8fb88c0a9608d44d690c83568746f0f5969978ed3d799cef33dd024b5"
+  },
+  "portfolio_results/cash_0p020000/B_exposure_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "3dd2221567bc76ced41ce37eb3fcf5374ce5792f335fdd964ba78678ab8d8717"
+  },
+  "portfolio_results/cash_0p020000/B_exposure_threshold/daily.csv.gz": {
+    "bytes": 322379,
+    "sha256": "909b7c6c8d146e842efb170eda44e1a83b266994a71bf1ce1bdcc8ccfc08e433"
+  },
+  "portfolio_results/cash_0p020000/B_exposure_threshold/metrics.json": {
+    "bytes": 3325,
+    "sha256": "7aac41bcb416facf96e98e0690631dd19a0f4030e66ed9d2000cdd64d298eaa5"
+  },
+  "portfolio_results/cash_0p020000/B_exposure_threshold/trades.csv": {
+    "bytes": 5537,
+    "sha256": "1fffcfb34998bb755960fcd5aab0bca1e6666659745071f8650a33b45b9004d2"
+  },
+  "portfolio_results/cash_0p020000/B_quarterly/config.json": {
+    "bytes": 1390,
+    "sha256": "39535ac8c3d0ef749261437f5f1e48da1c44428657c82bddc3f13a9e1134e58f"
+  },
+  "portfolio_results/cash_0p020000/B_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "b18044b451f941150e5bf1d69ef872fdb4bd81c69343f0b39e98d11dc05ba79a"
+  },
+  "portfolio_results/cash_0p020000/B_quarterly/daily.csv.gz": {
+    "bytes": 270301,
+    "sha256": "c98ce637134ff104fae2e50a0aaea08bb1e9bb317cf8411aa37be2f452409837"
+  },
+  "portfolio_results/cash_0p020000/B_quarterly/metrics.json": {
+    "bytes": 3284,
+    "sha256": "0af4e4bd2c3808fe746ec7f11d9e860512ebb89a23dfc0c6831719e16c4f065b"
+  },
+  "portfolio_results/cash_0p020000/B_quarterly/trades.csv": {
+    "bytes": 25686,
+    "sha256": "9e273bd35c196e31e9b7b6e75e448d71e76cf52f79c6ec8815792dfaaa6c4ce9"
+  },
+  "portfolio_results/cash_0p020000/B_threshold/config.json": {
+    "bytes": 1390,
+    "sha256": "8a481d55c978cad8529c69bfe6888786d8808f6fdfcfe67a2a518ff77cbabfc5"
+  },
+  "portfolio_results/cash_0p020000/B_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "db440b7c426b4e2045a7ce19d7af840e6f0faa3abcc13d8cd3f70c061edecf2e"
+  },
+  "portfolio_results/cash_0p020000/B_threshold/daily.csv.gz": {
+    "bytes": 316881,
+    "sha256": "98780e779a4ef20b9fb8d54d0e7f83d03e71d59ddbb917e01ad6d499e0decbe4"
+  },
+  "portfolio_results/cash_0p020000/B_threshold/metrics.json": {
+    "bytes": 3289,
+    "sha256": "46c8d2b31aefe7328dde61bcc39b13d8f0e66cfb6f99c2fc751b5d1f5af6e9ac"
+  },
+  "portfolio_results/cash_0p020000/B_threshold/trades.csv": {
+    "bytes": 6383,
+    "sha256": "3d1ccecec59eb999507beaf04674ae30b516b83a7d54e9c28a978314831616c8"
+  },
+  "portfolio_results/cash_0p020000/C_exposure_threshold/config.json": {
+    "bytes": 1399,
+    "sha256": "e8fe78384e53a3cb2a44ba6388e5ce6688f7f9877f739d64c4567c0fcc41ccf3"
+  },
+  "portfolio_results/cash_0p020000/C_exposure_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "c85f55b963ef24c181570a3dc0f4bbb636ec7c70ab1fc795c55be82e9c8e45c8"
+  },
+  "portfolio_results/cash_0p020000/C_exposure_threshold/daily.csv.gz": {
+    "bytes": 347717,
+    "sha256": "6b5962be160eae5d300409e57940e931c5be7ffa6710eb2ae0303dc4043bf2e6"
+  },
+  "portfolio_results/cash_0p020000/C_exposure_threshold/metrics.json": {
+    "bytes": 3339,
+    "sha256": "cd41dac738bf07f6fd5ed1bcfd8af0508b0d659d00e737eea4aafced7a92ea10"
+  },
+  "portfolio_results/cash_0p020000/C_exposure_threshold/trades.csv": {
+    "bytes": 5977,
+    "sha256": "3f75f8d1c545b746467ff1c75f8c0612f93eeb066f299597e182f3c1c6e838ca"
+  },
+  "portfolio_results/cash_0p020000/C_quarterly/config.json": {
+    "bytes": 1390,
+    "sha256": "cd149ebf10b32eb0f1d0582e3a742e7815f682a630b27960673876acad408629"
+  },
+  "portfolio_results/cash_0p020000/C_quarterly/config.sha256": {
+    "bytes": 65,
+    "sha256": "73cf86116b3e4e7de18e9272809df025745d2b15bd99b266176383c6cfb8c193"
+  },
+  "portfolio_results/cash_0p020000/C_quarterly/daily.csv.gz": {
+    "bytes": 349877,
+    "sha256": "5f7848d1e279a2bfdca31043e7fbebffcf07cfa2e48cf8a43cd103aad8fc790a"
+  },
+  "portfolio_results/cash_0p020000/C_quarterly/metrics.json": {
+    "bytes": 3315,
+    "sha256": "db230af8025e5af9fbfe62a1ea7bbd1641e017a14c14700dc40511ea9e2bd5c4"
+  },
+  "portfolio_results/cash_0p020000/C_quarterly/trades.csv": {
+    "bytes": 26661,
+    "sha256": "b90537d6151a99f4f814b6e435a5d66601a2280aa9599690d99a911a2a546ec3"
+  },
+  "portfolio_results/cash_0p020000/C_threshold/config.json": {
+    "bytes": 1390,
+    "sha256": "d4bf920879ab6c6aed98cda9b556a25893b315d6d4d5b79618d7c76b4e1c6797"
+  },
+  "portfolio_results/cash_0p020000/C_threshold/config.sha256": {
+    "bytes": 65,
+    "sha256": "06a43efc3fe2e94d8aeedd0f8a51ed0d953a6301d1aca21bd7ce10ebdf5dbcdc"
+  },
+  "portfolio_results/cash_0p020000/C_threshold/daily.csv.gz": {
+    "bytes": 348038,
+    "sha256": "493abd87b3daac2f9a28ea8d39d0ba551e28ffa46c0264b83120ce554bb92c5c"
+  },
+  "portfolio_results/cash_0p020000/C_threshold/metrics.json": {
+    "bytes": 3309,
+    "sha256": "62e92252f308f14ebe513023eca44c11001b8ca29c7b7826ed07bd162ac93378"
+  },
+  "portfolio_results/cash_0p020000/C_threshold/trades.csv": {
+    "bytes": 8142,
+    "sha256": "a9af50d75d2095e84897b5a454ddd6fc6cee784e783f19ab0e26e83538f395b4"
+  },
+  "portfolio_results/manifest.json": {
+    "bytes": 313,
+    "sha256": "430530c9abc9da190a687f09b0e4b707f58ac4da6bd4b2822d43e12d09fceda7"
+  },
+  "portfolio_results/summary.csv": {
+    "bytes": 4905,
+    "sha256": "cbfc64d77b716f05003da113a6ba9412c76ce27af7ec86c105e756001f0efc93"
+  },
+  "portfolio_results/summary.json": {
+    "bytes": 83557,
+    "sha256": "bc4b677873dde17bdc339cc152c127cacfef5f7229e10211e02ecdb9b3c2b36b"
+  },
+  "portfolio_review.json": {
+    "bytes": 14835,
+    "sha256": "8dd99ba3eacee0a26c5936025322cdcf940eaa9b9cf73495351d22614cc1c2f5"
   },
   "raw/download.jsonl": {
     "bytes": 1343764,
@@ -84,8 +716,12 @@
     "sha256": "4ee026c2baa30f75b5dd1d7e4371267b28e8ab1f5240b8adabdb33eb6d487532"
   },
   "report.html": {
-    "bytes": 1950452,
-    "sha256": "145b40106f55b65eb9299639cbc9082586d71b09a190c01e4924996a8ea6d9bf"
+    "bytes": 3478016,
+    "sha256": "a30519e399f2c147c9dd2b6e4f43e2667521566b6d775bf7ef694accc179c29d"
+  },
+  "report_portfolios.py": {
+    "bytes": 11566,
+    "sha256": "753e5cac694be24bbb9a67254401ff163e79c2b40c0d2acaabffa3218acebe91"
   },
   "results/cash_0p000000/0050_buyhold/config.json": {
     "bytes": 1164,
@@ -583,9 +1219,25 @@
     "bytes": 8403,
     "sha256": "3ab8db7764243077cdb7e8e3dcc62744833dbdbb88c1649640edea9b6357cd1f"
   },
+  "scripts/fetch_market_data.py": {
+    "bytes": 3031,
+    "sha256": "ef42ddc8498a87027a8611fbd7d0128a95cfddf75284e2da435c8c9eba8b33c5"
+  },
+  "test_analyze_portfolios.py": {
+    "bytes": 2115,
+    "sha256": "cf7fda774d2746fc42a5390b8c02a84d293d37d3e124ccdef8656435ec7fae3a"
+  },
   "test_backtest.py": {
     "bytes": 12091,
     "sha256": "a737c81b61dd042c83d52978992f2d9978913a9357dc70de68e324f79b3f8423"
+  },
+  "test_portfolio_backtest.py": {
+    "bytes": 9918,
+    "sha256": "0087d53762073b56f382f918b825d39690168a7320669d3f08073ed67f4b25ba"
+  },
+  "test_web_calculator.py": {
+    "bytes": 2978,
+    "sha256": "6d31d05d12e98400ce4dbf527cb7b8d9138f7f62075a0f8fbf2248f84e9b58fc"
   },
   "twse_spotcheck.json": {
     "bytes": 6181,
@@ -594,6 +1246,18 @@
   "twse_spotcheck.py": {
     "bytes": 5213,
     "sha256": "f66eb6ab2422b1176a8443b9f404ca0348dfd3e957e6a08a92cbca398fb77757"
+  },
+  "validation/browser_checks.json": {
+    "bytes": 1319,
+    "sha256": "b97050e0a8afb621f1fff587518974d7a0cb8318f9fb0d057bce01d8d17ea997"
+  },
+  "validation/calculator_source_review.json": {
+    "bytes": 10919,
+    "sha256": "4c3e44d56a44fa42ac4906ce168f6b601cdcd6f01f8b3fb99d26914cd00a4cc5"
+  },
+  "validation/calculator_source_review.py": {
+    "bytes": 15711,
+    "sha256": "67f895fc66182525a6b6d070d1a42953fdb8be9ce59f21d8ffc47b09174a6c77"
   },
   "validation/independent_backtest_review.py": {
     "bytes": 15571,
@@ -611,6 +1275,22 @@
     "bytes": 1499,
     "sha256": "7e9214f956e555525828cb17f2599a6d99e9e8a6f5c00959cbc5548c682c921c"
   },
+  "validation/period_independent_checks.json": {
+    "bytes": 21309,
+    "sha256": "dfd2b69363ef1b369c05a5257db6939581991af005ff8d51151e0da1f7f5d46d"
+  },
+  "validation/period_independent_review.py": {
+    "bytes": 21419,
+    "sha256": "f25e9db89e58fd7ca9ec51eb8fb19fda18a85fc2ca1fb30aec4424f71998f12c"
+  },
+  "validation/portfolio_independent_checks.json": {
+    "bytes": 76812,
+    "sha256": "f983763e3b8c31b01824ea9ba203d6f5913da94e5c046647484f0d1c970c030c"
+  },
+  "validation/portfolio_independent_review.py": {
+    "bytes": 25978,
+    "sha256": "25e72fdfc65a1c0ae313c9dc13193a210c0ed25832f0ad06ba4285216af796b3"
+  },
   "validation/presentation_updates.json": {
     "bytes": 650,
     "sha256": "6c0197c266e8a8b10ff227386a4abe6bd428f50aab14895b61447a929b806388"
@@ -622,5 +1302,21 @@
   "validation/theme_update.json": {
     "bytes": 826,
     "sha256": "fb55aaa6f2f3da328141b849cbfea0ccbe789346a4bb44d6eb75e39b1b066a8f"
+  },
+  "web/calculator_app.js": {
+    "bytes": 14678,
+    "sha256": "1633c9eb9644318a549fe422c729375d7e928c87f03ad40cab25d4ce2b69dc1b"
+  },
+  "web/calculator_template.html": {
+    "bytes": 11866,
+    "sha256": "7197fcfd760faf1ae1d55ccc5b3e6bda0d8b31fc03de213e88ce97bbd2c6de9f"
+  },
+  "web/calculator_worker.js": {
+    "bytes": 1517,
+    "sha256": "df3d43e5856b86b3aecdc006291ee32dd4b1215e1f6c392e0e3c5f48756ed255"
+  },
+  "web_calculator.py": {
+    "bytes": 4152,
+    "sha256": "8700870bb3cb0f59e37c155c6bbbc1f0666b1ab2f3158a3b5e5d4707aeb472ff"
   }
 }

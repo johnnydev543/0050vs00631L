@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv, html, json, math
 from datetime import date
 from pathlib import Path
+from report_portfolios import build_extension
 
 ROOT=Path(__file__).resolve().parent
 LABELS={'0050_buyhold':'0050 買進持有', '00631L_100_buyhold':'00631L 100% 持有'}
@@ -68,7 +69,7 @@ def main()->None:
    r=m['longest_recovery'] or {};current=m.get('ongoing_drawdown')
    recovery+=f'<tr><th>{esc(LABELS[m["strategy"]])}</th><td>{esc(r.get("peak_date","—"))}</td><td>{esc(r.get("trough_date","—"))}</td><td>{esc(r.get("recovery_date") or "尚未回本")}</td><td>{r.get("duration_sessions",0)}</td><td>{(str(current["duration_calendar_days"])+" 天") if current else "無"}</td></tr>'
   panels.append(f'''<section class="scenario" data-rate="{rate}" {'' if rate==.01 else 'hidden'}>
-  {table(rows)}<p class="note">期末資產為持倉按收盤市價估值，已扣期間交易成本；下表另列全部賣出後金額。回本期以先前資產高點至恢復高點的曆日數衡量。</p>
+  {build_extension(ROOT,rate)}<h2>原有固定配置結果</h2>{table(rows)}<p class="note">期末資產為持倉按收盤市價估值，已扣期間交易成本；下表另列全部賣出後金額。回本期以先前資產高點至恢復高點的曆日數衡量。</p>
   <h2>資產路徑</h2><p>成長倍數以 100 萬元起始資產為基準；使用對數刻度，便於比較長期成長率。</p>{chart(rows,rate)}
   <h2>從歷史高點回撤</h2>{chart(rows,rate,True)}
   <h2>交易成本與現金收益</h2><div class="tablewrap"><table><thead><tr><th>策略</th><th>交易筆數</th><th>累計交易成本（萬）</th><th>累計現金利息（萬）</th><th>期末全數賣出（萬）</th></tr></thead><tbody>{costs}</tbody></table></div>
@@ -97,11 +98,12 @@ def main()->None:
 </style>
  <main><div class="eyebrow">TAIWAN ETF · REPRODUCIBLE RESEARCH</div><h1>0050 與正二＋現金配置</h1><p class="meta">實際期間 2014-10-31 開盤 → 2026-10-08 收盤｜資料查核 2026-10-10</p>
  <div class="capital-card"><span>投入本金</span><strong>NT${baseline['initial_capital']:,.0f}</strong><small>{money(baseline['initial_capital'])} 萬元 · 各策略本金相同，期間沒有額外投入</small></div>
- <p class="lead">以真實 ETF 日價與公司行動建立持倉帳本，共比較 8 個策略、3 種現金收益假設。主要情境下，0050 期末為 <b>{money(baseline['ending_nav'])} 萬元</b>；00631L 滿倉為 <b>{money(full['ending_nav'])} 萬元</b>，最大回撤分別為 <b>{pct(baseline['max_drawdown'])}</b> 與 <b>{pct(full['max_drawdown'])}</b>。</p>
+ <p class="lead">保留原有五種固定配置與兩種再平衡方式，加入A／B／C三種160%目標市場曝險比較，並提供年度、危機回撤與每日曝險分析。所有策略由同一段真實ETF日價與公司行動建立持倉帳本，現金年收益提供0%、1%、2%假設情境。</p>
+ <p><a href="dist/index.html">開啟互動回測：自行輸入目標曝險、本金與配置</a></p>
 
  <div class="controls"><label>現金年有效收益率假設<select id="cash"><option value="0">0%</option><option value="0.01" selected>1%（主要情境）</option><option value="0.02">2%</option></select></label><button type="button" id="themeToggle" class="theme-toggle" aria-label="切換為淺色主題" aria-pressed="true">☀ 淺色主題</button><div class="note">固定情境值，並非觀測到的歷史存款利率。其餘成本、規則與價格保持相同。</div></div>
  {''.join(panels)}
- <section class="rebalance-explanation"><h2>偏離10個百分點是什麼意思？</h2><p>衡量的是<strong>正二占總資產的比例</strong>。當收盤比例與目標相差至少10個百分點，就在下一個可交易日開盤，將比例調回目標。</p><div class="tablewrap"><table><thead><tr><th>正二目標比例</th><th>觸發買入</th><th>觸發賣出</th></tr></thead><tbody><tr><th>50%</th><td>≤40%</td><td>≥60%</td></tr><tr><th>60%</th><td>≤50%</td><td>≥70%</td></tr><tr><th>80%</th><td>≤70%</td><td>≥90%</td></tr></tbody></table></div><p><strong>100萬元範例：</strong>一開始正二50萬元、現金50萬元。正二漲到75萬元時，總資產為125萬元，正二比例＝75÷125＝<strong>60%</strong>，與50%目標相差10個百分點，因此觸發賣出再平衡。若執行時價格不變，未扣成本前正二與現金會各約62.5萬元；實際金額會納入交易成本。</p><p class="note">50%變成60%是增加10個百分點。這個門檻觀察的是資產配置比例，兩次再平衡之間比例會隨市場漲跌與現金收益改變。</p></section>
+ <section class="rebalance-explanation"><h2>偏離10個百分點是什麼意思？</h2><p>在原本正二＋現金策略中，衡量的是<strong>正二占總資產的比例</strong>。當收盤比例與目標相差至少10個百分點，就在下一個可交易日開盤，將比例調回目標。</p><div class="tablewrap"><table><thead><tr><th>正二目標比例</th><th>觸發買入</th><th>觸發賣出</th></tr></thead><tbody><tr><th>50%</th><td>≤40%</td><td>≥60%</td></tr><tr><th>60%</th><td>≤50%</td><td>≥70%</td></tr><tr><th>80%</th><td>≤70%</td><td>≥90%</td></tr></tbody></table></div><p><strong>100萬元範例：</strong>一開始正二50萬元、現金50萬元。正二漲到75萬元時，總資產為125萬元，正二比例＝75÷125＝<strong>60%</strong>，與50%目標相差10個百分點，因此觸發賣出再平衡。若執行時價格不變，未扣成本前正二與現金會各約62.5萬元；實際金額會納入交易成本。</p><p class="note">50%變成60%是增加10個百分點。這個門檻觀察的是資產配置比例，兩次再平衡之間比例會隨市場漲跌與現金收益改變。</p></section>
  <h2>交易與計算口徑</h2><div class="grid"><div class="card"><h3>部位與時點</h3><ul><li>2014-10-31 開盤建倉。0050 為全額持有並將已發放股利再投入；00631L 為 50%、60%、80%、100%，其餘持現金。</li><li>季度：新季度第一個市場交易日開盤回到目標權重；ETF 不可交易則遞延。</li><li>偏離門檻：收盤權重距目標達 10 個百分點，於下一個可交易日開盤回到目標；50% 的觸發區間即 ≤40% 或 ≥60%。</li><li>目標權重按扣除當筆成本後的資產解算，不借貸；兩次再平衡間權重會漂移。</li></ul></div><div class="card"><h3>成本與現金</h3><ul><li>每側佣金 0.1425% 為模型假設，賣出交易稅 0.1%，每側滑價 0.05%。基金內部費用已反映在實際日價，未重複扣除。</li><li>現金按曆日、年有效利率每日複利。買賣資金採交易日記帳，未另建 T+2 交割凍結模型。</li><li>允許小數受益單位；未套券商最低費、折扣、整股／零股撮合差異，未扣個人股利所得稅、補充保費、利息稅。</li><li>成交按原始開盤價加減固定滑價，沒有逐筆成交佇列資料；不保證真實帳戶能以模擬價格成交。</li></ul></div></div>
  <p>股利於除息日認列應收、發放日轉現金，於發放日之後首個 ETF 可交易日開盤再投入，避免股息提前投資。起日前 2014-10-24 除息的 1.55 元不屬於本持倉，即使發放日在起日後也不計入。分割只改受益單位數與單位價格，不當作投資損益。停牌以最近實價估值並標示陳舊，禁止以補值成交。</p>
  <p>CAGR 使用 2014-10-31 09:00 至末日 13:30 的實際曆日／365.2425；最大回撤以含初始本金的累積高點計算。Sharpe 使用日超額報酬平均／樣本標準差 × √252；超額基準為同情境現金利率、依相鄰交易日曆日間隔換算。Sortino＝日超額報酬平均 ÷ √[所有觀測日中負超額報酬平方的平均] × √252；非負日貢獻 0，最低可接受報酬同現金利率。首日開盤至收盤損益及建倉成本均納入；首日無風險報酬設 0。最長回本時間與最大跌幅可能來自不同事件，期末未回本另外標示，不能當作已完成回本。</p>
