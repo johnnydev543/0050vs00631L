@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "case": {
+    "exposure": 137.5,
+    "ordinary": 11.2,
+    "principal": 234.5,
+    "cash_rate": 1.5,
+    "rule": "threshold",
+    "threshold": 7.5
+  },
+  "displayed_ending_nav_wan": {
+    "A": 4487.16,
+    "B": 4340.95,
+    "C": 4404.14,
+    "D": 4380.01
+  },
+  "log_svg_endpoints_reconstructed_wan": {
+    "A": 4487.161240445007,
+    "B": 4340.945647019865,
+    "C": 4404.139596610656,
+    "D": 4380.013886289868
+  },
+  "daily_points_per_series": 2912,
+  "last_tooltip_date": "2026-10-08",
+  "guide_visible_on_keyboard_navigation": true,
+  "scale_switch": "PASS",
+  "D_always_present_when_matching_A": "PASS",
+  "method": "Browser UI plus inverse mapping of actual rendered SVG points via visible axis labels."
+}

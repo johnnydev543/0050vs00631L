@@ -1,7 +1,7 @@
 {
   ".github/workflows/refresh-data.yml": {
-    "bytes": 1710,
-    "sha256": "1e9185acc60590a2ee52e83b96589641be8d685c1e6ac3b4e67f2753ae3ec3e8"
+    "bytes": 1753,
+    "sha256": "996ab6c0817da3d4f90eca845c5eab26da59e2d1d71cc41c651f91ba5557cbfb"
   },
   ".gitignore": {
     "bytes": 60,
@@ -12,8 +12,8 @@
     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "README.md": {
-    "bytes": 6314,
-    "sha256": "94530b4fd1af12951faf944262d8ebd1e12f51336a7ea1204c08f8ff0150db1d"
+    "bytes": 6611,
+    "sha256": "0156489ed7d84274cae5ba75ca47bd1abc4b686ce096a45d8cf3e9bb11ee2887"
   },
   "START_HERE.txt": {
     "bytes": 1858,
@@ -72,8 +72,8 @@
     "sha256": "17a366760c2b84d2ec7c5a8215615552a77c8edcb3fad7b027b70755f20b295a"
   },
   "build_calculator.py": {
-    "bytes": 2281,
-    "sha256": "f5506960d91664ce97918f6daf39724fdf34fbcc4a5ff247837ff59495d3c2db"
+    "bytes": 2364,
+    "sha256": "2c88165d4b044c2978c8683b2f04b8314a6cb4e800bc188314a2413d1a413cc8"
   },
   "build_report.py": {
     "bytes": 21521,
@@ -88,8 +88,8 @@
     "sha256": "7369afa89ad9447bef57b10cd1d71f88e2a3ef2263a23e3205efa28029d43736"
   },
   "deployment/site.json": {
-    "bytes": 380,
-    "sha256": "007f635a7d66daf8f07b580e97732526becd22e2a34f3abfdcc31ad5b6c3739a"
+    "bytes": 443,
+    "sha256": "0b47305fb5b2378eac88273ceda32bdc2f976fba903377de929fdc7cb08ea980"
   },
   "derived_price_diagnostics.csv": {
     "bytes": 352007,
@@ -116,8 +116,8 @@
     "sha256": "7369afa89ad9447bef57b10cd1d71f88e2a3ef2263a23e3205efa28029d43736"
   },
   "dist/index.html": {
-    "bytes": 968026,
-    "sha256": "fd0964aad63a8c62f678f33d55d10039c7f3c29ef9ce57db129c9992d9f30f7d"
+    "bytes": 971970,
+    "sha256": "f8599116dbd212084933915041313b827c909cb878e937253fb6bf026543fa8a"
   },
   "dist/portfolio_results/summary.csv": {
     "bytes": 4905,
@@ -1247,17 +1247,29 @@
     "bytes": 5213,
     "sha256": "f66eb6ab2422b1176a8443b9f404ca0348dfd3e957e6a08a92cbca398fb77757"
   },
+  "validation/audit_chart.py": {
+    "bytes": 3505,
+    "sha256": "ab24abd45bc3d485be1b6f073130ae181d4cd5d4358e08279356fb54f309d01b"
+  },
   "validation/browser_checks.json": {
     "bytes": 1319,
     "sha256": "b97050e0a8afb621f1fff587518974d7a0cb8318f9fb0d057bce01d8d17ea997"
   },
   "validation/calculator_source_review.json": {
-    "bytes": 10919,
-    "sha256": "4c3e44d56a44fa42ac4906ce168f6b601cdcd6f01f8b3fb99d26914cd00a4cc5"
+    "bytes": 11316,
+    "sha256": "6990bfa8a0a208984e2d3a63947218e2b43ec1093447ef22556ae904c5e540af"
   },
   "validation/calculator_source_review.py": {
-    "bytes": 15711,
-    "sha256": "67f895fc66182525a6b6d070d1a42953fdb8be9ce59f21d8ffc47b09174a6c77"
+    "bytes": 15903,
+    "sha256": "2d4d18811afe27bb646a9062b176839461bd1963ba410d117a5f2960aee6faa0"
+  },
+  "validation/chart_audit.json": {
+    "bytes": 1307,
+    "sha256": "0c905c7a26e79b66364d894142d4a16f4a15473dab67b6e3a53e0833fc0bd696"
+  },
+  "validation/chart_browser_checks.json": {
+    "bytes": 738,
+    "sha256": "c070720cd37e16b4c8fbe7386884566440f7a4662685fc71f425fafcad146699"
   },
   "validation/independent_backtest_review.py": {
     "bytes": 15571,
@@ -1299,21 +1311,29 @@
     "bytes": 486,
     "sha256": "f6bbe0c675d730c1ff33c1c6f25e4710223018ad5d949701893e9fc7b2dc8077"
   },
+  "validation/test_chart_model.js": {
+    "bytes": 2029,
+    "sha256": "cae0850cd75db0d6eac89e3a0445a5c86ecdcd4147550e45cc41a543129c2eef"
+  },
   "validation/theme_update.json": {
     "bytes": 826,
     "sha256": "fb55aaa6f2f3da328141b849cbfea0ccbe789346a4bb44d6eb75e39b1b066a8f"
   },
   "web/calculator_app.js": {
-    "bytes": 14678,
-    "sha256": "1633c9eb9644318a549fe422c729375d7e928c87f03ad40cab25d4ce2b69dc1b"
+    "bytes": 14747,
+    "sha256": "14f7d75062c9ed12d21589f1cc6aca2d7a9deed25f9adacb3c8d0e5a84728e2f"
   },
   "web/calculator_template.html": {
-    "bytes": 11866,
-    "sha256": "7197fcfd760faf1ae1d55ccc5b3e6bda0d8b31fc03de213e88ce97bbd2c6de9f"
+    "bytes": 12543,
+    "sha256": "b77922e19095f04e105af1a46d96df657527572737bad3d7384a51b986386ede"
   },
   "web/calculator_worker.js": {
     "bytes": 1517,
     "sha256": "df3d43e5856b86b3aecdc006291ee32dd4b1215e1f6c392e0e3c5f48756ed255"
+  },
+  "web/chart_model.js": {
+    "bytes": 3213,
+    "sha256": "9a22e2be3affeedc5928d3f1513ed57e7b891eba65f9f3c7a53de8b4df15632b"
   },
   "web_calculator.py": {
     "bytes": 4152,

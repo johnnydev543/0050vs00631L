@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-11T03:05:43.596720+00:00",
+  "bundle_vs_saved_accounts": [
+    {
+      "series": "A",
+      "daily_rows": 2912,
+      "max_nav_difference_twd": 0.0,
+      "ending_nav_twd": 25061166.528162956
+    },
+    {
+      "series": "B",
+      "daily_rows": 2912,
+      "max_nav_difference_twd": 1.601874828338623e-07,
+      "ending_nav_twd": 25982970.516922824
+    },
+    {
+      "series": "C",
+      "daily_rows": 2912,
+      "max_nav_difference_twd": 2.2351741790771484e-08,
+      "ending_nav_twd": 25528543.324554134
+    }
+  ],
+  "geometry": {
+    "status": "PASS",
+    "cases": 5,
+    "models": 60,
+    "verified_vertices": 698880,
+    "checks": "All dated vertices round-trip to real NAV/exposure, nearest-date lookup, plot bounds, SVG rounding, linear/log, widths, invalid alignment/values."
+  },
+  "scope": "Real daily portfolio NAV including cash and receivables, exact calendar dates and nominal exposure, linear/log geometry; no change to financial engine.",
+  "display_changes": [
+    "D is always a separate dashed series, even when its allocation matches A/B/C.",
+    "Linear and logarithmic NAV scales use the same amounts, not cumulative percentage returns.",
+    "Initial principal is a reference, not an invented pre-cost trading observation."
+  ]
+}

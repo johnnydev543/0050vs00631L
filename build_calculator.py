@@ -34,6 +34,7 @@ def main() -> None:
     template = (ROOT/'web/calculator_template.html').read_text()
     html = template.replace('@@BUNDLE@@',bundle).replace('@@WORKER@@',(ROOT/'web/calculator_worker.js').read_text())
     html = html.replace('@@APP@@',(ROOT/'web/calculator_app.js').read_text())
+    html = html.replace('@@CHART_MODEL@@',(ROOT/'web/chart_model.js').read_text())
     assert '@@' not in html
     (ROOT/'dist').mkdir(exist_ok=True)
     (ROOT/'dist/index.html').write_text(html)

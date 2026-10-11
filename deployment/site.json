@@ -2,8 +2,9 @@
   "url": "https://taiwan-etf-expose.humble-root-7878.chatgpt.site",
   "access": "public",
   "project_id": "appgprj_6aca109bebb88191874cca7063c7c366",
-  "source_commit_sha": "d174d252226a75aef9f139296b8ca6797f3bb1ff",
-  "version_number": 1,
+  "source_commit_sha": "eec769e0d7eb1036f822bfaea7ed89ce410b5935",
+  "version_number": 2,
   "deployment_status": "succeeded",
-  "version_id": "appgprj_6aca109bebb88191874cca7063c7c366~appgver_6034e95205c48191bca86f2b93f4df19"
+  "version_id": "appgprj_6aca109bebb88191874cca7063c7c366~appgver_bd1133a5fa5c8191b18316c49af82092",
+  "deployment_id": "appgdep_6acafd93e9888191b3ef30a96cbc94b5"
 }

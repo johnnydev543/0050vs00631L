@@ -4,7 +4,7 @@
 
 實際期間：2014-10-31開盤至2026-10-08收盤。2026-10-09休市。
 
-[開啟互動回測網站](https://taiwan-etf-expose.humble-root-7878.chatgpt.site)。可輸入0%～200%目標曝險、0050比例、本金、現金收益及再平衡方式，直接以同一套Python引擎在瀏覽器計算。
+[開啟互動回測網站](https://taiwan-etf-expose.humble-root-7878.chatgpt.site)。可輸入0%～200%目標曝險、0050比例、本金、現金收益及再平衡方式，直接以同一套Python引擎在瀏覽器計算。D為自訂配置，會與A／B／C一起呈現；資產成長可切換線性或對數刻度，並顯示本金與各方案期末金額。
 
 [下載深色主題完整報告](report.html) 後，用瀏覽器開啟。可切換深／淺色及現金收益0%、1%、2%情境；[全部24組結果CSV](results/summary.csv) 可直接下載。
 
@@ -96,3 +96,5 @@ B在季度再平衡下的風險調整指標略優於A；在10個百分點權重�
 - `.github/workflows/refresh-data.yml`：手動或資料工具更新時重新擷取與核對固定期間，輸出Actions成果，不自行覆寫已發布的歷史結果。
 
 A、B、C的目標曝險相同；實際持倉漂移與再平衡門檻對應的曝險範圍不同。因此報酬差不能單獨歸因於現金或正二比例。
+
+線圖逐日數值與座標核對：[chart_audit.json](validation/chart_audit.json)。重現檢查（需Node.js 18+）：`python3 validation/audit_chart.py`。

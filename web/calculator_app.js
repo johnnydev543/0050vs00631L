@@ -14,7 +14,7 @@
   const ratio = n => n == null ? '—' : Number(n).toFixed(2);
   const percentage = n => Number(n).toLocaleString('zh-TW',{maximumFractionDigits:2})+'%';
   const rules = {quarterly:'季度再平衡',threshold:'權重偏離門檻',exposure_threshold:'曝險偏離門檻'};
-  const colors = {A:'var(--a)',B:'var(--b)',C:'var(--c)',custom:'var(--custom)'};
+  const colors = {A:'var(--a)',B:'var(--b)',C:'var(--c)',D:'var(--custom)'};
   const status = (text,error=false) => {$('status').textContent=text;$('status').classList.toggle('error',error);};
 
   function syncTheme() {
@@ -35,6 +35,7 @@
             principal:Number($('principal').value),cash_rate:Number($('cashRate').value),
             rule:$('rule').value,threshold:Number($('threshold').value)};
   }
+  let activePreset='A';
   function preview() {
     const exposure=Number($('exposure').value);
     const maximum=Math.max(0,Math.min(exposure,200-exposure));
@@ -52,13 +53,15 @@
     $('bar50').style.width=(valid?ordinary:0)+'%';
     $('barCash').style.width=(valid?Math.max(0,cash):0)+'%';
     document.querySelectorAll('[data-preset]').forEach(button=>{
-      const target={A:0,B:40,C:20}[button.dataset.preset];
-      button.setAttribute('aria-pressed',String(exposure===160&&ordinary===target));
+      button.setAttribute('aria-pressed',String(button.dataset.preset===activePreset));
     });
   }
-  ['exposure','ordinary'].forEach(id=>$(id).addEventListener('input',preview));
+  ['exposure','ordinary'].forEach(id=>$(id).addEventListener('input',()=>{activePreset='D';preview();}));
   document.querySelectorAll('[data-preset]').forEach(button=>button.addEventListener('click',()=>{
-    $('exposure').value='160';$('ordinary').value=String({A:0,B:40,C:20}[button.dataset.preset]);preview();
+    activePreset=button.dataset.preset;
+    if(activePreset!=='D'){$('exposure').value='160';$('ordinary').value=String({A:0,B:40,C:20}[activePreset]);}
+    preview();
+    if(activePreset==='D')$('ordinary').focus();
   }));
   $('rule').addEventListener('change',()=>{
     const exposureRule=$('rule').value==='exposure_threshold';
@@ -70,10 +73,8 @@
   preview();
 
   function series() {
-    const matches=result.comparisons.find(x=>Math.abs(x.result.params.ordinary-result.params.ordinary)<1e-9);
-    const list=result.comparisons.map(x=>({id:x.id,name:x.id+(matches?.id===x.id?'（本次設定）':''),
-                                         result:x.result,selected:matches?.id===x.id}));
-    if(!matches)list.push({id:'custom',name:'自訂（本次設定）',result:result.selected,selected:true});
+    const list=result.comparisons.map(x=>({id:x.id,name:x.id,result:x.result,selected:false}));
+    list.push({id:'D',name:'D：自訂（本次設定）',result:result.selected,selected:true});
     return list;
   }
 
@@ -99,41 +100,33 @@
     $('crisisTable').innerHTML='<table><thead><tr><th>事件／方案</th><th>最大回撤</th><th>高點</th><th>谷底</th><th>回到高點</th><th>回本天數</th></tr></thead><tbody>'+crises+'</tbody></table>';
   }
 
-  function niceStep(value){const magnitude=10**Math.floor(Math.log10(value));const norm=value/magnitude;return(norm<=1?1:norm<=2?2:norm<=5?5:10)*magnitude;}
   function chart(container,key,list){
-    const width=Math.max(260,container.getBoundingClientRect().width),height=300;
-    const left=64,right=16,top=20,bottom=42,plotW=width-left-right,plotH=height-top-bottom;
-    const times=list[0].result.daily.map(x=>Date.parse(x.date+'T00:00:00Z'));
-    const start=times[0],end=times[times.length-1];
-    const value=(row)=>key==='nav'?row.nav/10000:row.nominal_market_exposure*100;
-    let min=Infinity,max=-Infinity;
-    for(const s of list)for(const row of s.result.daily){const v=value(row);min=Math.min(min,v);max=Math.max(max,v);}
-    if(key==='nav')min=0;
-    const padding=key==='nav'?max*.06:Math.max(3,(max-min)*.12);
-    let lo=key==='nav'?0:Math.max(0,min-padding),hi=max+padding;
-    if(hi-lo<5)hi=lo+5;
-    const step=niceStep((hi-lo)/4);
-    lo=Math.floor(lo/step)*step;hi=Math.ceil(hi/step)*step;
-    const x=t=>left+(t-start)/(end-start)*plotW,y=v=>top+(hi-v)/(hi-lo)*plotH;
+    const model=ETFCharts.create(list,{key,width:Math.max(260,container.getBoundingClientRect().width),
+      scale:$('chartScale').value,principal:result.params.principal,target:result.params.exposure});
+    const {width,height,left,right,top,bottom,plotW,plotH,times,start,end,x,y,value,ticks}=model;
     let markup=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${key==='nav'?'資產成長，單位萬元':'名目市場曝險，單位百分比'}"><title>${key==='nav'?'同曝險資產成長':'每日名目市場曝險'}</title>`;
-    for(let v=lo;v<=hi+step/10;v+=step){
-      const label=key==='nav'?Number(v.toFixed(1)).toLocaleString('zh-TW'):v.toFixed(0)+'%';
+    for(const v of ticks){
+      const label=key==='nav'?Number(v.toFixed(2)).toLocaleString('zh-TW'):v.toFixed(0)+'%';
       markup+=`<line x1="${left}" x2="${width-right}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${left-10}" y="${y(v)+4}" text-anchor="end" fill="var(--muted)" font-size="12">${label}</text>`;
     }
-    const years=width<480?[2015,2019,2023,2026]:[2015,2017,2019,2021,2023,2026];
-    for(const year of years){const t=Date.parse(year+'-01-01T00:00:00Z');markup+=`<text x="${x(t)}" y="${height-16}" text-anchor="middle" fill="var(--muted)" font-size="12">${year}</text>`;}
-    if(key!=='nav'){const target=result.params.exposure;markup+=`<line x1="${left}" x2="${width-right}" y1="${y(target)}" y2="${y(target)}" stroke="var(--muted)" stroke-dasharray="4 4"/><text x="${width-right-5}" y="${y(target)-7}" text-anchor="end" fill="var(--muted)" font-size="12">目標${percentage(target)}</text>`;}
-    for(const s of [...list].sort((a,b)=>Number(a.selected)-Number(b.selected))){
-      const points=s.result.daily.map((row,i)=>x(times[i]).toFixed(2)+','+y(value(row)).toFixed(2)).join(' ');
-      markup+=`<polyline points="${points}" fill="none" stroke="${colors[s.id]}" stroke-width="${s.selected?2.4:1.5}" opacity=".95"/>`;
+    const interval=width<480?4:2;
+    for(let year=2016;year<=2024;year+=interval){const t=Date.parse(year+'-01-01T00:00:00Z');
+      markup+=`<text x="${x(t)}" y="${height-30}" text-anchor="middle" fill="var(--muted)" font-size="11">${year}</text>`;
     }
+    markup+=`<text x="${left}" y="${height-10}" text-anchor="start" fill="var(--muted)" font-size="11">2014-10-31</text><text x="${width-right}" y="${height-10}" text-anchor="end" fill="var(--muted)" font-size="11">2026-10-08</text>`;
+    const reference=key==='nav'?result.params.principal:result.params.exposure;
+    markup+=`<line x1="${left}" x2="${width-right}" y1="${y(reference)}" y2="${y(reference)}" stroke="var(--muted)" stroke-dasharray="3 5"/><text x="${left+5}" y="${y(reference)-7}" fill="var(--muted)" font-size="11">${key==='nav'?'投入本金'+money(reference)+'萬元':'目標'+percentage(reference)}</text>`;
+    list.forEach((s,index)=>{
+      const points=model.points[index].map(([px,py])=>px.toFixed(6)+','+py.toFixed(6)).join(' ');
+      markup+=`<polyline data-series="${s.id}" points="${points}" fill="none" stroke="${colors[s.id]}" stroke-width="${s.selected?2.6:1.7}" ${s.id==='D'?'stroke-dasharray="7 4"':''} opacity=".95"/><circle cx="${x(end)}" cy="${y(value(s.result.daily.at(-1)))}" r="3" fill="${colors[s.id]}"/>`;
+    });
     markup+=`<line data-guide x1="0" x2="0" y1="${top}" y2="${height-bottom}" stroke="var(--muted)" hidden/><rect data-hit x="${left}" y="${top}" width="${plotW}" height="${plotH}" fill="transparent" tabindex="0" aria-label="使用左右方向鍵查看逐日數值"/></svg>`;
     container.innerHTML=markup;
     const svg=container.querySelector('svg'),hit=svg.querySelector('[data-hit]'),guide=svg.querySelector('[data-guide]');
     let activeIndex=times.length-1;
     function show(index,event){
-      activeIndex=Math.max(0,Math.min(times.length-1,index));const d=list[0].result.daily[activeIndex].date;
-      guide.hidden=false;guide.setAttribute('x1',x(times[activeIndex]));guide.setAttribute('x2',x(times[activeIndex]));
+      activeIndex=Math.max(0,Math.min(times.length-1,index));const d=model.dates[activeIndex];
+      guide.removeAttribute('hidden');guide.setAttribute('x1',x(times[activeIndex]));guide.setAttribute('x2',x(times[activeIndex]));
       const tooltip=$('tooltip');tooltip.innerHTML='<strong>'+d+'</strong>'+list.map(s=>`<div><span>${s.name}</span><b>${key==='nav'?money(value(s.result.daily[activeIndex]))+' 萬元':percentage(value(s.result.daily[activeIndex]))}</b></div>`).join('');
       tooltip.hidden=false;
       const bounds=svg.getBoundingClientRect();const px=event?.clientX||bounds.left+x(times[activeIndex]),py=event?.clientY||bounds.top+35;
@@ -142,13 +135,11 @@
     }
     hit.addEventListener('pointermove',event=>{
       const bounds=svg.getBoundingClientRect();const px=(event.clientX-bounds.left)/bounds.width*width;
-      const t=start+(px-left)/plotW*(end-start);let low=0,high=times.length-1;
-      while(low<high){const mid=Math.floor((low+high)/2);if(times[mid]<t)low=mid+1;else high=mid;}
-      const index=low>0&&Math.abs(times[low-1]-t)<Math.abs(times[low]-t)?low-1:low;show(index,event);
+      show(model.nearest(px),event);
     });
-    hit.addEventListener('pointerleave',()=>{guide.hidden=true;$('tooltip').hidden=true;});
+    hit.addEventListener('pointerleave',()=>{guide.setAttribute('hidden','');$('tooltip').hidden=true;});
     hit.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();show(activeIndex+(event.key==='ArrowLeft'?-1:1));}});
-    hit.addEventListener('blur',()=>{guide.hidden=true;$('tooltip').hidden=true;});
+    hit.addEventListener('blur',()=>{guide.setAttribute('hidden','');$('tooltip').hidden=true;});
   }
 
   function render(){
@@ -157,9 +148,14 @@
     const threshold=p.rule==='quarterly'?'':' · '+Number(p.threshold).toLocaleString('zh-TW',{maximumFractionDigits:3})+'個百分點門檻';
     $('resultContext').textContent=`本次結果：本金${money(p.principal)}萬元 · 目標曝險${percentage(p.exposure)} · 正二${percentage(w['00631L']*100)}／0050 ${percentage(w['0050']*100)}／現金${percentage(w.cash*100)} · ${rules[p.rule]}${threshold} · 現金年收益${percentage(p.cash_rate)}`;
     chart($('navChart'),'nav',list);chart($('exposureChart'),'exposure',list);
+    $('chartContext').textContent='縱軸：資產總值（萬元，含現金及應收股利） · '+($('chartScale').value==='log'?'對數刻度：相同百分比漲跌呈現相同高度變化。':'線性刻度：後期資產較大，早期波動會被壓縮。');
+    const overlap=result.comparisons.filter(s=>Math.abs(s.result.params.ordinary-p.ordinary)<1e-9).map(s=>s.id);
+    $('overlapNote').textContent=overlap.length?'D配置與'+overlap.join('／')+'相同，線條會重疊；D用虛線標示。':'D為你輸入的自訂配置，以虛線標示。';
+    $('chartEndpoints').innerHTML=list.map(s=>`<span><i style="background:${colors[s.id]}"></i>${s.id} 期末 ${money(s.result.metrics.ending_nav/10000)}萬元</span>`).join('');
     $('navLegend').innerHTML=list.map(s=>`<span><i style="background:${colors[s.id]}"></i>${s.name}</span>`).join('');
     renderTables(list);
   }
+  $('chartScale').addEventListener('change',render);
   let resizeTimer;
   addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(render,100);});
   render();
@@ -170,7 +166,7 @@
     const message=event.data;
     if(message.type==='status')status(message.message);
     else if(message.type==='ready'){ready=true;$('run').disabled=false;status('已準備好，可調整設定後重新計算。');}
-    else if(message.type==='result'&&message.id===jobId){result=message.result;render();$('run').disabled=false;$('run').textContent='計算並比較';status('已完成：自訂設定及A／B／C均以相同條件重算。');}
+    else if(message.type==='result'&&message.id===jobId){result=message.result;render();$('run').disabled=false;$('run').textContent='計算並比較';status('已完成：A／B／C／D自訂均以相同條件重算。');}
     else if(message.type==='error'){if(!message.init)$('run').disabled=!ready;$('run').textContent='計算並比較';status(message.init?'計算環境無法載入。請確認網路後重新開啟。':message.message,true);}
   };
   worker.onerror=()=>{status('計算環境無法啟動。請確認瀏覽器及網路後重新開啟。',true);$('run').disabled=true;};

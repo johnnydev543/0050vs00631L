@@ -124,7 +124,8 @@ def main():
           and "message.type==='result'&&message.id===jobId" in app
           and 'result.selected.daily.map' in app and 'JSON.stringify(result.selected,null,2)' in app,
           {'context_and_downloads':'Bound to last successful result, not pending/current form fields','stale_jobs':'Only latest matching result id is rendered'})
-    for f in ['web/calculator_worker.js','web/calculator_app.js']:
+    check('CALC-BUNDLE-CHART-MODEL',parsed.scripts.get('chartModelSource')==(BASE/'web/chart_model.js').read_text(),{'source_matches_embedded':True})
+    for f in ['web/calculator_worker.js','web/calculator_app.js','web/chart_model.js']:
         completed=subprocess.run(['node','--check',str(BASE/f)],capture_output=True,text=True)
         check('CALC-JS-SYNTAX '+f,completed.returncode==0,{'exit_code':completed.returncode,'stderr':completed.stderr[:1000]})
     report=(BASE/'report_portfolios.py').read_text();builder=(BASE/'build_report.py').read_text()
@@ -162,7 +163,7 @@ def main():
     check('CALC-DOC-THRESHOLD-UNIT',doc1,{'finding_id':'RVW-CALC-001','expected':'number + percentage points, without an extra % sign'})
     check('CALC-DOC-MULTIASSET-RULE',doc2,{'finding_id':'RVW-CALC-002','expected':'Explicit multi-asset/cash-like trigger and common opening; legacy explanation scoped separately; target exposure label'})
     check('CALC-DOC-CRISIS-ANCHOR',doc3,{'finding_id':'RVW-CALC-003','expected':'Prior-year closing portfolio NAV, not ETF price'})
-    reviewed=['web_calculator.py','test_web_calculator.py','build_calculator.py','web/calculator_app.js','web/calculator_worker.js',
+    reviewed=['web/chart_model.js','web_calculator.py','test_web_calculator.py','build_calculator.py','web/calculator_app.js','web/calculator_worker.js',
               'web/calculator_template.html','report_portfolios.py','build_report.py','normalize.py','analyze_portfolios.py',
               'dist/index.html','dist/report.html','normalized.json']
     findings=[]

@@ -39,6 +39,7 @@ jobs:
           python validation/portfolio_independent_review.py
           python validation/period_independent_review.py
           python build_site.py
+          python validation/audit_chart.py
       - name: Upload refreshed study
         uses: actions/upload-artifact@v4
         with:

@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "review_level": "L3",
-  "reviewed_at_utc": "2026-10-10T10:30:58.533495+00:00",
-  "check_count": 28,
+  "reviewed_at_utc": "2026-10-11T03:06:33.967735+00:00",
+  "check_count": 30,
   "checks": [
     {
       "id": "CALC-WEIGHT-ALGEBRA",
@@ -173,7 +173,7 @@
       "status": "PASS",
       "evidence": {
         "worker_sha256": "df3d43e5856b86b3aecdc006291ee32dd4b1215e1f6c392e0e3c5f48756ed255",
-        "app_sha256": "1633c9eb9644318a549fe422c729375d7e928c87f03ad40cab25d4ce2b69dc1b"
+        "app_sha256": "14f7d75062c9ed12d21589f1cc6aca2d7a9deed25f9adacb3c8d0e5a84728e2f"
       }
     },
     {
@@ -219,6 +219,13 @@
       }
     },
     {
+      "id": "CALC-BUNDLE-CHART-MODEL",
+      "status": "PASS",
+      "evidence": {
+        "source_matches_embedded": true
+      }
+    },
+    {
       "id": "CALC-JS-SYNTAX web/calculator_worker.js",
       "status": "PASS",
       "evidence": {
@@ -228,6 +235,14 @@
     },
     {
       "id": "CALC-JS-SYNTAX web/calculator_app.js",
+      "status": "PASS",
+      "evidence": {
+        "exit_code": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "id": "CALC-JS-SYNTAX web/chart_model.js",
       "status": "PASS",
       "evidence": {
         "exit_code": 0,
@@ -332,17 +347,18 @@
     "Nominal exposure still uses fixed 2/1 multipliers; internal derivatives exposure and strict point-in-time data vintage remain unverified."
   ],
   "reviewed_file_sha256": {
+    "web/chart_model.js": "9a22e2be3affeedc5928d3f1513ed57e7b891eba65f9f3c7a53de8b4df15632b",
     "web_calculator.py": "8700870bb3cb0f59e37c155c6bbbc1f0666b1ab2f3158a3b5e5d4707aeb472ff",
     "test_web_calculator.py": "6d31d05d12e98400ce4dbf527cb7b8d9138f7f62075a0f8fbf2248f84e9b58fc",
-    "build_calculator.py": "f5506960d91664ce97918f6daf39724fdf34fbcc4a5ff247837ff59495d3c2db",
-    "web/calculator_app.js": "1633c9eb9644318a549fe422c729375d7e928c87f03ad40cab25d4ce2b69dc1b",
+    "build_calculator.py": "2c88165d4b044c2978c8683b2f04b8314a6cb4e800bc188314a2413d1a413cc8",
+    "web/calculator_app.js": "14f7d75062c9ed12d21589f1cc6aca2d7a9deed25f9adacb3c8d0e5a84728e2f",
     "web/calculator_worker.js": "df3d43e5856b86b3aecdc006291ee32dd4b1215e1f6c392e0e3c5f48756ed255",
-    "web/calculator_template.html": "7197fcfd760faf1ae1d55ccc5b3e6bda0d8b31fc03de213e88ce97bbd2c6de9f",
+    "web/calculator_template.html": "b77922e19095f04e105af1a46d96df657527572737bad3d7384a51b986386ede",
     "report_portfolios.py": "753e5cac694be24bbb9a67254401ff163e79c2b40c0d2acaabffa3218acebe91",
     "build_report.py": "df79e934d8b116f30c083aa8b54098b4331adcc52b704f1405285357e17bb4c8",
     "normalize.py": "70a04362eb42bc1e95fcd56285ba69b024e875c38985be99d303d87539d573bf",
     "analyze_portfolios.py": "288ad8f1ab077f66941fea7826942520270afea3f3e755c78ea9e65696cda162",
-    "dist/index.html": "fd0964aad63a8c62f678f33d55d10039c7f3c29ef9ce57db129c9992d9f30f7d",
+    "dist/index.html": "f8599116dbd212084933915041313b827c909cb878e937253fb6bf026543fa8a",
     "dist/report.html": "160009c59da051671291ddd7cc4a332784ab51a2b8b80125bc9d76631e0f0a2e",
     "normalized.json": "789dc72096f429458dc6103e7995010c3a2bcaa9a42850e46098412c389b63f7"
   }
