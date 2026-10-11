@@ -294,12 +294,14 @@ onmessage = event => {
     $('ending').textContent=money(m.ending_nav/10000);$('cagr').textContent=pct(m.cagr);$('mdd').textContent=pct(m.max_drawdown);
     const threshold=p.rule==='quarterly'?'':' · '+Number(p.threshold).toLocaleString('zh-TW',{maximumFractionDigits:3})+'個百分點門檻';
     $('resultContext').textContent=`本次結果：本金${money(p.principal)}萬元 · 目標曝險${percentage(p.exposure)} · 正二${percentage(w['00631L']*100)}／0050 ${percentage(w['0050']*100)}／現金${percentage(w.cash*100)} · ${rules[p.rule]}${threshold} · 現金年收益${percentage(p.cash_rate)}`;
-    chart($('navChart'),'nav',list);chart($('exposureChart'),'exposure',list);
-    $('chartContext').textContent='縱軸：資產總值（萬元，含現金及應收股利） · '+($('chartScale').value==='log'?'對數刻度：相同百分比漲跌呈現相同高度變化。':'線性刻度：後期資產較大，早期波動會被壓縮。');
     const overlap=result.comparisons.filter(s=>Math.abs(s.result.params.ordinary-p.ordinary)<1e-9).map(s=>s.id);
-    $('overlapNote').textContent=overlap.length?'D配置與'+overlap.join('／')+'相同，線條會重疊；D用虛線標示。':'D為你輸入的自訂配置，以虛線標示。';
-    $('chartEndpoints').innerHTML=list.map(s=>`<span><i style="background:${colors[s.id]}"></i>${s.id} 期末 ${money(s.result.metrics.ending_nav/10000)}萬元</span>`).join('');
-    $('navLegend').innerHTML=list.map(s=>`<span><i style="background:${colors[s.id]}"></i>${s.name}</span>`).join('');
+    const chartList=list.filter(s=>s.id!=='D'||overlap.length===0).map(s=>
+      overlap.includes(s.id)?{...s,selected:true,name:s.id+'（本次設定）'}:s);
+    chart($('navChart'),'nav',chartList);chart($('exposureChart'),'exposure',chartList);
+    $('chartContext').textContent='縱軸：資產總值（萬元，含現金及應收股利） · '+($('chartScale').value==='log'?'對數刻度：相同百分比漲跌呈現相同高度變化。':'線性刻度：後期資產較大，早期波動會被壓縮。');
+    $('overlapNote').textContent=overlap.length?'D配置與'+overlap.join('／')+'相同，線圖不重複顯示D。':'D為你輸入的自訂配置，以虛線標示。';
+    $('chartEndpoints').innerHTML=chartList.map(s=>`<span><i style="background:${colors[s.id]}"></i>${s.id} 期末 ${money(s.result.metrics.ending_nav/10000)}萬元</span>`).join('');
+    $('navLegend').innerHTML=chartList.map(s=>`<span><i style="background:${colors[s.id]}"></i>${s.name}</span>`).join('');
     renderTables(list);
   }
   $('chartScale').addEventListener('change',render);

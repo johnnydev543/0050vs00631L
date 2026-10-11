@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "scope": "D chart deduplication only; table and underlying calculation preserved.",
+  "browser_cases": [
+    {
+      "ordinary": 0,
+      "matched": "A",
+      "chart_series": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "ordinary": 40,
+      "matched": "B",
+      "chart_series": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "ordinary": 20,
+      "matched": "C",
+      "chart_series": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "ordinary": 10,
+      "matched": null,
+      "chart_series": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "common_parameters": {
+    "exposure": 160,
+    "principal": 100,
+    "cash_rate": 1,
+    "rule": "quarterly"
+  },
+  "checks": [
+    "NAV and nominal-exposure plots both hide matching D.",
+    "Chart legend, endpoint values and tooltips receive the same filtered list.",
+    "Unique D remains visible in linear/log modes.",
+    "Calculator source/bundle checks: 30 passed."
+  ]
+}
