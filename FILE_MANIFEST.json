@@ -12,8 +12,8 @@
     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "README.md": {
-    "bytes": 6323,
-    "sha256": "9cd3c6a34ec673ee7b24c86c78045b650a01f0a6ce8654a1b978671474a88083"
+    "bytes": 6314,
+    "sha256": "94530b4fd1af12951faf944262d8ebd1e12f51336a7ea1204c08f8ff0150db1d"
   },
   "START_HERE.txt": {
     "bytes": 1858,
@@ -88,8 +88,8 @@
     "sha256": "7369afa89ad9447bef57b10cd1d71f88e2a3ef2263a23e3205efa28029d43736"
   },
   "deployment/site.json": {
-    "bytes": 389,
-    "sha256": "4bb1f2b5e307128de445ad3c2f97733230697c5ad58ee1c34049fd8d63d10a64"
+    "bytes": 380,
+    "sha256": "007f635a7d66daf8f07b580e97732526becd22e2a34f3abfdcc31ad5b6c3739a"
   },
   "derived_price_diagnostics.csv": {
     "bytes": 352007,

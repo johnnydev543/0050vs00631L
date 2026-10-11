@@ -4,7 +4,7 @@
 
 實際期間：2014-10-31開盤至2026-10-08收盤。2026-10-09休市。
 
-[開啟互動回測網站](https://taiwan-etf-exposure-johnny.humble-root-7878.chatgpt.site)。可輸入0%～200%目標曝險、0050比例、本金、現金收益及再平衡方式，直接以同一套Python引擎在瀏覽器計算。
+[開啟互動回測網站](https://taiwan-etf-expose.humble-root-7878.chatgpt.site)。可輸入0%～200%目標曝險、0050比例、本金、現金收益及再平衡方式，直接以同一套Python引擎在瀏覽器計算。
 
 [下載深色主題完整報告](report.html) 後，用瀏覽器開啟。可切換深／淺色及現金收益0%、1%、2%情境；[全部24組結果CSV](results/summary.csv) 可直接下載。
 
